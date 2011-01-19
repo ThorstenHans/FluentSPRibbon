@@ -8,6 +8,8 @@ namespace DotNetRocks.FluentSPRibbon
     {
         private readonly IList<SuitableRibbonElement> _suitableElements;
         private string _templateId;
+        private Dictionary<String, String> _controlsProperties;
+
 
         internal Group():this("NotSet")
         {
@@ -16,12 +18,23 @@ namespace DotNetRocks.FluentSPRibbon
         internal Group(string id) : base(id)
         {
             this._suitableElements= new List<SuitableRibbonElement>();
+            this._controlsProperties = new Dictionary<string, string>();
         }
+        
 
         
         public new Group SetPropertyTo(string name, string value)
         {
             base.SetPropertyTo(name,value);
+            return this;
+        }
+
+        public Group SetControlsPropertyTo(String name, String value)
+        {
+            if (this._controlsProperties.ContainsKey(name))
+                this._controlsProperties[name] = value;
+            else
+                this._controlsProperties.Add(name,value);
             return this;
         }
 
@@ -47,6 +60,10 @@ namespace DotNetRocks.FluentSPRibbon
         {
             writer.WriteStartElement("Controls");
             writer.WriteAttributeString("Id", Id+".ControlsContainer");
+            foreach (var controlsProperty in _controlsProperties)
+            {
+                writer.WriteAttributeString(controlsProperty.Key,controlsProperty.Value);
+            }
             _suitableElements.ToList().ForEach(se=>
                                                    {
                                                        writer.WriteStartElement(se.TagName);

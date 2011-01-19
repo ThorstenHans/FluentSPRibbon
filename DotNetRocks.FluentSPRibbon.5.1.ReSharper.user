@@ -1,0 +1,177 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="RibbonElementBase`0" priority="3" />
+      <Item value="public" priority="2" />
+      <Item value="void" priority="1" />
+      <Item value="var" priority="2" />
+      <Item value="Create" priority="5" />
+      <Item value="Button`0" priority="0" />
+      <Item value="Ribbon`0" priority="2" />
+      <Item value="Tab`0" priority="1" />
+      <Item value="Group`0" priority="1" />
+      <Item value="button" priority="1" />
+      <Item value="Assert`0" priority="8" />
+      <Item value="ribbon" priority="2" />
+      <Item value="typeof" priority="0" />
+      <Item value="Test" priority="0" />
+      <Item value="newRibbon" priority="0" />
+      <Item value="test" priority="2" />
+      <Item value="sut" priority="0" />
+      <Item value="private" priority="0" />
+      <Item value="Dictionary" priority="0" />
+      <Item value="String`0" priority="11" />
+      <Item value="this" priority="24" />
+      <Item value="new" priority="0" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="0" />
+      <Item value="if" priority="0" />
+      <Item value="name" priority="10" />
+      <Item value="value" priority="10" />
+      <Item value="return" priority="18" />
+      <Item value="_controlsProperties" priority="0" />
+      <Item value="foreach" priority="0" />
+      <Item value="writer" priority="0" />
+      <Item value="controlsProperty" priority="1" />
+      <Item value="base" priority="18" />
+      <Item value="SplitButton`0" priority="3" />
+      <Item value="internal" priority="6" />
+      <Item value="TextBox`0" priority="0" />
+      <Item value="SuitableRibbonElement`0" priority="7" />
+      <Item value="id" priority="8" />
+      <Item value="CheckBox`0" priority="0" />
+      <Item value="IRibbonElement" priority="7" />
+      <Item value="ComboBox`0" priority="1" />
+      <Item value="ctor" priority="3" />
+      <Item value="DropDown`0" priority="2" />
+      <Item value="MRUSplittButton`0" priority="0" />
+      <Item value="Spinner`0" priority="0" />
+      <Item value="itor" priority="9" />
+      <Item value="GalleryButton`0" priority="0" />
+      <Item value="string" priority="0" />
+      <Item value="FlyoutAnchor`0" priority="0" />
+      <Item value="class" priority="0" />
+      <Item value="MenuSection`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Create`1">
+      <Item value="Instance`0" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Button">
+      <Item value="SetPropertyTo`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Ribbon">
+      <Item value="With`0" priority="1" />
+      <Item value="Indexer" priority="0" />
+      <Item value="ChildItemCount" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Tab">
+      <Item value="With`0" priority="0" />
+      <Item value="ChildItemCount" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Group">
+      <Item value="SetPropertyTo`0" priority="0" />
+      <Item value="With`0" priority="0" />
+      <Item value="OriginalId" priority="0" />
+      <Item value="_controlsProperties" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="IsNotNull`0" priority="4" />
+      <Item value="IsTrue`0" priority="0" />
+      <Item value="IsInstanceOf`1" priority="0" />
+      <Item value="AreEqual`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="ContainsKey`0" priority="0" />
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlWriter">
+      <Item value="WriteAttributeString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.KeyValuePair`2">
+      <Item value="Key" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.RibbonElementBase">
+      <Item value="SetPropertyTo`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.SuitableRibbonElement">
+      <Item value="SetPropertyTo`0" priority="5" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElementBase.cs" caret="1069" fromTop="31" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="462" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Tab.cs" caret="250" fromTop="9" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Representation_Tests.cs" caret="0" fromTop="0" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Instance_Creation_Tests.cs" caret="1017" fromTop="34" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Group.cs" caret="1833" fromTop="55" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:SuitableRibbonElement.cs" caret="71" fromTop="4" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Button.cs" caret="105" fromTop="4" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:TextBox.cs" caret="131" fromTop="4" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CheckBox.cs" caret="207" fromTop="8" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:ComboBox.cs" caret="386" fromTop="18" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:DropDown.cs" caret="259" fromTop="9" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Continous_Fluent_API_Tests.cs" caret="2054" fromTop="30" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tab_Tests.cs" caret="592" fromTop="22" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="90" fromTop="4" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:GalleryButton.cs" caret="182" fromTop="4" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:SplitButton.cs" caret="398" fromTop="15" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Spinner.cs" caret="173" fromTop="6" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:MRUSplitButton.cs" caret="280" fromTop="9" />
+      <File id="d:Miscellaneous Files/f:cui.xsd/l:C!?Program Files?Common Files?Microsoft Shared?Web Server Extensions?14?TEMPLATE?XML?cui.xsd" caret="9185" fromTop="14" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:FlyoutAnchor.cs" caret="378" fromTop="18" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Menu.cs" caret="512" fromTop="24" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:MenuSection.cs" caret="493" fromTop="23" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:ComboBox.cs" caret="641" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:ComboBox.cs" caret="386" fromTop="18" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:DropDown.cs" caret="474" fromTop="11" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:DropDown.cs" caret="638" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:DropDown.cs" caret="372" fromTop="16" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:DropDown.cs" caret="268" fromTop="9" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:MRUSplitButton.cs" caret="521" fromTop="11" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:MRUSplitButton.cs" caret="691" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:MRUSplitButton.cs" caret="246" fromTop="9" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:MRUSplitButton.cs" caret="337" fromTop="14" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:MRUSplitButton.cs" caret="433" fromTop="19" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Spinner.cs" caret="373" fromTop="11" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Spinner.cs" caret="536" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Spinner.cs" caret="256" fromTop="14" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Spinner.cs" caret="13" fromTop="0" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:GalleryButton.cs" caret="384" fromTop="11" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:GalleryButton.cs" caret="553" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:GalleryButton.cs" caret="263" fromTop="9" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:GalleryButton.cs" caret="182" fromTop="4" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Spinner.cs" caret="173" fromTop="6" />
+      <File id="d:Miscellaneous Files/f:cui.xsd/l:C!?Program Files?Common Files?Microsoft Shared?Web Server Extensions?14?TEMPLATE?XML?cui.xsd" caret="9194" fromTop="14" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:FlyoutAnchor.cs" caret="471" fromTop="11" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:FlyoutAnchor.cs" caret="641" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:FlyoutAnchor.cs" caret="387" fromTop="18" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Menu.cs" caret="313" fromTop="14" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Menu.cs" caret="241" fromTop="9" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Menu.cs" caret="358" fromTop="19" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Menu.cs" caret="512" fromTop="31" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Menu.cs" caret="512" fromTop="34" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Menu.cs" caret="512" fromTop="24" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.8\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>
