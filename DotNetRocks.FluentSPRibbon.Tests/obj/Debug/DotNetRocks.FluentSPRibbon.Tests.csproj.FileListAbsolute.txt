@@ -1,0 +1,16 @@
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.Tests.dll
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.Tests.pdb
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.dll
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\nunit.framework.dll
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.pdb
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.dll
+D:\projects\DotNetRocks.SharePoint.FluentRibbon\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.pdb
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.Tests.dll
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.Tests.pdb
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.dll
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\nunit.framework.dll
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.pdb
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.dll
+D:\projects\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.pdb
