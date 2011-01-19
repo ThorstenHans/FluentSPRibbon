@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D" ModuleId="DotNetRocks.FluentSPRibbon" />
+  <Module PersistentId="8D760DC3-C867-4104-B225-82EDAA54A056" ModuleId="DotNetRocks.FluentSPRibbon.Tests" />
+</Modules>

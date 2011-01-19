@@ -17,5 +17,20 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Assert
             Assert.AreEqual(2,tab.ChildItemCount);
         }
+
+      
+
+        [Test]
+        public void A_New_Tab_Should_Always_Be_Empty()
+        {
+            var sut = Create<Ribbon>.Instance("MyRibbon")
+                .With(()=>Create<Tab>.Instance("MyTab"));
+
+            Assert.IsNotNull(sut);
+            Assert.IsNotNull(sut["MyTab"]);
+            Assert.AreEqual(0,sut["MyTab"].ChildItemCount);
+
+        }   
+        
     }
 }

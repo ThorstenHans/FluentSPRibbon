@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
@@ -47,7 +46,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public Group this[string id]
         {
-            get { return _groups.FirstOrDefault(g => g.Id == id); }
+            get { return _groups.FirstOrDefault(g => g.OriginalId == id); }
         }
 
         public int ChildItemCount
@@ -59,7 +58,6 @@ namespace DotNetRocks.FluentSPRibbon
         {
             var group = expression.Invoke();
             group.Parent = this;
-            group.TemplateActionRequired += Ribbon.DoTemplateAction;
             this._groups.Add(group);
             return this;
         }

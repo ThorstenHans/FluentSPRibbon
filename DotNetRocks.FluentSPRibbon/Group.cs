@@ -4,9 +4,8 @@ using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Group : RibbonElementBase, IRibbonElementContainer<Group,SuitableRibbonElement>, ITemplateProvider<Group>
+    public class Group : RibbonElementBase, IRibbonElementContainer<Group,SuitableRibbonElement>
     {
-        internal event EventHandler<TemplateActionRequiredEventArgs> TemplateActionRequired;
         private readonly IList<SuitableRibbonElement> _suitableElements;
         private string _templateId;
 
@@ -19,10 +18,7 @@ namespace DotNetRocks.FluentSPRibbon
             this._suitableElements= new List<SuitableRibbonElement>();
         }
 
-        internal String TemplateId
-        {
-            get { return String.Format("{0}.{1}", this.Id, _templateId); }
-        }
+        
         public new Group SetPropertyTo(string name, string value)
         {
             base.SetPropertyTo(name,value);
@@ -61,22 +57,6 @@ namespace DotNetRocks.FluentSPRibbon
 
         }
 
-        private void FireTemplateActionRequired()
-        {
-            if(TemplateActionRequired!=null)
-                this.TemplateActionRequired(this, new TemplateActionRequiredEventArgs()
-                                                      {
-                                                          ControlTemplateAlias = String.Empty,
-                                                          TemplateId = this.TemplateId
-                                                      });
-        }
-
-        public Group SetTemplate(string templateId)
-        {
-            this._templateId = templateId;
-            this.SetPropertyTo("Template", this.TemplateId);
-            FireTemplateActionRequired();
-            return this;
-        }
+        
     }
 }

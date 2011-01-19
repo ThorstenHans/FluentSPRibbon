@@ -32,7 +32,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("Caption",actual.GetProperty("LabelText"));
         }
 
-        
+      
 
     }
 }
