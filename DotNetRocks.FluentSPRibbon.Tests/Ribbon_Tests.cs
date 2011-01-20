@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace DotNetRocks.FluentSPRibbon.Tests
@@ -13,5 +14,18 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual(0, newRibbon.ChildItemCount);
         }
 
+
+        [Test]
+        public void BuildTemplateXml_Should_Return_TemplateXml()
+        {
+            // Arrange
+            var sut = Create<Ribbon>.Instance("MyRibbon");
+
+            // Act
+            String actual = sut.BuildTemplateXml();
+
+            // Assert
+            Assert.IsNotNullOrEmpty(actual);
+        }
     }
 }

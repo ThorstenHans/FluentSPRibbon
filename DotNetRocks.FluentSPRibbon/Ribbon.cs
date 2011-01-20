@@ -58,7 +58,9 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
 
-        
-       
+        public String BuildTemplateXml()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
