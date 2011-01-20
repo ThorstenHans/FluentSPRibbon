@@ -14,11 +14,6 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             // Arrange
             String actual = String.Empty;
-            using (var stream = new MemoryStream())
-            {
-
-                XmlSerializer serializer = new XmlSerializer(typeof (Ribbon));
-
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
                     .SetPropertyTo("Name", ".NET Rocks Fluent SPRibbon API")
                     .With(() => Create<Tab>.Instance("FluentRibbonTab1")
@@ -47,14 +42,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                     .SetPropertyTo("Sequence", "1002")
                                     .SetPropertyTo("Description", ".NET Rocks Fluent SPRibbon API"));
 
-                // Act
-                serializer.Serialize(stream, ribbon);
-                using (var reader = new StreamReader(stream))
-                {
-                    stream.Position = 0;
-                    actual = reader.ReadToEnd();
-                }
-            }
+            actual = ribbon.ToXml();
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(actual);
             // Assert
@@ -134,17 +122,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("$Resources:MyResourceFile, Group3Title", group3.Attributes["Title"].Value);
            
         }
+ 
+
 
         [Test]
         public void Titles_Should_Be_Localized_And_Image_Urls_Should_be_composed()
         {
             // Arrange
             String actual = String.Empty;
-            using (var stream = new MemoryStream())
-            {
                 RibbonSettings.ResourceFileIdentifier = "MyResourceFile";
                 RibbonSettings.ImagesFolder = "/_layouts/FluentSPRibbon/Images/";
-                XmlSerializer serializer = new XmlSerializer(typeof(Ribbon));
+                
 
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
                     .SetPropertyTo("Name", ".NET Rocks Fluent SPRibbon API")
@@ -175,14 +163,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                     .SetPropertyTo("Sequence", "1002")
                                     .SetPropertyTo("Description", ".NET Rocks Fluent SPRibbon API"));
 
-                // Act
-                serializer.Serialize(stream, ribbon);
-                using (var reader = new StreamReader(stream))
-                {
-                    stream.Position = 0;
-                    actual = reader.ReadToEnd();
-                }
-            }
+            actual = ribbon.ToXml();
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(actual);
             // Assert
@@ -212,7 +193,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("$Resources:MyResourceFile, Group1Title", group1.Attributes["Title"].Value);
             Assert.AreEqual("$Resources:MyResourceFile, Group2Title", group2.Attributes["Title"].Value);
             Assert.AreEqual("$Resources:MyResourceFile, Group3Title", group3.Attributes["Title"].Value);
-
+            Console.Write(actual);
         }
 
         [Test]
@@ -220,10 +201,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             // Arrange
             String actual = String.Empty;
-            using (var stream = new MemoryStream())
-            {
-                RibbonSettings.ImagesFolder = "/_layouts/FluentSPRibbon/Images/";
-                XmlSerializer serializer = new XmlSerializer(typeof(Ribbon));
+            RibbonSettings.ImagesFolder = "/_layouts/FluentSPRibbon/Images/";
 
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
                      .SetPropertyTo("Name", ".NET Rocks Fluent SPRibbon API")
@@ -240,14 +218,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                                      .SetPropertyTo("Image32by32","CoolIcon.png"))));
 
                 // Act
-                serializer.Serialize(stream, ribbon);
-                using (var reader = new StreamReader(stream))
-                {
-                    stream.Position = 0;
-                    actual = reader.ReadToEnd();
-                }
-            }
-        
+            actual = ribbon.ToXml();
             // Assert
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(actual);
@@ -258,6 +229,46 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("/_layouts/FluentSPRibbon/Images/CoolIcon.png",button1.Attributes["Image32by32"].Value);
             Console.Write(actual);
 
+        }
+
+
+        [Test]
+        public void Ribbon_Element_Should_Be_Exportable_To_Xml()
+        {
+            RibbonSettings.ResourceFileIdentifier = "MyResourceFile";
+            RibbonSettings.ImagesFolder = "/_layouts/FluentSPRibbon/Images/";
+           
+
+            var ribbon = Create<Ribbon>.Instance("FluentRibbon")
+                .SetPropertyTo("Name", ".NET Rocks Fluent SPRibbon API")
+                .With(() => Create<Tab>.Instance("FluentRibbonTab1")
+                                .SetPropertyTo("Title", "Tab1Title")
+                                .SetPropertyTo("Sequence", "1001")
+                                .SetPropertyTo("Description", "see http://www.dotnet-rocks.de")
+                                .With(() => Create<Group>.Instance("ActionsGroup")
+                                                .SetPropertyTo("Title", "Group1Title")
+                                                .SetPropertyTo("Sequence", "10")
+                                                .SetPropertyTo("Description", "These are my actions")
+                                                .With(() => Create<Button>.Instance("MyButton1")
+                                                .SetPropertyTo("Image32by32", "CoolIcon.png")
+                                                .SetPropertyTo("LabelText", "Click me!")))
+                                .With(() => Create<Group>.Instance("WorkflowActions")
+                                                .SetPropertyTo("Title", "Group2Title")
+                                                .SetPropertyTo("Sequence", "20")
+                                                .SetPropertyTo("Description",
+                                                               "Master your Workflows by using Ribbon Elements")
+                                                               .With(() => Create<Button>.Instance("Button2").SetPropertyTo("LabelText", "OrClickMe!")))
+                                .With(() => Create<Group>.Instance("ViewSettingsGroup")
+                                                .SetPropertyTo("Title", "Group3Title")
+                                                .SetPropertyTo("Sequence", "30")
+                                                .SetPropertyTo("Description",
+                                                               "Customize the current view for your needs")))
+                .With(() => Create<Tab>.Instance("FluentRibbonTab2")
+                                .SetPropertyTo("Title", "Tab2Title")
+                                .SetPropertyTo("Sequence", "1002")
+                                .SetPropertyTo("Description", ".NET Rocks Fluent SPRibbon API"));
+
+            Assert.IsNotNullOrEmpty(ribbon.ToXml());
         }
     }
 }

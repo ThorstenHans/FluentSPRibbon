@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
@@ -9,12 +10,27 @@ namespace DotNetRocks.FluentSPRibbon
     public abstract class RibbonElementBase : IXmlSerializable
     {
         private readonly Dictionary<string, string> _properties;
-      
+
         private readonly string _originalId;
         private RibbonElementBase _parent;
+
+        internal RibbonElementBase()
+            : this("NotSet")
+        {
+
+        }
+
+        internal RibbonElementBase(String id)
+        {
+            _originalId = id;
+            _properties = new Dictionary<string, string>();
+
+        }
+
         internal Ribbon Ribbon
         {
-            get { 
+            get
+            {
                 var parent = Parent;
                 while (parent != null && parent as Ribbon == null)
                 {
@@ -29,29 +45,21 @@ namespace DotNetRocks.FluentSPRibbon
         internal RibbonElementBase Parent
         {
             get { return _parent; }
-            set { 
+            set
+            {
                 _parent = value;
-                
+
             }
         }
 
         internal String OriginalId
-    {
-        get
         {
-            return this._originalId;
+            get
+            {
+                return this._originalId;
+            }
         }
-    }
-        internal RibbonElementBase():this("NotSet")
-        {
-            
-        }
-        internal RibbonElementBase(String id)
-        {
-            _originalId = id;
-            _properties=new Dictionary<string, string>();
-          
-        }
+
 
         private string ResolveId(string id)
         {
@@ -65,6 +73,7 @@ namespace DotNetRocks.FluentSPRibbon
         {
             get { return ResolveId(_originalId); }
         }
+
         protected void SetPropertyTo(string name, string value)
         {
             if (_properties.ContainsKey(name))
@@ -80,6 +89,23 @@ namespace DotNetRocks.FluentSPRibbon
             return _properties[name];
         }
 
+        public String ToXml()
+        {
+            var serializer = new XmlSerializer(this.GetType());
+            String elementAsXml = String.Empty;
+            using (var stream = new MemoryStream())
+            {
+                serializer.Serialize(stream,this);
+                stream.Position = 0;
+                using (var reader = new StreamReader(stream))
+                {
+                    elementAsXml = reader.ReadToEnd();
+                }
+            }
+            
+            return elementAsXml;
+        }
+
 
         public XmlSchema GetSchema()
         {
@@ -88,12 +114,12 @@ namespace DotNetRocks.FluentSPRibbon
 
         public void ReadXml(XmlReader reader)
         {
-            throw new NotImplementedException();
+           
         }
 
         public void WriteXml(XmlWriter writer)
         {
-            writer.WriteAttributeString("Id",Id);
+            writer.WriteAttributeString("Id", Id);
             foreach (var property in _properties)
             {
                 var transformedProperty = RibbonSettings.ApplyResourceLink(property);
@@ -105,7 +131,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         protected virtual void WriteChildren(XmlWriter writer)
         {
-            
+
         }
     }
 }

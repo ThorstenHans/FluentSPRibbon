@@ -12,19 +12,19 @@
       <Item value="RibbonElementBase`0" priority="7" />
       <Item value="public" priority="10" />
       <Item value="void" priority="2" />
-      <Item value="var" priority="6" />
-      <Item value="Create" priority="5" />
+      <Item value="var" priority="8" />
+      <Item value="Create" priority="7" />
       <Item value="Button`0" priority="0" />
       <Item value="Ribbon`0" priority="2" />
       <Item value="Tab`0" priority="2" />
       <Item value="Group`0" priority="1" />
       <Item value="button" priority="1" />
-      <Item value="Assert`0" priority="18" />
-      <Item value="ribbon" priority="2" />
+      <Item value="Assert`0" priority="20" />
+      <Item value="ribbon" priority="4" />
       <Item value="typeof" priority="1" />
       <Item value="Test" priority="0" />
       <Item value="newRibbon" priority="0" />
-      <Item value="test" priority="13" />
+      <Item value="test" priority="14" />
       <Item value="sut" priority="0" />
       <Item value="private" priority="5" />
       <Item value="Dictionary" priority="0" />
@@ -122,21 +122,23 @@
       <Item value="group2" priority="0" />
       <Item value="group1" priority="0" />
       <Item value="tab2" priority="0" />
+      <Item value="expected" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Create`1">
-      <Item value="Instance`0" priority="6" />
+      <Item value="Instance`0" priority="8" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Button">
       <Item value="SetPropertyTo`0" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Ribbon">
-      <Item value="With`0" priority="1" />
+      <Item value="With`0" priority="2" />
       <Item value="Indexer" priority="0" />
       <Item value="ChildItemCount" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Tab">
       <Item value="With`0" priority="0" />
       <Item value="ChildItemCount" priority="0" />
+      <Item value="OriginalId" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Group">
       <Item value="SetPropertyTo`0" priority="0" />
@@ -145,10 +147,10 @@
       <Item value="_controlsProperties" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
-      <Item value="IsNotNull`0" priority="6" />
+      <Item value="IsNotNull`0" priority="7" />
       <Item value="IsTrue`0" priority="1" />
       <Item value="IsInstanceOf`1" priority="0" />
-      <Item value="AreEqual`0" priority="6" />
+      <Item value="AreEqual`0" priority="7" />
       <Item value="Throws`1" priority="1" />
       <Item value="Fail`0" priority="0" />
       <Item value="IsFalse`0" priority="0" />
@@ -211,7 +213,6 @@
   <RecentFiles>
     <RecentFiles>
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Representation_Tests.cs" caret="0" fromTop="0" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="90" fromTop="4" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:ImageFolderNotSpecifiedException.cs" caret="13" fromTop="0" />
       <File id="d:Miscellaneous Files/f:cui.xsd/l:C!?Program Files?Common Files?Microsoft Shared?Web Server Extensions?14?TEMPLATE?XML?cui.xsd" caret="9185" fromTop="21" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:SuitableRibbonElement.cs" caret="0" fromTop="0" />
@@ -222,22 +223,23 @@
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Continous_Fluent_API_Tests.cs" caret="2054" fromTop="30" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tab_Tests.cs" caret="592" fromTop="22" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:Properties/f:AssemblyInfo.cs" caret="1541" fromTop="36" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:RibbonSettings_Tests.cs" caret="2202" fromTop="65" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonSettings.cs" caret="627" fromTop="15" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="10165" fromTop="27" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:RibbonSettings_Tests.cs" caret="2202" fromTop="14" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="90" fromTop="4" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Id_Tests.cs" caret="806" fromTop="29" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="240" fromTop="11" />
     </RecentFiles>
     <RecentEdits>
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="6059" fromTop="32" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="6491" fromTop="37" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="7744" fromTop="57" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="7878" fromTop="53" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="7738" fromTop="47" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14430" fromTop="37" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="15900" fromTop="46" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="15900" fromTop="32" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14659" fromTop="14" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="16199" fromTop="16" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="16786" fromTop="47" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14464" fromTop="37" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="15934" fromTop="46" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="15934" fromTop="32" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14693" fromTop="14" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="16233" fromTop="16" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="16820" fromTop="47" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="3734" fromTop="47" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:RibbonSettings_Tests.cs" caret="484" fromTop="14" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:RibbonSettings_Tests.cs" caret="432" fromTop="14" />
@@ -250,13 +252,14 @@
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonSettings.cs" caret="681" fromTop="17" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonSettings.cs" caret="251" fromTop="5" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonSettings.cs" caret="562" fromTop="13" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14350" fromTop="59" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="8780" fromTop="18" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="9086" fromTop="25" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="13037" fromTop="38" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="13677" fromTop="27" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="13540" fromTop="23" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="10165" fromTop="27" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Id_Tests.cs" caret="912" fromTop="31" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14373" fromTop="46" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

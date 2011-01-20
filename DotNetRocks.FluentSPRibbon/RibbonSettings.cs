@@ -68,8 +68,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         private static string BuildResourceString(string resourceKey)
         {
-            if (String.IsNullOrEmpty(ResourceFileIdentifier))
-                throw new ResourceFileIdentifierNotSpecifiedException("The 'ResourceFile' Property on 'RibbonSettings' is not specified");
+          
             var resourceFile = ResourceFileIdentifier.IndexOf(".resx")>-1?ResourceFileIdentifier.Substring(0,ResourceFileIdentifier.IndexOf(".resx")):ResourceFileIdentifier;
             return String.Format("$Resources:{0}, {1}", resourceFile, resourceKey);
         }
