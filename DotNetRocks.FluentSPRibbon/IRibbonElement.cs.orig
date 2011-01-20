@@ -1,0 +1,18 @@
+﻿using System;
+
+namespace DotNetRocks.FluentSPRibbon
+{
+    public interface IRibbonElement
+    {
+        
+    }
+    public interface IRibbonElement<T> : IRibbonElement 
+        where T:RibbonElementBase
+    {
+        
+        
+        
+    }
+
+  
+}

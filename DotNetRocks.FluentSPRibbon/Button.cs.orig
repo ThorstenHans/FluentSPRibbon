@@ -2,17 +2,26 @@
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Button : RibbonElementBase,IRibbonElement<Button>
+    public class Button : SuitableRibbonElement,IRibbonElement<Button>
     {
         internal Button():this("NotSet"){}
 
         internal Button(string id) : base(id)
         {
         }
- 
+
+        internal override string TagName
+        {
+            get { return "Button"; }
+        }
+
+        public override Property<SuitableRibbonElement> Set(string name)
+        {
+            throw new NotImplementedException();
+        }
 
 
-        public Button SetPropertyTo(string name, string value)
+        internal new Button SetPropertyTo(string name, string value)
         {
             base.SetPropertyTo(name, value);
             return this;

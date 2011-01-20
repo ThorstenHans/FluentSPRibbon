@@ -41,16 +41,25 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="CheckBox.cs" />
+    <Compile Include="ComboBox.cs" />
     <Compile Include="Create.cs" />
+    <Compile Include="DropDown.cs" />
+    <Compile Include="FlyoutAnchor.cs" />
+    <Compile Include="GalleryButton.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="IRibbonElement.cs" />
     <Compile Include="IRibbonElementContainer.cs" />
-    <Compile Include="ITemplateConsumer.cs" />
-    <Compile Include="ITemplateProvider.cs" />
     <Compile Include="Label.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MenuSection.cs" />
+    <Compile Include="MRUSplitButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="RibbonElementBase.cs" />
+    <Compile Include="Spinner.cs" />
+    <Compile Include="SplitButton.cs" />
+    <Compile Include="SuitableRibbonElement.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="TemplateActionRequiredEventArgs.cs" />
     <Compile Include="TextBox.cs" />

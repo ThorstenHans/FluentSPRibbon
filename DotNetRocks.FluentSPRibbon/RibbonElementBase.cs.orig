@@ -96,13 +96,15 @@ namespace DotNetRocks.FluentSPRibbon
             writer.WriteAttributeString("Id",Id);
             foreach (var property in _properties)
             {
-                var transformedProperty = RibbonSettings.ApplyResourceLink(property);
-                transformedProperty = RibbonSettings.ApplyImagesFolder(transformedProperty);
-                writer.WriteAttributeString(transformedProperty.Key, transformedProperty.Value);
+                writer.WriteAttributeString(property.Key,property.Value);
             }
             WriteChildren(writer);
         }
-
+        public Property<SuitableRibbonElement> Set(string name)
+        {
+            Property<SuitableRibbonElement> p = new Property<SuitableRibbonElement>(this, name);
+            return p;
+        }
         protected virtual void WriteChildren(XmlWriter writer)
         {
             

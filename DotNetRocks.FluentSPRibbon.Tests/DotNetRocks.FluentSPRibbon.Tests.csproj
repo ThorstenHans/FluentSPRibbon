@@ -46,6 +46,7 @@
     <Compile Include="Id_Tests.cs" />
     <Compile Include="Instance_Creation_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RibbonSettings_Tests.cs" />
     <Compile Include="Ribbon_Representation_Tests.cs" />
     <Compile Include="Ribbon_Tab_Tests.cs" />
     <Compile Include="Ribbon_Tests.cs" />
