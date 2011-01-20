@@ -18,6 +18,21 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
+        public void Original_Id_Should_Always_Return_Id_Which_Was_Specified_By_the_User()
+        {
+            // Arrange
+            var expected = "MyTab1";
+
+            // Act
+            var ribbon = Create<Ribbon>.Instance("Ribbon1")
+                .With(() => Create<Tab>.Instance("MyTab1"));
+
+            // Assert
+            Assert.IsNotNull(ribbon);
+            Assert.AreEqual(expected, ribbon["MyTab1"].OriginalId);
+        }
+
+        [Test]
         public void Tab_Id_Should_Be_Concated_By_Ribbon_And_Tab_Id()
         {
             // Arrange
