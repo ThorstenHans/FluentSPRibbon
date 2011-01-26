@@ -15,17 +15,6 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
 
-        [Test]
-        public void BuildTemplateXml_Should_Return_TemplateXml()
-        {
-            // Arrange
-            var sut = Create<Ribbon>.Instance("MyRibbon");
-
-            // Act
-            String actual = sut.BuildTemplateXml();
-
-            // Assert
-            Assert.IsNotNullOrEmpty(actual);
-        }
+        
     }
 }

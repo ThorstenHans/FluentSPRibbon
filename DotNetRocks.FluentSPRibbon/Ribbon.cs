@@ -5,11 +5,10 @@ using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Ribbon : RibbonElementBase, IRibbonElementContainer<Ribbon,Tab>
+    public class Ribbon : InteractiveRibbonElement, IRibbonElementContainer<Ribbon,Tab>
     {
         private readonly IList<Tab> _tabs;
       
-
         public Tab this[string id]
         {
             get { return _tabs.FirstOrDefault(t => t.OriginalId == id); }
@@ -25,9 +24,23 @@ namespace DotNetRocks.FluentSPRibbon
       
         }
 
-        public new Ribbon SetPropertyTo(string name, string value)
+        internal override string TagName
         {
-            base.SetPropertyTo(name,value);
+            get { return "Ribbon"; }
+        }
+
+        public Ribbon ApplyProperty(String name, String value)
+        {
+            SetProperty(name, value);
+            return this;
+        }
+
+        public Ribbon ApplyProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
 

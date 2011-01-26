@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class TextBox : SuitableRibbonElement, IRibbonElement<TextBox>
+    public class TextBox : InteractiveRibbonElement
     {
         internal TextBox() : this("NotSet")
         {
@@ -17,9 +18,18 @@ namespace DotNetRocks.FluentSPRibbon
             get { return "TextBox"; }
         }
 
-        public TextBox SetPropertyTo(string name, string value)
+        public TextBox ApplyProperty(String name, String value)
         {
-            base.SetPropertyTo(name,value);
+            SetProperty(name, value);
+            return this;
+        }
+
+        public TextBox ApplyProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

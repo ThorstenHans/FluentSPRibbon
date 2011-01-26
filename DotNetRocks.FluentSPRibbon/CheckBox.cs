@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class CheckBox : SuitableRibbonElement, IRibbonElement<CheckBox>
+    public class CheckBox : InteractiveRibbonElement
     {
         internal CheckBox() : this("NotSet")
         {
@@ -17,11 +18,19 @@ namespace DotNetRocks.FluentSPRibbon
             get { return "CheckBox"; }
         }
 
-        public CheckBox SetPropertyTo(string name, string value)
+        public CheckBox ApplyProperty(String name, String value)
         {
-            base.SetPropertyTo(name,value);
+            SetProperty(name,value);
             return this;
         }
-        
+
+        public CheckBox ApplyProperties(Dictionary<String,String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key,property.Value);
+            }
+            return this;
+        }
     }
 }

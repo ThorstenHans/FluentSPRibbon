@@ -1,6 +1,9 @@
-﻿namespace DotNetRocks.FluentSPRibbon
+﻿using System;
+using System.Collections.Generic;
+
+namespace DotNetRocks.FluentSPRibbon
 {
-    public class GalleryButton : SuitableRibbonElement, IRibbonElement<GalleryButton>
+    public class GalleryButton : InteractiveRibbonElement
     {
         internal GalleryButton() : this("NotSet")
         {
@@ -11,16 +14,25 @@
         {
 
         }
+
         internal override string TagName
         {
             get { return "GalleryButton"; }
         }
 
-        public GalleryButton SetPropertyTo(string name, string value)
+        public GalleryButton ApplyProperty(String name, String value)
         {
-            base.SetPropertyTo(name, value);
+            SetProperty(name, value);
             return this;
+        }
 
+        public GalleryButton ApplyProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
+            return this;
         }
     }
 }

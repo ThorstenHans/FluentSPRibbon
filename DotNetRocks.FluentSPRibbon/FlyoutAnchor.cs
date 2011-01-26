@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class FlyoutAnchor : SuitableRibbonElement, IRibbonElement<FlyoutAnchor>
+    public class FlyoutAnchor : InteractiveRibbonElement
     {
         internal FlyoutAnchor() : this("NotSet")
         {
@@ -22,9 +22,18 @@ namespace DotNetRocks.FluentSPRibbon
             get { return "FlyoutAnchor"; }
         }
 
-        public FlyoutAnchor SetPropertyTo(string name, string value)
+        public FlyoutAnchor ApplyProperty(String name, String value)
         {
-            base.SetPropertyTo(name, value);
+            SetProperty(name,value);
+            return this;
+        }
+
+        public FlyoutAnchor ApplyProperties(Dictionary<String,String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key,property.Value);
+            }
             return this;
         }
     }

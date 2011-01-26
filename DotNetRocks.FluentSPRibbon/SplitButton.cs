@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class SplitButton : SuitableRibbonElement, IRibbonElement<SplitButton>
+    public class SplitButton : InteractiveRibbonElement
     {
         internal SplitButton() : this("NotSet")
         {
@@ -16,18 +16,25 @@ namespace DotNetRocks.FluentSPRibbon
         {
             
         }
-
         internal override string TagName
         {
             get { return "SplitButton"; }
         }
 
-        public SplitButton SetPropertyTo(string name, string value)
+        public SplitButton ApplyProperty(String name, String value)
         {
-            base.SetPropertyTo(name,value);
+            SetProperty(name, value);
             return this;
         }
 
+        public SplitButton ApplyProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
+            return this;
+        }
        
     }
 }

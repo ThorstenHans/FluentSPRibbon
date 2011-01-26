@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class ComboBox : SuitableRibbonElement, IRibbonElement<ComboBox>
+    public class ComboBox : InteractiveRibbonElement
     {
         internal ComboBox() : this("NotSet")
         {
@@ -22,9 +22,18 @@ namespace DotNetRocks.FluentSPRibbon
             get { return "ComboBox"; }
         }
 
-        public ComboBox SetPropertyTo(string name, string value)
+        public ComboBox ApplyProperty(String name, String value)
         {
-            base.SetPropertyTo(name, value);
+            SetProperty(name,value);
+            return this;
+        }
+
+        public ComboBox ApplyProperties(Dictionary<String,String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key,property.Value);
+            }
             return this;
         }
     }

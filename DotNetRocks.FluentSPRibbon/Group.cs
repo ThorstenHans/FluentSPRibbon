@@ -4,32 +4,43 @@ using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Group : RibbonElementBase, IRibbonElementContainer<Group,SuitableRibbonElement>
+    public class Group : InteractiveRibbonElement, IRibbonElementContainer<Group,InteractiveRibbonElement>
     {
-        private readonly IList<SuitableRibbonElement> _suitableElements;
-        private string _templateId;
-        private Dictionary<String, String> _controlsProperties;
-
+        private readonly IList<InteractiveRibbonElement> _suitableElements;
+        private readonly Dictionary<String, String> _controlsProperties;
 
         internal Group():this("NotSet")
         {
             
         }
+
         internal Group(string id) : base(id)
         {
-            this._suitableElements= new List<SuitableRibbonElement>();
+            this._suitableElements= new List<InteractiveRibbonElement>();
             this._controlsProperties = new Dictionary<string, string>();
         }
-        
 
-        
-        public new Group SetPropertyTo(string name, string value)
+        internal override string TagName
         {
-            base.SetPropertyTo(name,value);
+            get { return "Group"; }
+        }
+
+        public Group ApplyProperty(String name, String value)
+        {
+            SetProperty(name, value);
             return this;
         }
 
-        public Group SetControlsPropertyTo(String name, String value)
+        public Group ApplyProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
+            return this;
+        }
+        
+        public Group ApplyControlsProperty(String name, String value)
         {
             if (this._controlsProperties.ContainsKey(name))
                 this._controlsProperties[name] = value;
@@ -38,7 +49,16 @@ namespace DotNetRocks.FluentSPRibbon
             return this;
         }
 
-        public SuitableRibbonElement this[string id]
+        public Group ApplyControlsProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                ApplyProperty(property.Key, property.Value);
+            }
+            return this;
+        }
+
+        public InteractiveRibbonElement this[string id]
         {
             get { return _suitableElements.FirstOrDefault(t => t.OriginalId == id); }
         }
@@ -48,7 +68,7 @@ namespace DotNetRocks.FluentSPRibbon
             get { return _suitableElements.Count; }
         }
 
-        public Group With(Func<SuitableRibbonElement> expression)
+        public Group With(Func<InteractiveRibbonElement> expression)
         {
             var suitableRibbonElement = expression.Invoke();
             suitableRibbonElement.Parent = this;

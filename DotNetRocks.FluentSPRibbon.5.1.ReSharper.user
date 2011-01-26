@@ -10,7 +10,7 @@
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
       <Item value="RibbonElementBase`0" priority="7" />
-      <Item value="public" priority="10" />
+      <Item value="public" priority="19" />
       <Item value="void" priority="2" />
       <Item value="var" priority="8" />
       <Item value="Create" priority="7" />
@@ -26,16 +26,16 @@
       <Item value="newRibbon" priority="0" />
       <Item value="test" priority="14" />
       <Item value="sut" priority="0" />
-      <Item value="private" priority="5" />
-      <Item value="Dictionary" priority="0" />
-      <Item value="String`0" priority="30" />
-      <Item value="this" priority="27" />
-      <Item value="new" priority="11" />
+      <Item value="private" priority="8" />
+      <Item value="Dictionary" priority="2" />
+      <Item value="String`0" priority="37" />
+      <Item value="this" priority="34" />
+      <Item value="new" priority="12" />
       <Item value="Dictionary&lt;string,string&gt;" priority="0" />
       <Item value="if" priority="8" />
       <Item value="name" priority="11" />
-      <Item value="value" priority="11" />
-      <Item value="return" priority="31" />
+      <Item value="value" priority="12" />
+      <Item value="return" priority="35" />
       <Item value="_controlsProperties" priority="0" />
       <Item value="foreach" priority="0" />
       <Item value="writer" priority="0" />
@@ -49,7 +49,7 @@
       <Item value="CheckBox`0" priority="0" />
       <Item value="IRibbonElement" priority="8" />
       <Item value="ComboBox`0" priority="1" />
-      <Item value="ctor" priority="7" />
+      <Item value="ctor" priority="8" />
       <Item value="DropDown`0" priority="2" />
       <Item value="MRUSplittButton`0" priority="0" />
       <Item value="Spinner`0" priority="0" />
@@ -57,7 +57,7 @@
       <Item value="GalleryButton`0" priority="0" />
       <Item value="string" priority="0" />
       <Item value="FlyoutAnchor`0" priority="0" />
-      <Item value="class" priority="0" />
+      <Item value="class" priority="3" />
       <Item value="MenuSection`0" priority="0" />
       <Item value="where" priority="1" />
       <Item value="T`0" priority="4" />
@@ -67,18 +67,18 @@
       <Item value="currentItem" priority="0" />
       <Item value="_propertyName" priority="1" />
       <Item value="propertyName" priority="0" />
-      <Item value="Property" priority="4" />
+      <Item value="Property" priority="6" />
       <Item value="protected" priority="0" />
       <Item value="abstract" priority="1" />
       <Item value="virtual" priority="0" />
       <Item value="Property&lt;SuitableRibbonElement&gt;" priority="0" />
       <Item value="p" priority="0" />
       <Item value="Property&lt;TextBox&gt;" priority="0" />
-      <Item value="property" priority="7" />
+      <Item value="property" priority="12" />
       <Item value="RibbonSettings_Tests`0" priority="0" />
       <Item value="RibbonSettings" priority="0" />
       <Item value="ResourceFile" priority="2" />
-      <Item value="static" priority="4" />
+      <Item value="static" priority="5" />
       <Item value="RibbonSettings`0" priority="13" />
       <Item value="KeyValuePair&lt;String,String&gt;" priority="0" />
       <Item value="title" priority="3" />
@@ -123,6 +123,20 @@
       <Item value="group1" priority="0" />
       <Item value="tab2" priority="0" />
       <Item value="expected" priority="0" />
+      <Item value="TRibbonElementType`0" priority="0" />
+      <Item value="TRibbonElement`0" priority="4" />
+      <Item value="TProperty`0" priority="4" />
+      <Item value="ribbonElement" priority="1" />
+      <Item value="_property" priority="0" />
+      <Item value="Property&lt;TRibbonElement,TProperty&gt;" priority="0" />
+      <Item value="carrier" priority="0" />
+      <Item value="Button" priority="0" />
+      <Item value="Button1`0" priority="0" />
+      <Item value="IEnumerable" priority="0" />
+      <Item value="GCNotificationStatus`0" priority="0" />
+      <Item value="const" priority="0" />
+      <Item value="With`0" priority="0" />
+      <Item value="Properties`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Create`1">
       <Item value="Instance`0" priority="8" />
@@ -209,33 +223,38 @@
     <ItemStatistics item="Qualified:System.Xml.XmlAttribute">
       <Item value="Value" priority="1" />
     </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Property`2">
+      <Item value="_ribbonElement" priority="2" />
+      <Item value="_property" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TProperty">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Button1+Properties">
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Representation_Tests.cs" caret="0" fromTop="0" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:ImageFolderNotSpecifiedException.cs" caret="13" fromTop="0" />
-      <File id="d:Miscellaneous Files/f:cui.xsd/l:C!?Program Files?Common Files?Microsoft Shared?Web Server Extensions?14?TEMPLATE?XML?cui.xsd" caret="9185" fromTop="21" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:SuitableRibbonElement.cs" caret="0" fromTop="0" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElementBase.cs" caret="2749" fromTop="55" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Tab.cs" caret="2186" fromTop="56" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="0" fromTop="0" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Instance_Creation_Tests.cs" caret="1017" fromTop="34" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Continous_Fluent_API_Tests.cs" caret="2054" fromTop="30" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tab_Tests.cs" caret="592" fromTop="22" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:Properties/f:AssemblyInfo.cs" caret="1541" fromTop="36" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonSettings.cs" caret="627" fromTop="15" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:RibbonSettings_Tests.cs" caret="2202" fromTop="14" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="90" fromTop="4" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Id_Tests.cs" caret="806" fromTop="29" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="240" fromTop="11" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Create.cs" caret="0" fromTop="0" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:SuitableRibbonElement.cs" caret="0" fromTop="0" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="1366" fromTop="18" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElementBase.cs" caret="0" fromTop="0" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Representation_Tests.cs" caret="0" fromTop="0" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tab_Tests.cs" caret="0" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="6491" fromTop="37" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="7744" fromTop="57" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="7878" fromTop="53" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="7738" fromTop="47" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14464" fromTop="37" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="15934" fromTop="46" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="15934" fromTop="32" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14693" fromTop="14" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="16233" fromTop="16" />
@@ -260,6 +279,12 @@
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="10165" fromTop="27" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Id_Tests.cs" caret="912" fromTop="31" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="14373" fromTop="46" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="891" fromTop="16" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="455" fromTop="15" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="646" fromTop="20" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="1277" fromTop="10" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="1110" fromTop="8" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="1366" fromTop="18" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Tab : RibbonElementBase, IRibbonElementContainer<Tab,Group>
+    public class Tab : InteractiveRibbonElement, IRibbonElementContainer<Tab,Group>
     {
         private readonly IList<Group> _groups;
 
@@ -18,20 +18,24 @@ namespace DotNetRocks.FluentSPRibbon
             _groups = new List<Group>();
         }
 
-        public new Tab SetPropertyTo(string name, string value)
+        internal override string TagName
         {
-            base.SetPropertyTo(name,value);
+            get { return "Tab"; }
+        }
+
+        public Tab ApplyProperty(String name, String value)
+        {
+            SetProperty(name, value);
             return this;
         }
 
-        public IEnumerable<Group> Children
+        public Tab ApplyProperties(Dictionary<String, String> properties)
         {
-            get { throw new NotImplementedException(); }
-        }
-
-        public string ChildrenContainerNodeName
-        {
-            get { throw new NotImplementedException(); }
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
+            return this;
         }
 
         public Group this[int index]

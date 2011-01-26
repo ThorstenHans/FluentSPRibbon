@@ -24,8 +24,8 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             // Act
             var actual = Create<Button>.Instance("MyRibbon")
-                .SetPropertyTo("Name","Value")
-                .SetPropertyTo("LabelText","Caption");
+                .ApplyProperty("Name","Value")
+                .ApplyProperty("LabelText","Caption");
 
             // Assert
             Assert.AreEqual("Value", actual.GetProperty("Name"));

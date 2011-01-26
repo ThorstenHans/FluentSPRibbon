@@ -22,3 +22,12 @@ D:\projects\DotNetRocks.FluentSPRibbon-TemplateEngine\DotNetRocks.FluentSPRibbon
 D:\projects\DotNetRocks.FluentSPRibbon-TemplateEngine\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\ResolveAssemblyReference.cache
 D:\projects\DotNetRocks.FluentSPRibbon-TemplateEngine\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.dll
 D:\projects\DotNetRocks.FluentSPRibbon-TemplateEngine\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.pdb
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.Tests.dll
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.Tests.pdb
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.dll
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\nunit.framework.dll
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.pdb
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\bin\Debug\nunit.framework.xml
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.dll
+C:\dev\FluentSPRibbon-Spike\DotNetRocks.FluentSPRibbon.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.Tests.pdb

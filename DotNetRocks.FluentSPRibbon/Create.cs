@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Create<T> where T: class, IRibbonElement<T> 
+    public class Create<T> where T: class, IRibbonElement 
     {
         public static T Instance(String id)
         {

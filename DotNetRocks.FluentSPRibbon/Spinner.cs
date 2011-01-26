@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Spinner : SuitableRibbonElement, IRibbonElement<Spinner>
+    public class Spinner : InteractiveRibbonElement
     {
         internal Spinner() : this("NotSet")
         {
@@ -19,9 +20,18 @@ namespace DotNetRocks.FluentSPRibbon
             get { return "Spinner"; }
         }
 
-        public Spinner SetPropertyTo(string name, string value)
+        public Spinner ApplyProperty(String name, String value)
         {
-            base.SetPropertyTo(name, value);
+            SetProperty(name, value);
+            return this;
+        }
+
+        public Spinner ApplyProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

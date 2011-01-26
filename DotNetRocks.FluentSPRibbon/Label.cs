@@ -1,16 +1,36 @@
 using System;
+using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Label : RibbonElementBase, IRibbonElement<Label>
+    public class Label : InteractiveRibbonElement
     {
+        internal Label():this("NotSet")
+        {
+            
+        }
+
         internal Label(string id) : base(id)
         {
         }
 
-        public Label SetPropertyTo(string name, string value)
+        internal override string TagName
         {
-            base.SetPropertyTo(name,value);
+            get { return "Label"; }
+        }
+
+        public Label ApplyProperty(String name, String value)
+        {
+            SetProperty(name, value);
+            return this;
+        }
+
+        public Label ApplyProperties(Dictionary<String, String> properties)
+        {
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }
