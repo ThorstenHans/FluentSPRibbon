@@ -1,28 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
     public class Button : InteractiveRibbonElement
     {
-        public static class Property
-        {
-            public const String LabelText = "LabelText";
-        }
+        
 
         internal Button():this("NotSet"){}
 
         internal Button(string id) : base(id) { }
 
-        public Button ApplyProperty(String name, String value)
+        public Button ApplyProperty(ButtonProperty key, String value)
         {
-            SetProperty(name, value);
+            SetProperty(key.ToString(), value);
             return this;
         }
 
-        public Button ApplyProperties(Dictionary<String, String> properties)
+        internal String GetProperty(ButtonProperty propertyName)
         {
-            SetProperties(properties);
+            return GetProperty(propertyName.ToString());
+        }
+
+        public Button ApplyProperties(Dictionary<ButtonProperty, String> properties)
+        {
+            SetProperties(properties.ToDictionary(property => property.Key.ToString(), property => property.Value));
             return this;
         }
 

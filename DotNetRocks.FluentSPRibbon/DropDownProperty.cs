@@ -1,0 +1,32 @@
+﻿namespace DotNetRocks.FluentSPRibbon
+{
+    public enum DropDownProperty
+    {
+        AltArrow,
+        Alt,
+        CacheMenuVersions,
+        Command,
+        CommandMenuOpen,
+        CommandMenuClose,
+        CommandPreview,
+        CommandPreviewRevert,
+        InitialItem,
+        PopulateDynamically,
+        PopulateQueryCommand,
+        PopulateOnlyOnce,
+        QueryCommand,
+        Sequence,
+        TemplateAlias,
+        ToolTipImage32by32,
+        ToolTipImage32by32Class,
+        ToolTipImage32by32Left, 
+        ToolTipImage32by32Top,
+        ToolTipTitle,
+        ToolTipDescription,
+        ToolTipHelpKeyWord,
+        ToolTipShortcutKey,
+        ToolTipSelectedItemTitle,
+        Width,
+        SelectedItemDisplayMode
+    }
+}

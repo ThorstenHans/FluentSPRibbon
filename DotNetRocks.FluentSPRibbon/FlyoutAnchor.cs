@@ -1,32 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
     public class FlyoutAnchor : InteractiveRibbonElement
     {
-        internal FlyoutAnchor() : this("NotSet")
-        {
+        internal FlyoutAnchor() : this("NotSet") { }
 
+        internal FlyoutAnchor(String id) : base(id) { }
+
+        public String GetProperty(FlyoutAnchorProperty propertyKey)
+        {
+            return GetProperty(propertyKey.ToString());
         }
 
-        internal FlyoutAnchor(String id) : base(id)
+        public FlyoutAnchor ApplyProperty(FlyoutAnchorProperty propertyKey, String value)
         {
-
-        }
-
-
-        public FlyoutAnchor ApplyProperty(String name, String value)
-        {
-            SetProperty(name,value);
+            SetProperty(propertyKey.ToString(),value);
             return this;
         }
 
-        public FlyoutAnchor ApplyProperties(Dictionary<String,String> properties)
+        public FlyoutAnchor ApplyProperties(Dictionary<FlyoutAnchorProperty,String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

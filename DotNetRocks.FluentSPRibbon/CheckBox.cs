@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
     public class CheckBox : InteractiveRibbonElement
     {
+
         internal CheckBox() : this("NotSet")
         {
         }
@@ -13,16 +15,20 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-      
-        public CheckBox ApplyProperty(String name, String value)
+        public String GetProperty(CheckBoxProperty propertyKey)
         {
-            SetProperty(name,value);
+            return GetProperty(propertyKey.ToString());
+        }
+      
+        public CheckBox ApplyProperty(CheckBoxProperty propertyKey, String value)
+        {
+            SetProperty(propertyKey.ToString(),value);
             return this;
         }
 
         public CheckBox ApplyProperties(Dictionary<String,String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

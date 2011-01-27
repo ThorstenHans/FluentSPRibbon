@@ -40,9 +40,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             var button = Create<Button>
                 .Instance("MyButton")
-                .ApplyProperty("LabelText", "Click me!")
-                .ApplyProperty("Sequence", "100")
-                .ApplyProperty("Description", "a new button");
+                .ApplyProperty(ButtonProperty.LabelText, "Click me!")
+                .ApplyProperty(ButtonProperty.Sequence, "100")
+                .ApplyProperty(ButtonProperty.Description, "a new button");
 
             var ribbon = Create<Ribbon>.Instance("CustomRibbon")
                 .With(() => Create<Tab>.Instance("1stTab")

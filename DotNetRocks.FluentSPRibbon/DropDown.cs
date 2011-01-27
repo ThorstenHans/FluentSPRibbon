@@ -1,33 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
     public class DropDown : InteractiveRibbonElement
     {
-        internal DropDown() : this("NotSet")
+        internal DropDown() : this("NotSet") { }
+
+        internal DropDown(String id) :base(id) { }
+
+        public String GetProperty(DropDownProperty propertyKey)
         {
-            
+            return GetProperty(propertyKey.ToString());
         }
 
-        internal DropDown(String id) :base(id)
+        public DropDown ApplyProperty(DropDownProperty propertyKey, String value)
         {
-            
-        }
-
-      
-
-        public DropDown ApplyProperty(String name, String value)
-        {
-            SetProperty(name,value);
+            SetProperty(propertyKey.ToString(),value);
             return this;
         }
 
-        public DropDown ApplyProperties(Dictionary<String,String> properties)
+        public DropDown ApplyProperties(Dictionary<DropDownProperty,String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(), e=>e.Value));
             return this;
         }
     }

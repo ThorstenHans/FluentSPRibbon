@@ -40,12 +40,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="ButtonProperty.cs" />
     <Compile Include="CheckBox.cs" />
+    <Compile Include="CheckBoxProperty.cs" />
     <Compile Include="ComboBox.cs" />
+    <Compile Include="ComboBoxProperty.cs" />
     <Compile Include="Create.cs" />
     <Compile Include="DropDown.cs" />
+    <Compile Include="DropDownProperty.cs" />
     <Compile Include="FlyoutAnchor.cs" />
+    <Compile Include="FlyoutAnchorProperty.cs" />
     <Compile Include="GalleryButton.cs" />
+    <Compile Include="GalleryButtonProperty.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="ImageFolderNotSpecifiedException.cs" />
     <Compile Include="InteractiveRibbonElement.cs" />

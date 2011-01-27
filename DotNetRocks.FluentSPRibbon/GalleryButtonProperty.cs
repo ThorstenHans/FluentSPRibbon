@@ -1,0 +1,30 @@
+﻿namespace DotNetRocks.FluentSPRibbon
+{
+    public enum GalleryButtonProperty
+    {
+        Alt,
+        Command,
+        CommandPreview,
+        CommandRevert,
+        CommandType,
+        CommandValueId,
+        ElementDimensions,
+        Image,
+        ImageClass,
+        ImageLeft,
+        ImageTop,
+        InnerHTML,
+        MenuItemId,
+        QueryCommand,
+        Sequence,
+        TemplateAlias,
+        ToolTipImage32by32,
+        ToolTipImage32by32Class,
+        ToolTipImage32by32Left,
+        ToolTipImage32by32Top,
+        ToolTipTitle,
+        ToolTipDescription,
+        ToolTipHelpKeyWord,
+        ToolTipShortcutKey
+    }
+}

@@ -11,5 +11,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = Create<Button>.Instance("MyButton");
             Assert.AreEqual("MyButton",sut.Id);
         }
+
+         
     }
 }

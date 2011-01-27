@@ -1,0 +1,32 @@
+﻿namespace DotNetRocks.FluentSPRibbon
+{
+    public enum ButtonProperty
+    {
+        Alt,
+        Command,
+        CommandType,
+        CommandValueId,
+        Description,
+        Image32by32,
+        Image32by32Class,
+        Image32by32Left,
+        Image32by32Top,
+        Image16by16,
+        Image16by16Class,
+        Image16by16Left,
+        Image16by16Top,
+        LabelCss,
+        LabelText,
+        MenuItemId,
+        Sequence,
+        TemplateAlias,
+        ToolTipImage32by32,
+        ToolTipImage32by32Class,
+        ToolTipImage32by32Left,
+        ToolTipImage32by32Top,
+        ToolTipTitle,
+        ToolTipDescription,
+        ToolTipHelpKeyWord,
+        ToolTipShortcutKey
+    }
+}
