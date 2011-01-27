@@ -12,9 +12,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Act
 
             var ribbon = Create<Ribbon>.Instance("MyRibbon")
-                .ApplyProperty(RibbonProperty.Name, "MyRibbon")
-                .With(() => Create<Tab>.Instance("Tab1").ApplyProperty(TabProperty.Name, "MyTab"))
-                .With(() => Create<Tab>.Instance("Tab2").ApplyProperty(TabProperty.Name, "My 2ndTab"));
+                .ApplyProperty(RibbonProperty.ToolTipFooterText, "MyRibbon")
+                .With(() => Create<Tab>.Instance("Tab1").ApplyProperty(TabProperty.Title, "MyTab"))
+                .With(() => Create<Tab>.Instance("Tab2").ApplyProperty(TabProperty.Title, "My 2ndTab"));
 
             // Assert
             Assert.AreEqual(2,ribbon.ChildItemCount);

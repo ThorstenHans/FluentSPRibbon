@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -13,16 +14,20 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-
-        public TextBox ApplyProperty(String name, String value)
+        public String GetProperty(TextBoxProperty propertyKey)
         {
-            SetProperty(name, value);
+            return GetProperty(propertyKey.ToString());
+        }
+
+        public TextBox ApplyProperty(TextBoxProperty propertyKey, String value)
+        {
+            SetProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public TextBox ApplyProperties(Dictionary<String, String> properties)
+        public TextBox ApplyProperties(Dictionary<TextBoxProperty, String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

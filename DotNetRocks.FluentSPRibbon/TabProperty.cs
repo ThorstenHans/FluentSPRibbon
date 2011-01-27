@@ -2,9 +2,10 @@
 {
     public enum TabProperty
     {
-        Name,
-        Sequence,
         Title,
-        Description
+        Sequence,
+        Description,
+        CssClass,
+        Command
     }
 }

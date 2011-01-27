@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -17,16 +16,20 @@ namespace DotNetRocks.FluentSPRibbon
 
         }
 
-      
-        public Menu ApplyProperty(String name, String value)
+        public String GetProperty(MenuProperty propertyKey)
         {
-            SetProperty(name, value);
+            return GetProperty(propertyKey.ToString());
+        }
+
+        public Menu ApplyProperty(MenuProperty propertyKey, String value)
+        {
+            SetProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Menu ApplyProperties(Dictionary<String, String> properties)
+        public Menu ApplyProperties(Dictionary<MenuProperty, String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
 

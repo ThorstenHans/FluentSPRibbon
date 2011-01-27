@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -11,15 +12,20 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public ToggleButton ApplyProperty(String name, String value)
+        public String GetProperty(ToggleButtonProperty propertyKey)
         {
-            SetProperty(name, value);
+            return GetProperty(propertyKey.ToString());
+        }
+
+        public ToggleButton ApplyProperty(ToggleButtonProperty propertyKey, String value)
+        {
+            SetProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public ToggleButton ApplyProperties(Dictionary<String, String> properties)
+        public ToggleButton ApplyProperties(Dictionary<ToggleButtonProperty, String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

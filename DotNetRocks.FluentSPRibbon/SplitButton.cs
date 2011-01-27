@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -17,15 +16,20 @@ namespace DotNetRocks.FluentSPRibbon
             
         }
 
-        public SplitButton ApplyProperty(String name, String value)
+        public String GetProperty(SplitButtonProperty propertyKey)
         {
-            SetProperty(name, value);
+            return GetProperty(propertyKey.ToString());
+        }
+
+        public SplitButton ApplyProperty(SplitButtonProperty propertyKey, String value)
+        {
+            SetProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public SplitButton ApplyProperties(Dictionary<String, String> properties)
+        public SplitButton ApplyProperties(Dictionary<SplitButtonProperty, String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
        

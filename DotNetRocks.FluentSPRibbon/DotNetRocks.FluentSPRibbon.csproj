@@ -43,6 +43,10 @@
     <Compile Include="ButtonProperty.cs" />
     <Compile Include="CheckBox.cs" />
     <Compile Include="CheckBoxProperty.cs" />
+    <Compile Include="Color.cs" />
+    <Compile Include="ColorPicker.cs" />
+    <Compile Include="ColorPickerProperty.cs" />
+    <Compile Include="ColorProperty.cs" />
     <Compile Include="ComboBox.cs" />
     <Compile Include="ComboBoxProperty.cs" />
     <Compile Include="Create.cs" />
@@ -59,7 +63,10 @@
     <Compile Include="IRibbonElement.cs" />
     <Compile Include="IRibbonElementContainer.cs" />
     <Compile Include="Label.cs" />
+    <Compile Include="LabelProperty.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MenuProperty.cs" />
+    <Compile Include="MRUProperty.cs" />
     <Compile Include="MRUSplitButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ribbon.cs" />
@@ -67,12 +74,16 @@
     <Compile Include="RibbonProperty.cs" />
     <Compile Include="RibbonSettings.cs" />
     <Compile Include="Spinner.cs" />
+    <Compile Include="SpinnerProperty.cs" />
     <Compile Include="SplitButton.cs" />
+    <Compile Include="SplitButtonProperty.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="TabProperty.cs" />
     <Compile Include="TemplateActionRequiredEventArgs.cs" />
     <Compile Include="TextBox.cs" />
+    <Compile Include="TextBoxProperty.cs" />
     <Compile Include="ToggleButton.cs" />
+    <Compile Include="ToggleButtonProperty.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

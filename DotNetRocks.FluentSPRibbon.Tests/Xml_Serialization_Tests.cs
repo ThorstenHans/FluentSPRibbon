@@ -15,7 +15,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Arrange
             String actual = String.Empty;
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                    .ApplyProperty(RibbonProperty.Name, ".NET Rocks Fluent SPRibbon API")
+                    .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                     .With(() => Create<Tab>.Instance("FluentRibbonTab1")
                                     .ApplyProperty(TabProperty.Title, "Hello World Tab!")
                                     .ApplyProperty(TabProperty.Sequence, "1001")
@@ -64,7 +64,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                 XmlSerializer serializer = new XmlSerializer(typeof(Ribbon));
 
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                    .ApplyProperty(RibbonProperty.Name, ".NET Rocks Fluent SPRibbon API")
+                    .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                     .With(() => Create<Tab>.Instance("FluentRibbonTab1")
                                     .ApplyProperty(TabProperty.Title, "Tab1Title")
                                     .ApplyProperty(TabProperty.Sequence, "1001")
@@ -135,7 +135,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                 
 
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                    .ApplyProperty(RibbonProperty.Name, ".NET Rocks Fluent SPRibbon API")
+                    .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                     .With(() => Create<Tab>.Instance("FluentRibbonTab1")
                                     .ApplyProperty(TabProperty.Title, "Tab1Title")
                                     .ApplyProperty(TabProperty.Sequence, "1001")
@@ -204,7 +204,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             RibbonSettings.ImagesFolder = "/_layouts/FluentSPRibbon/Images/";
 
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                     .ApplyProperty(RibbonProperty.Name, ".NET Rocks Fluent SPRibbon API")
+                     .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                      .With(() => Create<Tab>.Instance("FluentRibbonTab1")
                                      .ApplyProperty(TabProperty.Title, "Hello World Tab!")
                                      .ApplyProperty(TabProperty.Sequence, "1001")
@@ -240,7 +240,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
            
 
             var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                .ApplyProperty(RibbonProperty.Name, ".NET Rocks Fluent SPRibbon API")
+                .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                 .With(() => Create<Tab>.Instance("FluentRibbonTab1")
                                 .ApplyProperty(TabProperty.Title, "Tab1Title")
                                 .ApplyProperty(TabProperty.Sequence, "1001")

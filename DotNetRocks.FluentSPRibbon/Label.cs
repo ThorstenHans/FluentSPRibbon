@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -14,16 +15,20 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-  
-        public Label ApplyProperty(String name, String value)
+        public String GetProperty(LabelProperty propertyKey)
         {
-            SetProperty(name, value);
+            return GetProperty(propertyKey.ToString());
+        }
+  
+        public Label ApplyProperty(LabelProperty propertyKey, String value)
+        {
+            SetProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Label ApplyProperties(Dictionary<String, String> properties)
+        public Label ApplyProperties(Dictionary<LabelProperty, String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

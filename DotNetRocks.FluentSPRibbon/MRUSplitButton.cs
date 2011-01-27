@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -17,17 +16,22 @@ namespace DotNetRocks.FluentSPRibbon
         {
             
         }
+
+        public String GetProperty(MRUProperty propertyKey)
+        {
+            return GetProperty(propertyKey.ToString());
+        }
     
 
-        public MRUSplitButton ApplyProperty(String name, String value)
+        public MRUSplitButton ApplyProperty(MRUProperty propertyKey, String value)
         {
-            SetProperty(name, value);
+            SetProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public MRUSplitButton ApplyProperties(Dictionary<String, String> properties)
+        public MRUSplitButton ApplyProperties(Dictionary<MRUProperty, String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

@@ -1,0 +1,31 @@
+﻿namespace DotNetRocks.FluentSPRibbon
+{
+    public enum MRUProperty
+    {
+        Alt,
+        CacheMenuVersions,
+        Command,
+        CommandMenuOpen,
+        CommandMenuClose,
+        CommandPreview,
+        CommandPreviewRevert,
+        InitialItem,
+        MenuAlt,
+        MenuCommand,
+        PopulateDynamically,
+        PopulateQueryCommand,
+        PopulateOnlyOnce,
+        Sequence,
+        QueryCommand,
+        TemplateAlias,
+        ToolTipImage32by32,
+        ToolTipImage32by32Class,
+        ToolTipImage32by32Left,
+        ToolTipImage32by32Top,
+        ToolTipTitle,
+        ToolTipDescription,
+        ToolTipHelpKeyWord,
+        ToolTipSelectedItemTitle,
+        ToolTipShortcutKey
+    }
+}
