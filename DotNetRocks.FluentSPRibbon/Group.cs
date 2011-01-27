@@ -21,16 +21,20 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
    
-
-        public Group ApplyProperty(String name, String value)
+        public String GetProperty(GroupProperty propertyKey)
         {
-            SetProperty(name, value);
+            return GetProperty(propertyKey.ToString());
+        }
+
+        public Group ApplyProperty(GroupProperty propertyKey, String value)
+        {
+            SetProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Group ApplyProperties(Dictionary<String, String> properties)
+        public Group ApplyProperties(Dictionary<GroupProperty, String> properties)
         {
-            SetProperties(properties);
+            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
         

@@ -12,9 +12,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Act
 
             var ribbon = Create<Ribbon>.Instance("MyRibbon")
-                .ApplyProperty("Name", "MyRibbon")
-                .With(() => Create<Tab>.Instance("Tab1").ApplyProperty("Name", "MyTab"))
-                .With(() => Create<Tab>.Instance("Tab2").ApplyProperty("Name", "My 2ndTab"));
+                .ApplyProperty(RibbonProperty.Name, "MyRibbon")
+                .With(() => Create<Tab>.Instance("Tab1").ApplyProperty(TabProperty.Name, "MyTab"))
+                .With(() => Create<Tab>.Instance("Tab2").ApplyProperty(TabProperty.Name, "My 2ndTab"));
 
             // Assert
             Assert.AreEqual(2,ribbon.ChildItemCount);
@@ -28,8 +28,8 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Act
             var ribbon = Create<Ribbon>.Instance("MyRibbon")
                 .With(() => Create<Tab>.Instance("Tab1")
-                                .With(() => Create<Group>.Instance("Grp1").ApplyProperty("Name", "Group1"))
-                                .With(() => Create<Group>.Instance("Grp2").ApplyProperty("Name", "Group2")));
+                                .With(() => Create<Group>.Instance("Grp1").ApplyProperty(GroupProperty.Title, "Group1"))
+                                .With(() => Create<Group>.Instance("Grp2").ApplyProperty(GroupProperty.Title, "Group2")));
             Assert.AreEqual(1, ribbon.ChildItemCount);
             // Assert
         }
@@ -47,7 +47,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var ribbon = Create<Ribbon>.Instance("CustomRibbon")
                 .With(() => Create<Tab>.Instance("1stTab")
                                 .With(() => Create<Group>.Instance("1stGroup")
-                                                .ApplyProperty("Name", "Group 1")
+                                                .ApplyProperty(GroupProperty.Title, "Group 1")
                                                 .With(() => button)));
             Assert.IsNotNull(button);
             Assert.IsNotNull(ribbon);

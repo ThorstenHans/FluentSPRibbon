@@ -53,6 +53,7 @@
     <Compile Include="GalleryButton.cs" />
     <Compile Include="GalleryButtonProperty.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="GroupProperty.cs" />
     <Compile Include="ImageFolderNotSpecifiedException.cs" />
     <Compile Include="InteractiveRibbonElement.cs" />
     <Compile Include="IRibbonElement.cs" />
@@ -63,10 +64,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="RibbonElement.cs" />
+    <Compile Include="RibbonProperty.cs" />
     <Compile Include="RibbonSettings.cs" />
     <Compile Include="Spinner.cs" />
     <Compile Include="SplitButton.cs" />
     <Compile Include="Tab.cs" />
+    <Compile Include="TabProperty.cs" />
     <Compile Include="TemplateActionRequiredEventArgs.cs" />
     <Compile Include="TextBox.cs" />
     <Compile Include="ToggleButton.cs" />
