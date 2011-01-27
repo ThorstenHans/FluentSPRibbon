@@ -13,10 +13,6 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        internal override string TagName
-        {
-            get { return "TextBox"; }
-        }
 
         public TextBox ApplyProperty(String name, String value)
         {
@@ -26,10 +22,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public TextBox ApplyProperties(Dictionary<String, String> properties)
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key, property.Value);
-            }
+            SetProperties(properties);
             return this;
         }
     }

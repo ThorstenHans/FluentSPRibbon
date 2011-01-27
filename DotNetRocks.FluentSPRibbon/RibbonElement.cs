@@ -11,7 +11,7 @@ namespace DotNetRocks.FluentSPRibbon
     public class RibbonElement : IRibbonElement
     {
         private readonly String _originalId;
-        private readonly Dictionary<String, String> _properties;
+        private Dictionary<String, String> _properties;
 
         internal RibbonElement():this("NotSet")
         {
@@ -31,9 +31,9 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal RibbonElement Parent { get; set; }
 
-        internal virtual String TagName
+        internal virtual String XmlElementName
         {
-            get { return ""; }
+            get { return GetType().Name; }
         }
 
         internal string OriginalId
@@ -41,7 +41,7 @@ namespace DotNetRocks.FluentSPRibbon
             get { return this._originalId; }
         }
 
-        protected void SetProperty(String name, String value)
+        internal void SetProperty(String name, String value)
         {
             if (_properties.ContainsKey(name))
                 _properties[name] = value;
@@ -103,6 +103,11 @@ namespace DotNetRocks.FluentSPRibbon
         protected virtual void WriteChildren(XmlWriter writer)
         {
 
+        }
+
+        internal void SetProperties(Dictionary<String, String> properties)
+        {
+            this._properties = properties.Concat(this._properties).ToDictionary(e=>e.Key, e=>e.Value);
         }
     }
 }

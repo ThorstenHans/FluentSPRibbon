@@ -17,10 +17,6 @@ namespace DotNetRocks.FluentSPRibbon
 
         }
 
-        internal override string TagName
-        {
-            get { return "FlyoutAnchor"; }
-        }
 
         public FlyoutAnchor ApplyProperty(String name, String value)
         {
@@ -30,10 +26,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public FlyoutAnchor ApplyProperties(Dictionary<String,String> properties)
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key,property.Value);
-            }
+            SetProperties(properties);
             return this;
         }
     }

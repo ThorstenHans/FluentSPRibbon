@@ -14,11 +14,7 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        internal override string TagName
-        {
-            get { return "Label"; }
-        }
-
+  
         public Label ApplyProperty(String name, String value)
         {
             SetProperty(name, value);
@@ -27,10 +23,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public Label ApplyProperties(Dictionary<String, String> properties)
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key, property.Value);
-            }
+            SetProperties(properties);
             return this;
         }
     }

@@ -18,10 +18,6 @@ namespace DotNetRocks.FluentSPRibbon
             _groups = new List<Group>();
         }
 
-        internal override string TagName
-        {
-            get { return "Tab"; }
-        }
 
         public Tab ApplyProperty(String name, String value)
         {
@@ -31,10 +27,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public Tab ApplyProperties(Dictionary<String, String> properties)
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key, property.Value);
-            }
+            SetProperties(properties);
             return this;
         }
 

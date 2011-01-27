@@ -13,11 +13,7 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        internal override string TagName
-        {
-            get { return "CheckBox"; }
-        }
-
+      
         public CheckBox ApplyProperty(String name, String value)
         {
             SetProperty(name,value);
@@ -26,10 +22,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public CheckBox ApplyProperties(Dictionary<String,String> properties)
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key,property.Value);
-            }
+            SetProperties(properties);
             return this;
         }
     }

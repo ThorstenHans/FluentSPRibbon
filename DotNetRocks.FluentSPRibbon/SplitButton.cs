@@ -16,10 +16,6 @@ namespace DotNetRocks.FluentSPRibbon
         {
             
         }
-        internal override string TagName
-        {
-            get { return "SplitButton"; }
-        }
 
         public SplitButton ApplyProperty(String name, String value)
         {
@@ -29,10 +25,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public SplitButton ApplyProperties(Dictionary<String, String> properties)
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key, property.Value);
-            }
+            SetProperties(properties);
             return this;
         }
        

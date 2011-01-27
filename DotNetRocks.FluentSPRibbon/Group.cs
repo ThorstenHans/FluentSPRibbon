@@ -20,10 +20,7 @@ namespace DotNetRocks.FluentSPRibbon
             this._controlsProperties = new Dictionary<string, string>();
         }
 
-        internal override string TagName
-        {
-            get { return "Group"; }
-        }
+   
 
         public Group ApplyProperty(String name, String value)
         {
@@ -33,10 +30,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         public Group ApplyProperties(Dictionary<String, String> properties)
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key, property.Value);
-            }
+            SetProperties(properties);
             return this;
         }
         
@@ -86,7 +80,7 @@ namespace DotNetRocks.FluentSPRibbon
             }
             _suitableElements.ToList().ForEach(se=>
                                                    {
-                                                       writer.WriteStartElement(se.TagName);
+                                                       writer.WriteStartElement(se.XmlElementName);
                                                        se.WriteXml(writer);
                                                        writer.WriteEndElement();
                                                    });
