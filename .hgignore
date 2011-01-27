@@ -1,0 +1,7 @@
+syntax:glob
+DotNetRocks.FluentSPRibbon/bin/*
+DotNetRocks.FluentSPRibbon/obj/*
+DotNetRocks.FluentSPRibbon.Tests/bin/*
+DotNetRocks.FluentSPRibbon.Tests/obj/*
+_ReSharper.DotNetRocks.FluentSPRibbon/*
+DotNetRocks.FluentSPRibbon.5.1.ReSharper.user
