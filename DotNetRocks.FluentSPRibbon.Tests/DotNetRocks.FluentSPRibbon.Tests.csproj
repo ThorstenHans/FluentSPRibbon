@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button_Tests.cs" />
     <Compile Include="Continous_Fluent_API_Tests.cs" />
+    <Compile Include="Group_Tests.cs" />
     <Compile Include="Id_Tests.cs" />
     <Compile Include="Instance_Creation_Tests.cs" />
     <Compile Include="RibbonElement_Tests.cs" />

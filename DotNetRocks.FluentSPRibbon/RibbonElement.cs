@@ -107,7 +107,10 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal void SetProperties(Dictionary<String, String> properties)
         {
-            this._properties = properties.Concat(this._properties).ToDictionary(e=>e.Key, e=>e.Value);
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key,property.Value);
+            }
         }
     }
 }

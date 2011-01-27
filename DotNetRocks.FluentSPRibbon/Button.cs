@@ -9,13 +9,10 @@ namespace DotNetRocks.FluentSPRibbon
         {
             public const String LabelText = "LabelText";
         }
+
         internal Button():this("NotSet"){}
 
-        internal Button(string id) : base(id)
-        {
-        }
-
-    
+        internal Button(string id) : base(id) { }
 
         public Button ApplyProperty(String name, String value)
         {

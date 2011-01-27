@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace DotNetRocks.FluentSPRibbon.Tests
@@ -21,6 +19,19 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Assert
             Assert.AreEqual("Testbutton", sut.GetProperty("Name"));
             Assert.AreEqual("My Test Button", sut.GetProperty("DisplayText"));
+        }
+
+        [Test]
+        public void SetProperties_Should_Override_Existing_Properties_On_Current_Instance()
+        {   // Arrange
+            var sut = new Button("MyButton");
+
+            // Act
+            sut.SetProperties(new Dictionary<string, string> { { "Name", "My Button" }, { "Visible", "True" } });
+            sut.SetProperties(new Dictionary<string, string> { { "Name", "My new Button" } });
+            //Assert
+
+            Assert.AreEqual("My new Button", sut.GetProperty("Name"));
         }
 
         [Test]

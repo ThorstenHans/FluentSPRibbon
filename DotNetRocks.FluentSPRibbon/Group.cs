@@ -7,7 +7,7 @@ namespace DotNetRocks.FluentSPRibbon
     public class Group : InteractiveRibbonElement, IRibbonElementContainer<Group,InteractiveRibbonElement>
     {
         private readonly IList<InteractiveRibbonElement> _suitableElements;
-        private readonly Dictionary<String, String> _controlsProperties;
+        private Dictionary<String, String> _controlsProperties;
 
         internal Group():this("NotSet")
         {
@@ -47,7 +47,7 @@ namespace DotNetRocks.FluentSPRibbon
         {
             foreach (var property in properties)
             {
-                ApplyProperty(property.Key, property.Value);
+                ApplyControlsProperty(property.Key, property.Value);
             }
             return this;
         }
@@ -60,6 +60,11 @@ namespace DotNetRocks.FluentSPRibbon
         public int ChildItemCount
         {
             get { return _suitableElements.Count; }
+        }
+
+        public int ControlsPropertyCount
+        {
+            get { return this._controlsProperties.Count; }
         }
 
         public Group With(Func<InteractiveRibbonElement> expression)
@@ -88,6 +93,12 @@ namespace DotNetRocks.FluentSPRibbon
 
         }
 
-        
+
+        public String GetControlsProperty(string propertyName)
+        {
+            if (_controlsProperties.ContainsKey(propertyName))
+                return _controlsProperties[propertyName];
+            return String.Empty;
+        }
     }
 }
