@@ -50,8 +50,8 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Arrange
             var ribbon = Create<Ribbon>.Instance("MyRibbon")
                 .With(() => Create<Tab>.Instance("Tab1")
-                                .With(() => Create<Group>.Instance("Grp1").ApplyProperty(GroupProperty.Title, "Group1"))
-                                .With(() => Create<Group>.Instance("Grp2").ApplyProperty(GroupProperty.Title, "Group2")));
+                                .With(() => Create<Group>.Instance("Grp1").SetProperty(GroupProperty.Title, "Group1"))
+                                .With(() => Create<Group>.Instance("Grp2").SetProperty(GroupProperty.Title, "Group2")));
 
             // Act
 

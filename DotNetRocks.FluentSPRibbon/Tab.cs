@@ -21,18 +21,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(TabProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
 
-        public Tab ApplyProperty(TabProperty propertyKey, String value)
+        public Tab SetProperty(TabProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Tab ApplyProperties(Dictionary<TabProperty, String> properties)
+        public Tab SetProperties(Dictionary<TabProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(), e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(), e=>e.Value));
             return this;
         }
 

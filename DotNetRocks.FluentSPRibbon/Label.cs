@@ -17,18 +17,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(LabelProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
   
-        public Label ApplyProperty(LabelProperty propertyKey, String value)
+        public Label SetProperty(LabelProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Label ApplyProperties(Dictionary<LabelProperty, String> properties)
+        public Label SetProperties(Dictionary<LabelProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

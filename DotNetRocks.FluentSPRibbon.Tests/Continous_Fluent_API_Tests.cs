@@ -12,9 +12,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Act
 
             var ribbon = Create<Ribbon>.Instance("MyRibbon")
-                .ApplyProperty(RibbonProperty.ToolTipFooterText, "MyRibbon")
-                .With(() => Create<Tab>.Instance("Tab1").ApplyProperty(TabProperty.Title, "MyTab"))
-                .With(() => Create<Tab>.Instance("Tab2").ApplyProperty(TabProperty.Title, "My 2ndTab"));
+                .SetProperty(RibbonProperty.ToolTipFooterText, "MyRibbon")
+                .With(() => Create<Tab>.Instance("Tab1").SetProperty(TabProperty.Title, "MyTab"))
+                .With(() => Create<Tab>.Instance("Tab2").SetProperty(TabProperty.Title, "My 2ndTab"));
 
             // Assert
             Assert.AreEqual(2,ribbon.ChildItemCount);
@@ -28,8 +28,8 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Act
             var ribbon = Create<Ribbon>.Instance("MyRibbon")
                 .With(() => Create<Tab>.Instance("Tab1")
-                                .With(() => Create<Group>.Instance("Grp1").ApplyProperty(GroupProperty.Title, "Group1"))
-                                .With(() => Create<Group>.Instance("Grp2").ApplyProperty(GroupProperty.Title, "Group2")));
+                                .With(() => Create<Group>.Instance("Grp1").SetProperty(GroupProperty.Title, "Group1"))
+                                .With(() => Create<Group>.Instance("Grp2").SetProperty(GroupProperty.Title, "Group2")));
             Assert.AreEqual(1, ribbon.ChildItemCount);
             // Assert
         }
@@ -40,14 +40,14 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             var button = Create<Button>
                 .Instance("MyButton")
-                .ApplyProperty(ButtonProperty.LabelText, "Click me!")
-                .ApplyProperty(ButtonProperty.Sequence, "100")
-                .ApplyProperty(ButtonProperty.Description, "a new button");
+                .SetProperty(ButtonProperty.LabelText, "Click me!")
+                .SetProperty(ButtonProperty.Sequence, "100")
+                .SetProperty(ButtonProperty.Description, "a new button");
 
             var ribbon = Create<Ribbon>.Instance("CustomRibbon")
                 .With(() => Create<Tab>.Instance("1stTab")
                                 .With(() => Create<Group>.Instance("1stGroup")
-                                                .ApplyProperty(GroupProperty.Title, "Group 1")
+                                                .SetProperty(GroupProperty.Title, "Group 1")
                                                 .With(() => button)));
             Assert.IsNotNull(button);
             Assert.IsNotNull(ribbon);

@@ -16,18 +16,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(TextBoxProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
 
-        public TextBox ApplyProperty(TextBoxProperty propertyKey, String value)
+        public TextBox SetProperty(TextBoxProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public TextBox ApplyProperties(Dictionary<TextBoxProperty, String> properties)
+        public TextBox SetProperties(Dictionary<TextBoxProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }

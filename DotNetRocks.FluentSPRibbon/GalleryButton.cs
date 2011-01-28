@@ -12,18 +12,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(GalleryButtonProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
 
-        public GalleryButton ApplyProperty(GalleryButtonProperty propertyKey, String value)
+        public GalleryButton SetProperty(GalleryButtonProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public GalleryButton ApplyProperties(Dictionary<GalleryButtonProperty, String> properties)
+        public GalleryButton SetProperties(Dictionary<GalleryButtonProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(), e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(), e=>e.Value));
             return this;
         }
     }

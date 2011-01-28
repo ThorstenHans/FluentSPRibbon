@@ -47,7 +47,7 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
 
-        internal void SetProperty(String name, String value)
+        internal void AddOrUpdateProperty(String name, String value)
         {
             if (_properties.ContainsKey(name))
                 _properties[name] = value;
@@ -55,7 +55,7 @@ namespace DotNetRocks.FluentSPRibbon
                 _properties.Add(name,value);
         }
 
-        internal String GetProperty(String name)
+        internal String GetPropertyValue(String name)
         {
             if (_properties.ContainsKey(name))
                 return _properties[name];
@@ -112,11 +112,11 @@ namespace DotNetRocks.FluentSPRibbon
 
         }
 
-        internal void SetProperties(Dictionary<String, String> properties)
+        internal void AddOrUpdateProperties(Dictionary<String, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key,property.Value);
+                AddOrUpdateProperty(property.Key,property.Value);
             }
         }
     }

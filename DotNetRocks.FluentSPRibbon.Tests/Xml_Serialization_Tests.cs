@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
@@ -15,32 +16,32 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Arrange
             String actual = String.Empty;
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                    .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
+                    .SetProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                     .With(() => Create<Tab>.Instance("FluentRibbonTab1")
-                                    .ApplyProperty(TabProperty.Title, "Hello World Tab!")
-                                    .ApplyProperty(TabProperty.Sequence, "1001")
-                                    .ApplyProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
+                                    .SetProperty(TabProperty.Title, "Hello World Tab!")
+                                    .SetProperty(TabProperty.Sequence, "1001")
+                                    .SetProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
                                     .With(() => Create<Group>.Instance("ActionsGroup")
-                                                    .ApplyProperty(GroupProperty.Title, "My Actions")
-                                                    .ApplyProperty(GroupProperty.Sequence, "10")
-                                                    .ApplyProperty(GroupProperty.Description, "These are my actions")
+                                                    .SetProperty(GroupProperty.Title, "My Actions")
+                                                    .SetProperty(GroupProperty.Sequence, "10")
+                                                    .SetProperty(GroupProperty.Description, "These are my actions")
                                                     .With(()=>Create<Button>.Instance("MyButton1")
-                                                    .ApplyProperty(ButtonProperty.LabelText,"Click me!")))
+                                                    .SetProperty(ButtonProperty.LabelText,"Click me!")))
                                     .With(() => Create<Group>.Instance("WorkflowActions")
-                                                    .ApplyProperty(GroupProperty.Title, "My Workflow Actions")
-                                                    .ApplyProperty(GroupProperty.Sequence, "20")
-                                                    .ApplyProperty(GroupProperty.Description,
+                                                    .SetProperty(GroupProperty.Title, "My Workflow Actions")
+                                                    .SetProperty(GroupProperty.Sequence, "20")
+                                                    .SetProperty(GroupProperty.Description,
                                                                    "Master your Workflows by using Ribbon Elements")
-                                                                   .With(()=>Create<Button>.Instance("Button2").ApplyProperty(ButtonProperty.LabelText,"OrClickMe!")))
+                                                                   .With(()=>Create<Button>.Instance("Button2").SetProperty(ButtonProperty.LabelText,"OrClickMe!")))
                                     .With(() => Create<Group>.Instance("ViewSettingsGroup")
-                                                    .ApplyProperty(GroupProperty.Title, "Customize your view")
-                                                    .ApplyProperty(GroupProperty.Sequence, "30")
-                                                    .ApplyProperty(GroupProperty.Description,
+                                                    .SetProperty(GroupProperty.Title, "Customize your view")
+                                                    .SetProperty(GroupProperty.Sequence, "30")
+                                                    .SetProperty(GroupProperty.Description,
                                                                    "Customize the current view for your needs")))
                     .With(() => Create<Tab>.Instance("FluentRibbonTab2")
-                                    .ApplyProperty(TabProperty.Title, "FluentRibbon rocks")
-                                    .ApplyProperty(TabProperty.Sequence, "1002")
-                                    .ApplyProperty(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
+                                    .SetProperty(TabProperty.Title, "FluentRibbon rocks")
+                                    .SetProperty(TabProperty.Sequence, "1002")
+                                    .SetProperty(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
 
             actual = ribbon.ToXml();
             XmlDocument xmlDocument = new XmlDocument();
@@ -62,34 +63,34 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             {
                 RibbonSettings.ResourceFileIdentifier = "MyResourceFile";
                 XmlSerializer serializer = new XmlSerializer(typeof(Ribbon));
-
+                var button = Create<Button>.Instance("MyButton").SetProperty(ButtonProperty.Sequence, "12");
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                    .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
+                    .SetProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                     .With(() => Create<Tab>.Instance("FluentRibbonTab1")
-                                    .ApplyProperty(TabProperty.Title, "Tab1Title")
-                                    .ApplyProperty(TabProperty.Sequence, "1001")
-                                    .ApplyProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
+                                    .SetProperty(TabProperty.Title, "Tab1Title")
+                                    .SetProperty(TabProperty.Sequence, "1001")
+                                    .SetProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
                                     .With(() => Create<Group>.Instance("ActionsGroup")
-                                                    .ApplyProperty(GroupProperty.Title, "Group1Title")
-                                                    .ApplyProperty(GroupProperty.Sequence, "10")
-                                                    .ApplyProperty(GroupProperty.Description, "These are my actions")
+                                                    .SetProperty(GroupProperty.Title, "Group1Title")
+                                                    .SetProperty(GroupProperty.Sequence, "10")
+                                                    .SetProperty(GroupProperty.Description, "These are my actions")
                                                     .With(() => Create<Button>.Instance("MyButton1")
-                                                    .ApplyProperty(ButtonProperty.LabelText, "Click me!")))
+                                                    .SetProperty(ButtonProperty.LabelText, "Click me!")))
                                     .With(() => Create<Group>.Instance("WorkflowActions")
-                                                    .ApplyProperty(GroupProperty.Title, "Group2Title")
-                                                    .ApplyProperty(GroupProperty.Sequence, "20")
-                                                    .ApplyProperty(GroupProperty.Description,
+                                                    .SetProperty(GroupProperty.Title, "Group2Title")
+                                                    .SetProperty(GroupProperty.Sequence, "20")
+                                                    .SetProperty(GroupProperty.Description,
                                                                    "Master your Workflows by using Ribbon Elements")
-                                                                   .With(() => Create<Button>.Instance("Button2").ApplyProperty(ButtonProperty.LabelText, "OrClickMe!")))
+                                                                   .With(() => Create<Button>.Instance("Button2").SetProperty(ButtonProperty.LabelText, "OrClickMe!")))
                                     .With(() => Create<Group>.Instance("ViewSettingsGroup")
-                                                    .ApplyProperty(GroupProperty.Title, "Group3Title")
-                                                    .ApplyProperty(GroupProperty.Sequence, "30")
-                                                    .ApplyProperty(GroupProperty.Description,
+                                                    .SetProperty(GroupProperty.Title, "Group3Title")
+                                                    .SetProperty(GroupProperty.Sequence, "30")
+                                                    .SetProperty(GroupProperty.Description,
                                                                    "Customize the current view for your needs")))
                     .With(() => Create<Tab>.Instance("FluentRibbonTab2")
-                                    .ApplyProperty(TabProperty.Title, "Tab2Title")
-                                    .ApplyProperty(TabProperty.Sequence, "1002")
-                                    .ApplyProperty(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
+                                    .SetProperty(TabProperty.Title, "Tab2Title")
+                                    .SetProperty(TabProperty.Sequence, "1002")
+                                    .SetProperty(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
 
                 // Act
                 serializer.Serialize(stream, ribbon);
@@ -120,6 +121,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("$Resources:MyResourceFile, Group1Title", group1.Attributes["Title"].Value);
             Assert.AreEqual("$Resources:MyResourceFile, Group2Title", group2.Attributes["Title"].Value);
             Assert.AreEqual("$Resources:MyResourceFile, Group3Title", group3.Attributes["Title"].Value);
+            Console.WriteLine(actual);
            
         }
  
@@ -135,33 +137,33 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                 
 
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                    .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
+                    .SetProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                     .With(() => Create<Tab>.Instance("FluentRibbonTab1")
-                                    .ApplyProperty(TabProperty.Title, "Tab1Title")
-                                    .ApplyProperty(TabProperty.Sequence, "1001")
-                                    .ApplyProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
+                                    .SetProperty(TabProperty.Title, "Tab1Title")
+                                    .SetProperty(TabProperty.Sequence, "1001")
+                                    .SetProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
                                     .With(() => Create<Group>.Instance("ActionsGroup")
-                                                    .ApplyProperty(GroupProperty.Title, "Group1Title")
-                                                    .ApplyProperty(GroupProperty.Sequence, "10")
-                                                    .ApplyProperty(GroupProperty.Description, "These are my actions")
+                                                    .SetProperty(GroupProperty.Title, "Group1Title")
+                                                    .SetProperty(GroupProperty.Sequence, "10")
+                                                    .SetProperty(GroupProperty.Description, "These are my actions")
                                                     .With(() => Create<Button>.Instance("MyButton1")
-                                                    .ApplyProperty(ButtonProperty.Image32by32, "CoolIcon.png")
-                                                    .ApplyProperty(ButtonProperty.LabelText, "Click me!")))
+                                                    .SetProperty(ButtonProperty.Image32by32, "CoolIcon.png")
+                                                    .SetProperty(ButtonProperty.LabelText, "Click me!")))
                                     .With(() => Create<Group>.Instance("WorkflowActions")
-                                                    .ApplyProperty(GroupProperty.Title, "Group2Title")
-                                                    .ApplyProperty(GroupProperty.Sequence, "20")
-                                                    .ApplyProperty(GroupProperty.Description,
+                                                    .SetProperty(GroupProperty.Title, "Group2Title")
+                                                    .SetProperty(GroupProperty.Sequence, "20")
+                                                    .SetProperty(GroupProperty.Description,
                                                                    "Master your Workflows by using Ribbon Elements")
-                                                                   .With(() => Create<Button>.Instance("Button2").ApplyProperty(ButtonProperty.LabelText, "OrClickMe!")))
+                                                                   .With(() => Create<Button>.Instance("Button2").SetProperty(ButtonProperty.LabelText, "OrClickMe!")))
                                     .With(() => Create<Group>.Instance("ViewSettingsGroup")
-                                                    .ApplyProperty(GroupProperty.Title, "Group3Title")
-                                                    .ApplyProperty(GroupProperty.Sequence, "30")
-                                                    .ApplyProperty(GroupProperty.Description,
+                                                    .SetProperty(GroupProperty.Title, "Group3Title")
+                                                    .SetProperty(GroupProperty.Sequence, "30")
+                                                    .SetProperty(GroupProperty.Description,
                                                                    "Customize the current view for your needs")))
                     .With(() => Create<Tab>.Instance("FluentRibbonTab2")
-                                    .ApplyProperty(TabProperty.Title, "Tab2Title")
-                                    .ApplyProperty(TabProperty.Sequence, "1002")
-                                    .ApplyProperty(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
+                                    .SetProperty(TabProperty.Title, "Tab2Title")
+                                    .SetProperty(TabProperty.Sequence, "1002")
+                                    .SetProperty(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
 
             actual = ribbon.ToXml();
             XmlDocument xmlDocument = new XmlDocument();
@@ -204,18 +206,18 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             RibbonSettings.ImagesFolder = "/_layouts/FluentSPRibbon/Images/";
 
                 var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                     .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
+                     .SetProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                      .With(() => Create<Tab>.Instance("FluentRibbonTab1")
-                                     .ApplyProperty(TabProperty.Title, "Hello World Tab!")
-                                     .ApplyProperty(TabProperty.Sequence, "1001")
-                                     .ApplyProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
+                                     .SetProperty(TabProperty.Title, "Hello World Tab!")
+                                     .SetProperty(TabProperty.Sequence, "1001")
+                                     .SetProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
                                      .With(() => Create<Group>.Instance("ActionsGroup")
-                                                     .ApplyProperty(GroupProperty.Title, "My Actions")
-                                                     .ApplyProperty(GroupProperty.Sequence, "10")
-                                                     .ApplyProperty(GroupProperty.Description, "These are my actions")
+                                                     .SetProperty(GroupProperty.Title, "My Actions")
+                                                     .SetProperty(GroupProperty.Sequence, "10")
+                                                     .SetProperty(GroupProperty.Description, "These are my actions")
                                                      .With(() => Create<Button>.Instance("MyButton1")
-                                                     .ApplyProperty(ButtonProperty.LabelText, "Click me!")
-                                                     .ApplyProperty(ButtonProperty.Image32by32,"CoolIcon.png"))));
+                                                     .SetProperty(ButtonProperty.LabelText, "Click me!")
+                                                     .SetProperty(ButtonProperty.Image32by32,"CoolIcon.png"))));
 
                 // Act
             actual = ribbon.ToXml();
@@ -237,36 +239,47 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             RibbonSettings.ResourceFileIdentifier = "MyResourceFile";
             RibbonSettings.ImagesFolder = "/_layouts/FluentSPRibbon/Images/";
-           
+
 
             var ribbon = Create<Ribbon>.Instance("FluentRibbon")
-                .ApplyProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
+                .SetProperty(RibbonProperty.ToolTipFooterText, "RibbonToolTipFooter")
                 .With(() => Create<Tab>.Instance("FluentRibbonTab1")
-                                .ApplyProperty(TabProperty.Title, "Tab1Title")
-                                .ApplyProperty(TabProperty.Sequence, "1001")
-                                .ApplyProperty(TabProperty.Description, "see http://www.dotnet-rocks.de")
+                                .SetProperty(TabProperty.Title, "Tab1Title")
+                                .SetProperty(TabProperty.Sequence, "1001")
+                                .SetProperty(TabProperty.Description, "Tab1Description")
                                 .With(() => Create<Group>.Instance("ActionsGroup")
-                                                .ApplyProperty(GroupProperty.Title, "Group1Title")
-                                                .ApplyProperty(GroupProperty.Sequence, "10")
-                                                .ApplyProperty(GroupProperty.Description, "These are my actions")
+                                                .SetProperty(GroupProperty.Title, "Group1Title")
+                                                .SetProperty(GroupProperty.Sequence, "10")
+                                                .SetProperty(GroupProperty.Description, "Group1Description")
                                                 .With(() => Create<Button>.Instance("MyButton1")
-                                                .ApplyProperty(ButtonProperty.Image32by32, "CoolIcon.png")
-                                                .ApplyProperty(ButtonProperty.LabelText, "Click me!")))
+                                                .SetProperty(ButtonProperty.Image32by32, "CoolIcon.png")
+                                                .SetProperty(ButtonProperty.LabelText, "MyButton1LabelText")))
                                 .With(() => Create<Group>.Instance("WorkflowActions")
-                                                .ApplyProperty(GroupProperty.Title, "Group2Title")
-                                                .ApplyProperty(GroupProperty.Sequence, "20")
-                                                .ApplyProperty(GroupProperty.Description,
-                                                               "Master your Workflows by using Ribbon Elements")
-                                                               .With(() => Create<Button>.Instance("Button2").ApplyProperty(ButtonProperty.LabelText, "OrClickMe!")))
+                                                .SetProperty(GroupProperty.Title, "Group2Title")
+                                                .SetProperty(GroupProperty.Sequence, "20")
+                                                .SetProperty(GroupProperty.Description,
+                                                               "Group2Description")
+                                                               .With(() => Create<Button>.Instance("Button2")
+                                                                   .SetProperty(ButtonProperty.LabelText, "Button2LabelText")))
                                 .With(() => Create<Group>.Instance("ViewSettingsGroup")
-                                                .ApplyProperty(GroupProperty.Title, "Group3Title")
-                                                .ApplyProperty(GroupProperty.Sequence, "30")
-                                                .ApplyProperty(GroupProperty.Description,
-                                                               "Customize the current view for your needs")))
+                                                .SetProperty(GroupProperty.Title, "Group3Title")
+                                                .SetProperty(GroupProperty.Sequence, "30")
+                                                .SetProperty(GroupProperty.Description,
+                                                               "Group3Description")))
                 .With(() => Create<Tab>.Instance("FluentRibbonTab2")
-                                .ApplyProperty(TabProperty.Title, "Tab2Title")
-                                .ApplyProperty(TabProperty.Sequence, "1002")
-                                .ApplyProperty(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
+                                .SetProperty(TabProperty.Title, "Tab2Title")
+                                .SetProperty(TabProperty.Sequence, "1002")
+                                .SetProperty(TabProperty.Description, "Tab2Description")
+                                .With(() => Create<Group>.Instance("Group4711")
+                                    .SetProperty(GroupProperty.Title, "Group4711Title")
+                                    .With(() => Create<TextBox>.Instance("MyTextBox")
+                                        .SetProperties(new Dictionary<TextBoxProperty, string>()
+                                                           {
+                                                               { TextBoxProperty.ShowAsLabel,"TRUE"},
+                                                               { TextBoxProperty.Width,"100px"}
+                                                           }
+                                                        ))));
+                                        
 
             Assert.IsNotNullOrEmpty(ribbon.ToXml());
         }

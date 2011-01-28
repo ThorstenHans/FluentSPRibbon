@@ -14,11 +14,11 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = new RibbonElement();
 
             // Act
-            sut.SetProperties(new Dictionary<String,String>{{"Name","Testbutton"},{"DisplayText","My Test Button"}});
+            sut.AddOrUpdateProperties(new Dictionary<String,String>{{"Name","Testbutton"},{"DisplayText","My Test Button"}});
 
             // Assert
-            Assert.AreEqual("Testbutton", sut.GetProperty("Name"));
-            Assert.AreEqual("My Test Button", sut.GetProperty("DisplayText"));
+            Assert.AreEqual("Testbutton", sut.GetPropertyValue("Name"));
+            Assert.AreEqual("My Test Button", sut.GetPropertyValue("DisplayText"));
         }
 
         [Test]
@@ -27,11 +27,11 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = new Button("MyButton");
 
             // Act
-            sut.SetProperties(new Dictionary<string, string> { { "Name", "My Button" }, { "Visible", "True" } });
-            sut.SetProperties(new Dictionary<string, string> { { "Name", "My new Button" } });
+            sut.AddOrUpdateProperties(new Dictionary<string, string> { { "Name", "My Button" }, { "Visible", "True" } });
+            sut.AddOrUpdateProperties(new Dictionary<string, string> { { "Name", "My new Button" } });
             //Assert
 
-            Assert.AreEqual("My new Button", sut.GetProperty("Name"));
+            Assert.AreEqual("My new Button", sut.GetPropertyValue("Name"));
         }
 
         [Test]

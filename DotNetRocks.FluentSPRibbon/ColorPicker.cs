@@ -17,18 +17,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(ColorPickerProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
 
-        public ColorPicker ApplyProperty(ColorPickerProperty propertyKey, String value)
+        public ColorPicker SetProperty(ColorPickerProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(),value);
+            AddOrUpdateProperty(propertyKey.ToString(),value);
             return this;
         }
 
-        public ColorPicker ApplyProperties(Dictionary<ColorPickerProperty, String> properties)
+        public ColorPicker SetProperties(Dictionary<ColorPickerProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
 

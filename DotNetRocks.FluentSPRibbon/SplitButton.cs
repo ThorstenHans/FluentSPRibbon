@@ -18,18 +18,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(SplitButtonProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
 
-        public SplitButton ApplyProperty(SplitButtonProperty propertyKey, String value)
+        public SplitButton SetProperty(SplitButtonProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public SplitButton ApplyProperties(Dictionary<SplitButtonProperty, String> properties)
+        public SplitButton SetProperties(Dictionary<SplitButtonProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
        

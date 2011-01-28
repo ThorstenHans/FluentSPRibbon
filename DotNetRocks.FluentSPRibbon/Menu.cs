@@ -18,18 +18,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(MenuProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
 
-        public Menu ApplyProperty(MenuProperty propertyKey, String value)
+        public Menu SetProperty(MenuProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Menu ApplyProperties(Dictionary<MenuProperty, String> properties)
+        public Menu SetProperties(Dictionary<MenuProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
 

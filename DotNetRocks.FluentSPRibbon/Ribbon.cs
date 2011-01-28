@@ -26,18 +26,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(RibbonProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
 
-        public Ribbon ApplyProperty(RibbonProperty propertyKey, String value)
+        public Ribbon SetProperty(RibbonProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Ribbon ApplyProperties(Dictionary<RibbonProperty, String> properties)
+        public Ribbon SetProperties(Dictionary<RibbonProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
 

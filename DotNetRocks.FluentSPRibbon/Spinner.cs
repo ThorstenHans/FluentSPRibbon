@@ -18,17 +18,17 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(SpinnerProperty propertyKey)
         {
-            return GetProperty(propertyKey.ToString());
+            return GetPropertyValue(propertyKey.ToString());
         }
-        public Spinner ApplyProperty(SpinnerProperty propertyKey, String value)
+        public Spinner SetProperty(SpinnerProperty propertyKey, String value)
         {
-            SetProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey.ToString(), value);
             return this;
         }
 
-        public Spinner ApplyProperties(Dictionary<SpinnerProperty, String> properties)
+        public Spinner SetProperties(Dictionary<SpinnerProperty, String> properties)
         {
-            SetProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
             return this;
         }
     }
