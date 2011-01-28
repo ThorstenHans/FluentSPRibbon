@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button_Tests.cs" />
+    <Compile Include="Color_Tests.cs" />
     <Compile Include="Continous_Fluent_API_Tests.cs" />
     <Compile Include="Group_Tests.cs" />
     <Compile Include="Id_Tests.cs" />

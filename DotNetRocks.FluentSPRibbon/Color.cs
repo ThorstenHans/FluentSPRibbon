@@ -10,6 +10,11 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Color(string id) : base(id) { }
 
+        internal override bool IsIdProvider
+        {
+            get { return false; }
+        }
+
         public string GetProperty(ColorProperty propertyKey)
         {
             return GetProperty(propertyKey.ToString());

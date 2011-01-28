@@ -36,10 +36,16 @@ namespace DotNetRocks.FluentSPRibbon
             get { return GetType().Name; }
         }
 
+        internal virtual bool IsIdProvider
+        {
+            get { return true; }
+        }
+
         internal string OriginalId
         {
             get { return this._originalId; }
         }
+
 
         internal void SetProperty(String name, String value)
         {
@@ -90,7 +96,8 @@ namespace DotNetRocks.FluentSPRibbon
 
         public void WriteXml(XmlWriter writer)
         {
-            writer.WriteAttributeString("Id", Id);
+            if(IsIdProvider)
+                writer.WriteAttributeString("Id", Id);
             foreach (var transformedProperty in
                 _properties.Select(RibbonSettings.ApplyResourceLink)
                     .Select(RibbonSettings.ApplyImagesFolder))

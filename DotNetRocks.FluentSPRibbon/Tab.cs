@@ -8,6 +8,7 @@ namespace DotNetRocks.FluentSPRibbon
     public class Tab : InteractiveRibbonElement, IRibbonElementContainer<Tab,Group>
     {
         private readonly IList<Group> _groups;
+        private Scaling _scaling;
 
         internal Tab():this("NotSet")
         {
@@ -55,11 +56,24 @@ namespace DotNetRocks.FluentSPRibbon
             get { return _groups.Count; }
         }
 
+        public Scaling Scaling
+        {
+            get { return _scaling; }
+        }
+
         public Tab With(Func<Group> expression)
         {
             var group = expression.Invoke();
             group.Parent = this;
             this._groups.Add(group);
+            return this;
+        }
+
+        public Tab With(Func<Scaling> expression)
+        {
+            var scaling = expression.Invoke();
+            scaling.Parent = this;
+            this._scaling = scaling;
             return this;
         }
 
@@ -74,6 +88,7 @@ namespace DotNetRocks.FluentSPRibbon
                                              writer.WriteEndElement();
                                          });
             writer.WriteEndElement();
+            
         }
     }
 }
