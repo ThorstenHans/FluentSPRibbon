@@ -63,12 +63,14 @@
     <Compile Include="ImageFolderNotSpecifiedException.cs" />
     <Compile Include="ImageProvider.cs" />
     <Compile Include="InsertTable.cs" />
+    <Compile Include="InsertTableProperty.cs" />
     <Compile Include="InteractiveRibbonElement.cs" />
     <Compile Include="IRibbonElement.cs" />
     <Compile Include="IRibbonElementContainer.cs" />
     <Compile Include="Label.cs" />
     <Compile Include="LabelProperty.cs" />
     <Compile Include="MaxSize.cs" />
+    <Compile Include="MaxSizeProperty.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuProperty.cs" />
     <Compile Include="MenuSection.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="RibbonProperty.cs" />
     <Compile Include="RibbonSettings.cs" />
     <Compile Include="Scale.cs" />
+    <Compile Include="ScaleProperty.cs" />
     <Compile Include="Scaling.cs" />
     <Compile Include="Spinner.cs" />
     <Compile Include="SpinnerProperty.cs" />

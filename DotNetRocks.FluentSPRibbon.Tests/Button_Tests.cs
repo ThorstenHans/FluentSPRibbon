@@ -6,9 +6,11 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     public class Button_Tests
     {
         [Test]
-        public void Verify_That_Base_Constructor_Will_Be_Called()
+        public void Create_Should_Create_A_New_Instance()
         {
             var sut = Create<Button>.Instance("MyButton");
+            Assert.IsNotNull(sut);
+            Assert.IsInstanceOf<Button>(sut);
             Assert.AreEqual("MyButton",sut.Id);
         }
 
