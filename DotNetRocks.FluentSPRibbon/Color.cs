@@ -17,18 +17,21 @@ namespace DotNetRocks.FluentSPRibbon
 
         public string GetProperty(ColorProperty propertyKey)
         {
-            return GetPropertyValue(propertyKey.ToString());
+            return GetPropertyValue(propertyKey);
         }
 
         public Color SetProperty(ColorProperty propertyKey, string value)
         {
-            AddOrUpdateProperty(propertyKey.ToString(),value);
+            AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
         public Color SetProperties(Dictionary<ColorProperty, String> properties)
         {
-            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

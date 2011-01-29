@@ -14,18 +14,21 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(ToggleButtonProperty propertyKey)
         {
-            return GetPropertyValue(propertyKey.ToString());
+            return GetPropertyValue(propertyKey);
         }
 
         public ToggleButton SetProperty(ToggleButtonProperty propertyKey, String value)
         {
-            AddOrUpdateProperty(propertyKey.ToString(), value);
+            AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
         public ToggleButton SetProperties(Dictionary<ToggleButtonProperty, String> properties)
         {
-            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

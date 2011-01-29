@@ -8,10 +8,10 @@ using System.Xml.Serialization;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class RibbonElement : IRibbonElement
+    public class RibbonElement: IRibbonElement 
     {
         private readonly String _originalId;
-        private Dictionary<String, String> _properties;
+        private Dictionary<Enum, String> _properties;
 
         internal RibbonElement():this("NotSet")
         {
@@ -21,7 +21,7 @@ namespace DotNetRocks.FluentSPRibbon
         internal RibbonElement(String id)
         {
             _originalId = id;
-            _properties = new Dictionary<string, string>();
+            _properties = new Dictionary<Enum, string>();
         }
 
         public String Id
@@ -47,7 +47,7 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
 
-        internal void AddOrUpdateProperty(String name, String value)
+        internal void AddOrUpdateProperty(Enum name, String value)
         {
             if (_properties.ContainsKey(name))
                 _properties[name] = value;
@@ -55,7 +55,7 @@ namespace DotNetRocks.FluentSPRibbon
                 _properties.Add(name,value);
         }
 
-        internal String GetPropertyValue(String name)
+        internal String GetPropertyValue(Enum name)
         {
             if (_properties.ContainsKey(name))
                 return _properties[name];
@@ -102,7 +102,8 @@ namespace DotNetRocks.FluentSPRibbon
                 _properties.Select(RibbonSettings.ApplyResourceLink)
                     .Select(RibbonSettings.ApplyImagesFolder))
             {
-                writer.WriteAttributeString(transformedProperty.Key, transformedProperty.Value);
+                writer.WriteAttributeString(transformedProperty.Key.ToString(), 
+                    transformedProperty.Value);
             }
             WriteChildren(writer);
         }
@@ -110,14 +111,7 @@ namespace DotNetRocks.FluentSPRibbon
         protected virtual void WriteChildren(XmlWriter writer)
         {
 
-        }
+        }        
 
-        internal void AddOrUpdateProperties(Dictionary<String, String> properties)
-        {
-            foreach (var property in properties)
-            {
-                AddOrUpdateProperty(property.Key,property.Value);
-            }
-        }
     }
 }

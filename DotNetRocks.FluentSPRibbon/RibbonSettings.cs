@@ -6,72 +6,57 @@ namespace DotNetRocks.FluentSPRibbon
     public static class RibbonSettings
     {
         private static string _resourceFileIdentifier;
+        
+        internal static bool LocalizeVisualElements { get; set; }
+
         public static String ImagesFolder { get; set; }
+
         public static String ResourceFileIdentifier
         {
             get { return _resourceFileIdentifier; }
             set
             {
                 _resourceFileIdentifier = value;
-                if (String.IsNullOrEmpty(_resourceFileIdentifier))
-                    LocalizeVisualElements = false;
-                else
-                    LocalizeVisualElements = true;
+                LocalizeVisualElements = !String.IsNullOrEmpty(_resourceFileIdentifier);
             }
         }
-        
-        internal static bool LocalizeVisualElements { get; set; }
-        private static readonly List<String> LocalizableProperties;
-        private static readonly List<String> ImagesFolderProperties;
-        
 
-        static RibbonSettings()
+        public static KeyValuePair<Enum, string> ApplyResourceLink(KeyValuePair<Enum, string> property)
         {
-            LocalizableProperties = new List<string>()
-                                         {
-                                             "Title"
-                                         };
-
-            ImagesFolderProperties = new List<string>()
-                                          {
-                                              "Image32by32"
-                                          };
-
-
-        }
-
-        public static KeyValuePair<string, string> ApplyResourceLink(KeyValuePair<string, string> property)
-        {
-            if(!LocalizeVisualElements)
+            if (!LocalizeVisualElements)
                 return property;
-            if(LocalizableProperties.Contains(property.Key))
-                return new KeyValuePair<String, String>(property.Key, BuildResourceString(property.Value));
-            return property;
+            return IsTextProvider(property.Key) ? new KeyValuePair<Enum, String>(property.Key, BuildResourceString(property.Value)) : property;
         }
 
-
-        public static KeyValuePair<string, string> ApplyImagesFolder(KeyValuePair<string, string> imageProperty)
+        public static KeyValuePair<Enum, string> ApplyImagesFolder(KeyValuePair<Enum, string> imageProperty)
         {
-            if(ImagesFolderProperties.Contains(imageProperty.Key))
-                return new KeyValuePair<string, string>(imageProperty.Key,BuildAbsoluteImageUrl(imageProperty.Value));
-            return imageProperty;
+            return IsImageProvider(imageProperty.Key) ? new KeyValuePair<Enum, string>(imageProperty.Key, BuildAbsoluteImageUrl(imageProperty.Value)) : imageProperty;
         }
 
         private static string BuildAbsoluteImageUrl(string relativeImageUrl)
         {
             if (String.IsNullOrEmpty(ImagesFolder))
-                throw new ImageFolderNotSpecifiedException("The 'ImagesFolder' property on 'RibbonSettings' is not specified.");
-            if (ImagesFolder.EndsWith("/"))
-                return String.Concat(ImagesFolder, relativeImageUrl);
-            return String.Format("{0}/{1}", ImagesFolder, relativeImageUrl);
+                throw new ImageFolderNotSpecifiedException(
+                    "The 'ImagesFolder' property on 'RibbonSettings' is not specified.");
+            return ImagesFolder.EndsWith("/") ? String.Concat(ImagesFolder, relativeImageUrl) : String.Format("{0}/{1}", ImagesFolder, relativeImageUrl);
         }
 
         private static string BuildResourceString(string resourceKey)
         {
-          
-            var resourceFile = ResourceFileIdentifier.IndexOf(".resx")>-1?ResourceFileIdentifier.Substring(0,ResourceFileIdentifier.IndexOf(".resx")):ResourceFileIdentifier;
+            var resourceFile = ResourceFileIdentifier.IndexOf(".resx") > -1
+                                   ? ResourceFileIdentifier.Substring(0, ResourceFileIdentifier.IndexOf(".resx"))
+                                   : ResourceFileIdentifier;
             return String.Format("$Resources:{0}, {1}", resourceFile, resourceKey);
         }
 
+        private static bool IsTextProvider(Enum key)
+        {
+            return key.GetType().GetField(key.ToString()).GetCustomAttributes(typeof (TextProvider), false).Length > 0;
+        }
+
+        private static bool IsImageProvider(Enum key)
+        {
+            return key.GetType().GetField(key.ToString()).GetCustomAttributes(typeof (ImageProvider), false).Length > 0;
+        }
     }
 }

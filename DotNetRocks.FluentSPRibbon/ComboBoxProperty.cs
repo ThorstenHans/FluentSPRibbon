@@ -1,6 +1,8 @@
-﻿namespace DotNetRocks.FluentSPRibbon
+﻿using System;
+
+namespace DotNetRocks.FluentSPRibbon
 {
-    public enum ComboBoxProperty
+    public enum ComboBoxProperty 
     {
         AllowFreeForm,
         AltArrow,

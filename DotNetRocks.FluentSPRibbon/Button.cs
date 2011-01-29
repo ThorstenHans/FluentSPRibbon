@@ -14,18 +14,21 @@ namespace DotNetRocks.FluentSPRibbon
 
         public Button SetProperty(ButtonProperty key, String value)
         {
-            AddOrUpdateProperty(key.ToString(), value);
+            AddOrUpdateProperty(key, value);
             return this;
         }
 
         internal String GetProperty(ButtonProperty propertyName)
         {
-            return GetPropertyValue(propertyName.ToString());
+            return GetPropertyValue(propertyName);
         }
 
         public Button SetProperties(Dictionary<ButtonProperty, String> properties)
         {
-            AddOrUpdateProperties(properties.ToDictionary(property => property.Key.ToString(), property => property.Value));
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
 

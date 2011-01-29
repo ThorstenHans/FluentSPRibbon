@@ -12,18 +12,21 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(FlyoutAnchorProperty propertyKey)
         {
-            return GetPropertyValue(propertyKey.ToString());
+            return GetPropertyValue(propertyKey);
         }
 
         public FlyoutAnchor SetProperty(FlyoutAnchorProperty propertyKey, String value)
         {
-            AddOrUpdateProperty(propertyKey.ToString(),value);
+            AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
         public FlyoutAnchor SetProperties(Dictionary<FlyoutAnchorProperty,String> properties)
         {
-            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

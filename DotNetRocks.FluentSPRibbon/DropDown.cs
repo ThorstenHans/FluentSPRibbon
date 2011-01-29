@@ -12,18 +12,21 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(DropDownProperty propertyKey)
         {
-            return GetPropertyValue(propertyKey.ToString());
+            return GetPropertyValue(propertyKey);
         }
 
         public DropDown SetProperty(DropDownProperty propertyKey, String value)
         {
-            AddOrUpdateProperty(propertyKey.ToString(),value);
+            AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
         public DropDown SetProperties(Dictionary<DropDownProperty,String> properties)
         {
-            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(), e=>e.Value));
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

@@ -59,6 +59,7 @@
     <Compile Include="Group.cs" />
     <Compile Include="GroupProperty.cs" />
     <Compile Include="ImageFolderNotSpecifiedException.cs" />
+    <Compile Include="ImageProvider.cs" />
     <Compile Include="InteractiveRibbonElement.cs" />
     <Compile Include="IRibbonElement.cs" />
     <Compile Include="IRibbonElementContainer.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="TemplateActionRequiredEventArgs.cs" />
     <Compile Include="TextBox.cs" />
     <Compile Include="TextBoxProperty.cs" />
+    <Compile Include="TextProvider.cs" />
     <Compile Include="ToggleButton.cs" />
     <Compile Include="ToggleButtonProperty.cs" />
   </ItemGroup>

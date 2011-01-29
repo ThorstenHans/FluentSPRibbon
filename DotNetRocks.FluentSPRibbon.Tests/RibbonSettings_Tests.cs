@@ -37,14 +37,14 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Arrange
             var resourceLink = "$Resources:MyResource, MyButtonTitle";
             RibbonSettings.ResourceFileIdentifier = "MyResource";
-            var title = new KeyValuePair<String, String>("Title", "MyButtonTitle");
+            var labelText = new KeyValuePair<Enum, String>(ButtonProperty.LabelText, "MyButtonTitle");
 
             // Act
-            title = RibbonSettings.ApplyResourceLink(title);
+            labelText = RibbonSettings.ApplyResourceLink(labelText);
 
             // Assert
-            Assert.IsNotNull(title);
-            Assert.AreEqual(resourceLink,title.Value);
+            Assert.IsNotNull(labelText);
+            Assert.AreEqual(resourceLink,labelText.Value);
         }
 
         [Test]
@@ -53,14 +53,14 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Arrange
             var resourceLink = "$Resources:MyResource, MyButtonTitle";
             RibbonSettings.ResourceFileIdentifier = "MyResource.resx";
-            var title = new KeyValuePair<String, String>("Title", "MyButtonTitle");
+            var labelText = new KeyValuePair<Enum, String>(ButtonProperty.LabelText, "MyButtonTitle");
 
             // Act
-            title = RibbonSettings.ApplyResourceLink(title);
+            labelText = RibbonSettings.ApplyResourceLink(labelText);
 
             // Assert
-            Assert.IsNotNull(title);
-            Assert.AreEqual(resourceLink, title.Value);
+            Assert.IsNotNull(labelText);
+            Assert.AreEqual(resourceLink, labelText.Value);
         }
 
 
@@ -70,7 +70,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Arrange
             var imageDestination = "/_layouts/SPFluentRibbon/Images/AddItem.png";
             RibbonSettings.ImagesFolder = "/_layouts/SPFluentRibbon/Images/";
-            var imageProperty = new KeyValuePair<String, String>("Image32by32", "AddItem.png");
+            var imageProperty = new KeyValuePair<Enum, String>(ButtonProperty.Image32by32, "AddItem.png");
 
             // Act
             imageProperty = RibbonSettings.ApplyImagesFolder(imageProperty);
@@ -83,7 +83,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void ApplyImagesFolder_Should_Throw_ImageFolderNotSpecified_Exception_If_ImageFolder_IsMissing()
         {
-            var imageProperty = new KeyValuePair<String, String>("Image32by32", "AddItem.png");
+            var imageProperty = new KeyValuePair<Enum, String>(ButtonProperty.Image32by32, "AddItem.png");
             Assert.Throws<ImageFolderNotSpecifiedException>(()=> RibbonSettings.ApplyImagesFolder(imageProperty));
         }
 
@@ -93,7 +93,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Arrange
             var imageDestination = "/_layouts/SPFluentRibbon/Images/AddItem.png";
             RibbonSettings.ImagesFolder = "/_layouts/SPFluentRibbon/Images";
-            var imageProperty = new KeyValuePair<String, String>("Image32by32", "AddItem.png");
+            var imageProperty = new KeyValuePair<Enum, String>(ButtonProperty.Image32by32, "AddItem.png");
 
             // Act
             imageProperty = RibbonSettings.ApplyImagesFolder(imageProperty);

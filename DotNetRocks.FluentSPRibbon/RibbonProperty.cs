@@ -22,7 +22,9 @@
         TabSwitchCommand,
         ScaleCommand,
         TextDirection,
+        [TextProvider]
         ToolTipFooterText,
+        [ImageProvider]
         ToolTipFooterImage16by16,
         ToolTipFooterImage16by16Class,
         ToolTipFooterImage16by16Left,
@@ -31,7 +33,9 @@
         ToolTipDisabledCommandImage16by16Class,
         ToolTipDisabledCommandImage16by16Left,
         ToolTipDisabledCommandImage16by16Top,
+        [TextProvider]
         ToolTipDisabledCommandDescription,
+        [TextProvider]
         ToolTipDisabledCommandTitle,
         ToolTipDisabledCommandHelpKey,
         ToolTipHelpCommand,
@@ -44,8 +48,11 @@
         ShortcutKeyJumpToFirstControl_Alt,
         ShortcutKeyJumpToFirstControl_Shift,
         ShortcutKeyJumpToFirstControl_AccessKey,
+        [TextProvider]
         ATContextualTabText,
+        [TextProvider]
         ATTabPositionText,
+        [TextProvider]
         NavigationHelpText
     }
 }

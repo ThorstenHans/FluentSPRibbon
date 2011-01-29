@@ -17,18 +17,21 @@ namespace DotNetRocks.FluentSPRibbon
 
         public String GetProperty(CheckBoxProperty propertyKey)
         {
-            return GetPropertyValue(propertyKey.ToString());
+            return GetPropertyValue(propertyKey);
         }
       
         public CheckBox SetProperty(CheckBoxProperty propertyKey, String value)
         {
-            AddOrUpdateProperty(propertyKey.ToString(),value);
+            AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public CheckBox SetProperties(Dictionary<String,String> properties)
+        public CheckBox SetProperties(Dictionary<CheckBoxProperty,String> properties)
         {
-            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

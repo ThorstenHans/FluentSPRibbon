@@ -12,18 +12,21 @@ namespace DotNetRocks.FluentSPRibbon
  
         public String GetProperty(ComboBoxProperty propertyKey)
         {
-            return GetPropertyValue(propertyKey.ToString());
+            return GetPropertyValue(propertyKey);
         }
 
         public ComboBox SetProperty(ComboBoxProperty propertyKey, String value)
         {
-            AddOrUpdateProperty(propertyKey.ToString(),value);
+            AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public ComboBox SetProperties(Dictionary<String,String> properties)
+        public ComboBox SetProperties(Dictionary<ComboBoxProperty,String> properties)
         {
-            AddOrUpdateProperties(properties.ToDictionary(e=>e.Key.ToString(),e=>e.Value));
+            foreach (var property in properties)
+            {
+                SetProperty(property.Key, property.Value);
+            }
             return this;
         }
     }
