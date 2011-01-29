@@ -4,8 +4,9 @@ using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Menu :RibbonElement
+    public class Menu :RibbonElement, IRibbonElementContainer<Menu,MenuSection>
     {
+        internal readonly IList<MenuSection> _menuSections;
         internal Menu() :this("NotSet")
         {
 
@@ -13,7 +14,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Menu(String id) : base(id)
         {
-
+            _menuSections=new List<MenuSection>();
         }
 
         public String GetProperty(MenuProperty propertyKey)
@@ -21,20 +22,23 @@ namespace DotNetRocks.FluentSPRibbon
             return GetPropertyValue(propertyKey);
         }
 
-        public Menu SetProperty(MenuProperty propertyKey, String value)
+        public Menu SetWidthTo(String value)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(MenuProperty.MaxWidth, value);
             return this;
         }
 
-        public Menu SetProperties(Dictionary<MenuProperty, String> properties)
+        public MenuSection this[string id]
         {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key, property.Value);
-            }
-            return this;
+            get { return _menuSections.FirstOrDefault(ms => ms.OriginalId == id); }
         }
 
+        public Menu With(Func<MenuSection> expression)
+        {
+            var menuSection = expression.Invoke();
+            menuSection.Parent = this;
+            this._menuSections.Add(menuSection);
+            return this;
+        }
     }
 }

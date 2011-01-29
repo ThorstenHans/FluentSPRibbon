@@ -7,8 +7,8 @@ namespace DotNetRocks.FluentSPRibbon
     public class Scaling : RibbonElement, IRibbonElementContainer<Scaling,MaxSize>,IRibbonElementContainer<Scaling,Scale>
     {
 
-        private readonly IList<Scale> _scales;
-        private readonly IList<MaxSize> _maxSizes;
+        internal readonly IList<Scale> _scales;
+        internal readonly IList<MaxSize> _maxSizes;
         internal Scaling() : this("NotSet") { }
 
         internal Scaling(string id) : base(id) 
@@ -18,9 +18,9 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
 
-        MaxSize IRibbonElementContainer<Scaling, MaxSize>.this[string id]
+        public MaxSize GetMaxSize(String id)
         {
-            get { return _maxSizes.FirstOrDefault(ms => ms.Id == id); }
+            return _maxSizes.FirstOrDefault(ms => ms.OriginalId == id); 
         }
 
         public Scaling With(Func<Scale> expression)
@@ -39,9 +39,9 @@ namespace DotNetRocks.FluentSPRibbon
             return this;
         }
 
-        Scale IRibbonElementContainer<Scaling, Scale>.this[string id]
+        public Scale GetScale(String id)
         {
-            get { return _scales.FirstOrDefault(s => s.Id == id); }
+            return _scales.FirstOrDefault(s => s.OriginalId == id); 
         }
     }
 }

@@ -54,12 +54,15 @@
     <Compile Include="DropDownProperty.cs" />
     <Compile Include="FlyoutAnchor.cs" />
     <Compile Include="FlyoutAnchorProperty.cs" />
+    <Compile Include="Gallery.cs" />
     <Compile Include="GalleryButton.cs" />
     <Compile Include="GalleryButtonProperty.cs" />
+    <Compile Include="GalleryProperty.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="GroupProperty.cs" />
     <Compile Include="ImageFolderNotSpecifiedException.cs" />
     <Compile Include="ImageProvider.cs" />
+    <Compile Include="InsertTable.cs" />
     <Compile Include="InteractiveRibbonElement.cs" />
     <Compile Include="IRibbonElement.cs" />
     <Compile Include="IRibbonElementContainer.cs" />
@@ -68,6 +71,8 @@
     <Compile Include="MaxSize.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuProperty.cs" />
+    <Compile Include="MenuSection.cs" />
+    <Compile Include="MenuSectionProperty.cs" />
     <Compile Include="MRUProperty.cs" />
     <Compile Include="MRUSplitButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

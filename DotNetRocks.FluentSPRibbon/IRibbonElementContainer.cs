@@ -2,9 +2,8 @@
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public interface IRibbonElementContainer<TContainer, TChildControls>
+    public interface IRibbonElementContainer<TContainer, TChildControl>
     {
-        TChildControls this[String id] { get; }
-        TContainer With(Func<TChildControls> expression);
+        TContainer With(Func<TChildControl> expression);
     }
 }
