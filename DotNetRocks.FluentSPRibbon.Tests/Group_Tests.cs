@@ -57,9 +57,38 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             sut.ApplyControlsProperty("Name", "Controls");
 
             // Assert
-            Assert.AreEqual(1, sut.ControlsPropertyCount);
+            Assert.AreEqual("Controls", sut.GetControlsProperty("Name"));
         }
 
+        [Test]
+        public void With_Should_Add_InterActiveRibbonElement_And_Set_Parent()
+        {
+            var sut = new Group("MyGroup");
+            var actual = new Button("MyButton");
+            sut.With(() => actual);
+
+            Assert.AreEqual(sut,actual.Parent);
+            Assert.AreEqual(1,sut._interactiveRibbonElements.Count);
+            
+        }
+
+        [Test]
+        public void Indexer_Should_Return_Correct_InterActiveRibbonElement()
+        {
+            var sut = new Group("MyGroup");
+            var button1 = new Button("Button1");
+            var textBox1 = new TextBox("Textbox1");
+            var comboBox1 = new ComboBox("Combobox1");
+
+            sut.With(() => button1)
+                .With(() => textBox1)
+                .With(() => comboBox1);
+
+            Assert.AreEqual(button1,sut["Button1"]);
+            Assert.IsNull(sut["MyGroup.Button1"]);
+            Assert.AreEqual(textBox1, sut["Textbox1"]);
+            Assert.AreEqual(comboBox1, sut["Combobox1"]);
+        }
 
         [Test]
         public void ApplyControlsProperties_Should_Store_Multiple_Properties_On_Controls_PropertyCollection()
@@ -71,7 +100,6 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             sut.ApplyControlsProperties(new Dictionary<string, string>{{"Name","My Controls"},{"Visible","True"}});
 
             // Assert
-            Assert.AreEqual(2,sut.ControlsPropertyCount);
             Assert.AreEqual("My Controls",sut.GetControlsProperty("Name"));
             Assert.AreEqual("True",sut.GetControlsProperty("Visible"));
         }
@@ -85,7 +113,6 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             sut.ApplyControlsProperties(new Dictionary<string, string> { { "Name", "My Controls" }, { "Visible", "True" } });
             sut.ApplyControlsProperties(new Dictionary<string, string> { { "Name", "My new Controls" }});
             //Assert
-            Assert.AreEqual(2, sut.ControlsPropertyCount);
             Assert.AreEqual("My new Controls", sut.GetControlsProperty("Name"));
         }
 

@@ -1,27 +1,25 @@
-﻿namespace DotNetRocks.FluentSPRibbon
+﻿using DotNetRocks.FluentSPRibbon.Attributes;
+
+namespace DotNetRocks.FluentSPRibbon
 {
-    public enum ButtonProperty
+    public enum GalleryButtonProperty
     {
+        [TextProvider]
         Alt,
         Command,
+        CommandPreview,
+        CommandRevert,
         CommandType,
         CommandValueId,
-        [TextProvider]
-        Description,
+        ElementDimensions,
         [ImageProvider]
-        Image32by32,
-        Image32by32Class,
-        Image32by32Left,
-        Image32by32Top,
-        [ImageProvider]
-        Image16by16,
-        Image16by16Class,
-        Image16by16Left,
-        Image16by16Top,
-        LabelCss,
-        [TextProvider]
-        LabelText,
+        Image,
+        ImageClass,
+        ImageLeft,
+        ImageTop,
+        InnerHTML,
         MenuItemId,
+        QueryCommand,
         Sequence,
         TemplateAlias,
         [ImageProvider]

@@ -1,4 +1,6 @@
-﻿namespace DotNetRocks.FluentSPRibbon
+﻿using DotNetRocks.FluentSPRibbon.Attributes;
+
+namespace DotNetRocks.FluentSPRibbon
 {
     public enum RibbonProperty
     {

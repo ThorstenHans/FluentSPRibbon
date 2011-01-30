@@ -6,8 +6,8 @@ namespace DotNetRocks.FluentSPRibbon
 {
     public class Group : InteractiveRibbonElement, IRibbonElementContainer<Group,InteractiveRibbonElement>
     {
-        private readonly IList<InteractiveRibbonElement> _suitableElements;
-        private Dictionary<String, String> _controlsProperties;
+        internal readonly IList<InteractiveRibbonElement> _interactiveRibbonElements;
+        private readonly Dictionary<String, String> _controlsProperties;
 
         internal Group():this("NotSet")
         {
@@ -16,7 +16,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Group(string id) : base(id)
         {
-            this._suitableElements= new List<InteractiveRibbonElement>();
+            this._interactiveRibbonElements= new List<InteractiveRibbonElement>();
             this._controlsProperties = new Dictionary<string, string>();
         }
 
@@ -36,7 +36,7 @@ namespace DotNetRocks.FluentSPRibbon
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }
@@ -61,24 +61,19 @@ namespace DotNetRocks.FluentSPRibbon
 
         public InteractiveRibbonElement this[string id]
         {
-            get { return _suitableElements.FirstOrDefault(t => t.OriginalId == id); }
+            get { return _interactiveRibbonElements.FirstOrDefault(t => t.OriginalId == id); }
         }
 
         public int ChildItemCount
         {
-            get { return _suitableElements.Count; }
-        }
-
-        public int ControlsPropertyCount
-        {
-            get { return this._controlsProperties.Count; }
+            get { return _interactiveRibbonElements.Count; }
         }
 
         public Group With(Func<InteractiveRibbonElement> expression)
         {
             var suitableRibbonElement = expression.Invoke();
             suitableRibbonElement.Parent = this;
-            this._suitableElements.Add(suitableRibbonElement);
+            this._interactiveRibbonElements.Add(suitableRibbonElement);
             return this;
         }
 
@@ -90,7 +85,7 @@ namespace DotNetRocks.FluentSPRibbon
             {
                 writer.WriteAttributeString(controlsProperty.Key,controlsProperty.Value);
             }
-            _suitableElements.ToList().ForEach(se=>
+            _interactiveRibbonElements.ToList().ForEach(se=>
                                                    {
                                                        writer.WriteStartElement(se.XmlElementName);
                                                        se.WriteXml(writer);
