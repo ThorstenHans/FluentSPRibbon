@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button_Tests.cs" />
+    <Compile Include="CheckBox_Tests.cs" />
     <Compile Include="Color_Tests.cs" />
     <Compile Include="Continous_Fluent_API_Tests.cs" />
     <Compile Include="Gallery_Tests.cs" />
