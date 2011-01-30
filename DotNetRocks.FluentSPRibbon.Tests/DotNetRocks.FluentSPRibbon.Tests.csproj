@@ -58,6 +58,7 @@
     <Compile Include="Ribbon_Tab_Tests.cs" />
     <Compile Include="Ribbon_Tests.cs" />
     <Compile Include="Scaling_Tests.cs" />
+    <Compile Include="Tab_Tests.cs" />
     <Compile Include="Xml_Serialization_Tests.cs" />
   </ItemGroup>
   <ItemGroup>

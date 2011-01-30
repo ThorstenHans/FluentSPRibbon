@@ -44,20 +44,6 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual(expected, sut["MyTab1"].Id);
         }
 
-        [Test]
-        public void Group_Id_Should_Be_Concated_By_Ribbon_Tab_And_Group_Id()
-        {
-            // Arrange
-            var ribbon = Create<Ribbon>.Instance("MyRibbon")
-                .With(() => Create<Tab>.Instance("Tab1")
-                                .With(() => Create<Group>.Instance("Grp1").SetProperty(GroupProperty.Title, "Group1"))
-                                .With(() => Create<Group>.Instance("Grp2").SetProperty(GroupProperty.Title, "Group2")));
-
-            // Act
-
-            // Assert
-            Assert.AreEqual("MyRibbon.Tab1.Grp2",ribbon["Tab1"][1].Id);
-            Assert.AreEqual("MyRibbon.Tab1.Grp1", ribbon["Tab1"][0].Id);
-        }
+     
     }
 }

@@ -7,7 +7,7 @@ namespace DotNetRocks.FluentSPRibbon
 {
     public class Ribbon : InteractiveRibbonElement, IRibbonElementContainer<Ribbon,Tab>
     {
-        private readonly IList<Tab> _tabs;
+        internal readonly IList<Tab> _tabs;
       
         public Tab this[string id]
         {

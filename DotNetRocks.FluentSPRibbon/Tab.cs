@@ -7,7 +7,7 @@ namespace DotNetRocks.FluentSPRibbon
 {
     public class Tab : InteractiveRibbonElement, IRibbonElementContainer<Tab,Group>
     {
-        private readonly IList<Group> _groups;
+        internal readonly IList<Group> _groups;
         private Scaling _scaling;
 
         internal Tab():this("NotSet")
@@ -37,16 +37,6 @@ namespace DotNetRocks.FluentSPRibbon
                 SetProperty(property.Key, property.Value);
             }
             return this;
-        }
-
-        public Group this[int index]
-        {
-            get
-            {
-                if (_groups.Count >= index)
-                    return _groups[index];
-                throw new ArgumentOutOfRangeException("Index is out of range");
-            }
         }
 
         public Group this[string id]

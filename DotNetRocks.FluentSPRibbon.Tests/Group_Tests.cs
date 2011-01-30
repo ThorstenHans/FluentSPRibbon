@@ -7,6 +7,47 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     public class Group_Tests
     {
         [Test]
+        public void Create_Should_Create_A_New_Instance()
+        {
+            var sut = Create<Group>.Instance("MyGroup");
+
+            Assert.IsNotNull(sut);
+            Assert.IsInstanceOf<Group>(sut);
+            Assert.AreEqual("MyGroup",sut.Id);
+        }
+
+        [Test]
+        public void IsIdProvider_Should_Be_True()
+        {
+            var sut = new Group("MyGroup");
+            Assert.IsTrue(sut.IsIdProvider);
+        }
+
+        [Test]
+        public void PassedParameter_Is_Stored_In_OriginalId()
+        {
+            var sut = new Group("MyGroup");
+            Assert.AreEqual("MyGroup",sut.OriginalId);
+        }
+
+        [Test]
+        public void Id_Should_Return_Passed_Parameter_If_No_Parent_Is_Present()
+        {
+            var sut = new Group("MyGroup1");
+            Assert.AreEqual("MyGroup1",sut.Id);
+        }
+
+        [Test]
+        public void Id_Should_Be_Composed_If_Parent_Is_Present()
+        {
+            var sut = new Group("Group1");
+            var tab = new Tab("Tab2").With(() => sut);
+            var ribbon = new Ribbon("Ribbon3")
+                .With(()=>tab);
+            
+            Assert.AreEqual("Ribbon3.Tab2.Group1",sut.Id);
+        }
+        [Test]
         public void ApplyControlsProperty_Should_Store_Property_On_Controls_PropertyCollection()
         {
             // Arrange
