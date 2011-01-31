@@ -49,12 +49,15 @@
     <Compile Include="Continous_Fluent_API_Tests.cs" />
     <Compile Include="DropDown_Tests.cs" />
     <Compile Include="FlyoutAnchor_Tests.cs" />
+    <Compile Include="GalleryButton_Tests.cs" />
     <Compile Include="Gallery_Tests.cs" />
     <Compile Include="Group_Tests.cs" />
     <Compile Include="Id_Tests.cs" />
     <Compile Include="Instance_Creation_Tests.cs" />
+    <Compile Include="Label_Tests.cs" />
     <Compile Include="MenuSection_Tests.cs" />
     <Compile Include="Menu_Tests.cs" />
+    <Compile Include="MRUSplitButton_Tests.cs" />
     <Compile Include="RibbonElement_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RibbonSettings_Tests.cs" />
