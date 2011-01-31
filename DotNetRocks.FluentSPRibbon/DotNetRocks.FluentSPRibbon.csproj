@@ -40,6 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="ControlRef.cs" />
+    <Compile Include="GroupTemplate.cs" />
+    <Compile Include="Layout.cs" />
+    <Compile Include="OverflowArea.cs" />
+    <Compile Include="OverflowSection.cs" />
+    <Compile Include="PropertyEnums\OverflowLayoutType.cs" />
+    <Compile Include="PropertyEnums\GroupTemplateProperty.cs" />
     <Compile Include="PropertyEnums\ButtonProperty.cs" />
     <Compile Include="CheckBox.cs" />
     <Compile Include="PropertyEnums\CheckBoxProperty.cs" />
@@ -79,17 +86,24 @@
     <Compile Include="PropertyEnums\MRUProperty.cs" />
     <Compile Include="MRUSplitButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyEnums\SectionLayoutType.cs" />
+    <Compile Include="PropertyEnums\SectionProperty.cs" />
+    <Compile Include="PropertyEnums\VerticalAlignment.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="RibbonElement.cs" />
     <Compile Include="PropertyEnums\RibbonProperty.cs" />
     <Compile Include="RibbonSettings.cs" />
+    <Compile Include="Row.cs" />
     <Compile Include="Scale.cs" />
     <Compile Include="PropertyEnums\ScaleProperty.cs" />
     <Compile Include="Scaling.cs" />
+    <Compile Include="PropertyEnums\OverflowSectionProperty.cs" />
+    <Compile Include="Section.cs" />
     <Compile Include="Spinner.cs" />
     <Compile Include="PropertyEnums\SpinnerProperty.cs" />
     <Compile Include="SplitButton.cs" />
     <Compile Include="PropertyEnums\SplitButtonProperty.cs" />
+    <Compile Include="Strip.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="PropertyEnums\TabProperty.cs" />
     <Compile Include="TemplateActionRequiredEventArgs.cs" />

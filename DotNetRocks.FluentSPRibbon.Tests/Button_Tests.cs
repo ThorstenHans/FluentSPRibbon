@@ -66,6 +66,21 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("MyButton", sut.Id);
         }
 
+        [Test]
+        public void SetDisplayMode_Should_Store_Passed_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new Button();
+
+            // Act
+            sut.SetDisplayMode(DisplayMode.Medium);
+
+            // Assert
+            Assert.AreEqual("Medium",sut._templateProperties["DisplayMode"]);
+        }
+
+       
+
 
 
     }
