@@ -52,25 +52,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new ComboBox("MyComboBox");
-            sut.SetProperty(ComboBoxProperty.ToolTipTitle, "My ComboBox");
+            sut.Set(ComboBoxProperty.ToolTipTitle, "My ComboBox");
 
-            Assert.AreEqual("My ComboBox", sut.GetProperty(ComboBoxProperty.ToolTipTitle));
+            Assert.AreEqual("My ComboBox", sut.Get(ComboBoxProperty.ToolTipTitle));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new ComboBox("MyComboBox");
-            sut.SetProperties(new Dictionary<ComboBoxProperty, string>()
+            sut.Set(new Dictionary<ComboBoxProperty, string>()
                                   {
                                       {ComboBoxProperty.ToolTipTitle, "My ComboBox ToolTip"},
                                       {ComboBoxProperty.Alt, "My ComboBox"}
                                   });
-            Assert.AreEqual("My ComboBox ToolTip", sut.GetProperty(ComboBoxProperty.ToolTipTitle));
-            Assert.AreEqual("My ComboBox", sut.GetProperty(ComboBoxProperty.Alt));
+            Assert.AreEqual("My ComboBox ToolTip", sut.Get(ComboBoxProperty.ToolTipTitle));
+            Assert.AreEqual("My ComboBox", sut.Get(ComboBoxProperty.Alt));
         }
     }
 }

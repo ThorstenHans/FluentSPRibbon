@@ -14,7 +14,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Act
             var tab = Create<Tab>.Instance("MyTab")
                 .With(() => Create<Group>.Instance("Grp1")
-                                .SetProperty(GroupProperty.Description, "Group 1"))
+                                .Set(GroupProperty.Description, "Group 1"))
                 .With(()=>Create<Group>.Instance("Grp2"));
             // Assert
             Assert.AreEqual(2,tab.ChildItemCount);
@@ -37,7 +37,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Act
             var tab = Create<Tab>.Instance("MyTab")
                 .With(() => Create<Group>.Instance("Grp1")
-                                .SetProperty(GroupProperty.Description, "Group 1"))
+                                .Set(GroupProperty.Description, "Group 1"))
                 .With(() => Create<Group>.Instance("Grp2"));
             string actual = tab.ToXml();
             

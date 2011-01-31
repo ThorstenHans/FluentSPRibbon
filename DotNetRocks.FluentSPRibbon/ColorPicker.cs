@@ -15,22 +15,22 @@ namespace DotNetRocks.FluentSPRibbon
             _colors=new List<Color>();
         }
 
-        public String GetProperty(ColorPickerProperty propertyKey)
+        public String Get(ColorPickerProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public ColorPicker SetProperty(ColorPickerProperty propertyKey, String value)
+        public ColorPicker Set(ColorPickerProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public ColorPicker SetProperties(Dictionary<ColorPickerProperty, String> properties)
+        public ColorPicker Set(Dictionary<ColorPickerProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

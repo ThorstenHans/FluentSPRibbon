@@ -27,31 +27,31 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         public void Id_Should_Not_Be_Exported_To_Xml()
         {
             var sut = new Color("MyColor");
-            sut.SetProperty(ColorProperty.Title, "Red");
+            sut.Set(ColorProperty.Title, "Red");
             var actual = sut.ToXml();
             Assert.IsFalse(actual.Contains("Id"));
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new Color("My Color");
-            sut.SetProperty(ColorProperty.Title, "My Color");
+            sut.Set(ColorProperty.Title, "My Color");
 
-            Assert.AreEqual("My Color", sut.GetProperty(ColorProperty.Title));
+            Assert.AreEqual("My Color", sut.Get(ColorProperty.Title));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new Color("MyColor");
-            sut.SetProperties(new Dictionary<ColorProperty, string>()
+            sut.Set(new Dictionary<ColorProperty, string>()
                                   {
                                       {ColorProperty.Title, "My Color"},
                                       {ColorProperty.DisplayColor, "Red"}
                                   });
-            Assert.AreEqual("My Color", sut.GetProperty(ColorProperty.Title));
-            Assert.AreEqual("Red", sut.GetProperty(ColorProperty.DisplayColor));
+            Assert.AreEqual("My Color", sut.Get(ColorProperty.Title));
+            Assert.AreEqual("Red", sut.Get(ColorProperty.DisplayColor));
         }
     }
 }

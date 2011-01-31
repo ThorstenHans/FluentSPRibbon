@@ -9,18 +9,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal MaxSize(string id) : base(id) { }
 
-        public String GetProperty(MaxSizeProperty propertyKey)
+        public String Get(MaxSizeProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public MaxSize SetProperty(MaxSizeProperty propertyKey, String value)
+        public MaxSize Set(MaxSizeProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public MaxSize SetProperties(Dictionary<MaxSizeProperty, String> properties)
+        public MaxSize Set(Dictionary<MaxSizeProperty, String> properties)
         {
             foreach (var property in properties)
             {

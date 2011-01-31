@@ -52,25 +52,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new GalleryButton("MyGalleryButton");
-            sut.SetProperty(GalleryButtonProperty.ToolTipTitle, "My GalleryButton");
+            sut.Set(GalleryButtonProperty.ToolTipTitle, "My GalleryButton");
 
-            Assert.AreEqual("My GalleryButton", sut.GetProperty(GalleryButtonProperty.ToolTipTitle));
+            Assert.AreEqual("My GalleryButton", sut.Get(GalleryButtonProperty.ToolTipTitle));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new GalleryButton("MyGalleryButton");
-            sut.SetProperties(new Dictionary<GalleryButtonProperty, string>()
+            sut.Set(new Dictionary<GalleryButtonProperty, string>()
                                   {
                                       {GalleryButtonProperty.ToolTipTitle, "My GalleryButton ToolTip"},
                                       {GalleryButtonProperty.Alt, "My GalleryButton"}
                                   });
-            Assert.AreEqual("My GalleryButton ToolTip", sut.GetProperty(GalleryButtonProperty.ToolTipTitle));
-            Assert.AreEqual("My GalleryButton", sut.GetProperty(GalleryButtonProperty.Alt));
+            Assert.AreEqual("My GalleryButton ToolTip", sut.Get(GalleryButtonProperty.ToolTipTitle));
+            Assert.AreEqual("My GalleryButton", sut.Get(GalleryButtonProperty.Alt));
         }
     }
 }

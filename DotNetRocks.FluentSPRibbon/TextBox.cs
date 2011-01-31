@@ -14,22 +14,22 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String GetProperty(TextBoxProperty propertyKey)
+        public String Get(TextBoxProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public TextBox SetProperty(TextBoxProperty propertyKey, String value)
+        public TextBox Set(TextBoxProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public TextBox SetProperties(Dictionary<TextBoxProperty, String> properties)
+        public TextBox Set(Dictionary<TextBoxProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

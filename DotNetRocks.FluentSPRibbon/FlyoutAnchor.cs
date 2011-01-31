@@ -10,22 +10,22 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal FlyoutAnchor(String id) : base(id) { }
 
-        public String GetProperty(FlyoutAnchorProperty propertyKey)
+        public String Get(FlyoutAnchorProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public FlyoutAnchor SetProperty(FlyoutAnchorProperty propertyKey, String value)
+        public FlyoutAnchor Set(FlyoutAnchorProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public FlyoutAnchor SetProperties(Dictionary<FlyoutAnchorProperty,String> properties)
+        public FlyoutAnchor Set(Dictionary<FlyoutAnchorProperty,String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

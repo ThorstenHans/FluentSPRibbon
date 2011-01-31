@@ -46,22 +46,22 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_PropertyValue()
+        public void Set_Should_Store_PropertyValue()
         {
             var sut = new Tab("MyRibbonTab");
-            sut.SetProperty(TabProperty.Title, "SuperTab");
-            Assert.AreEqual("SuperTab",sut.GetProperty(TabProperty.Title));
+            sut.Set(TabProperty.Title, "SuperTab");
+            Assert.AreEqual("SuperTab",sut.Get(TabProperty.Title));
         }
 
         [Test]
-        public void SetProperties_Should_Store_PropertyValues()
+        public void Set_Should_Store_PropertyValues()
         {
             var sut = new Tab("MyRibbonTab");
-            sut.SetProperties(new Dictionary<TabProperty, string>()
+            sut.Set(new Dictionary<TabProperty, string>()
                                   {{TabProperty.Title, "SuperTab"}, {TabProperty.Description, "Description"}});
 
-            Assert.AreEqual("SuperTab", sut.GetProperty(TabProperty.Title));
-            Assert.AreEqual("Description",sut.GetProperty(TabProperty.Description));
+            Assert.AreEqual("SuperTab", sut.Get(TabProperty.Title));
+            Assert.AreEqual("Description",sut.Get(TabProperty.Description));
         }
 
         [Test]

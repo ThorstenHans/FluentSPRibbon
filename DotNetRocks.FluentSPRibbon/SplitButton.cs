@@ -16,22 +16,22 @@ namespace DotNetRocks.FluentSPRibbon
             
         }
 
-        public String GetProperty(SplitButtonProperty propertyKey)
+        public String Get(SplitButtonProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public SplitButton SetProperty(SplitButtonProperty propertyKey, String value)
+        public SplitButton Set(SplitButtonProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public SplitButton SetProperties(Dictionary<SplitButtonProperty, String> properties)
+        public SplitButton Set(Dictionary<SplitButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

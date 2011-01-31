@@ -10,22 +10,22 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal ComboBox(String id) : base(id){ }
  
-        public String GetProperty(ComboBoxProperty propertyKey)
+        public String Get(ComboBoxProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public ComboBox SetProperty(ComboBoxProperty propertyKey, String value)
+        public ComboBox Set(ComboBoxProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public ComboBox SetProperties(Dictionary<ComboBoxProperty,String> properties)
+        public ComboBox Set(Dictionary<ComboBoxProperty,String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

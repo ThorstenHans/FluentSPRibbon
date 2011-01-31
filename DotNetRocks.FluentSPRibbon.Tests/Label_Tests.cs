@@ -52,25 +52,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new Label("MyLabel");
-            sut.SetProperty(LabelProperty.LabelText, "My Label");
+            sut.Set(LabelProperty.LabelText, "My Label");
 
-            Assert.AreEqual("My Label", sut.GetProperty(LabelProperty.LabelText));
+            Assert.AreEqual("My Label", sut.Get(LabelProperty.LabelText));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new Label("MyLabel");
-            sut.SetProperties(new Dictionary<LabelProperty, string>()
+            sut.Set(new Dictionary<LabelProperty, string>()
                                   {
                                       {LabelProperty.LabelText, "My Label ToolTip"},
                                       {LabelProperty.TemplateAlias, "My Label"}
                                   });
-            Assert.AreEqual("My Label ToolTip", sut.GetProperty(LabelProperty.LabelText));
-            Assert.AreEqual("My Label", sut.GetProperty(LabelProperty.TemplateAlias));
+            Assert.AreEqual("My Label ToolTip", sut.Get(LabelProperty.LabelText));
+            Assert.AreEqual("My Label", sut.Get(LabelProperty.TemplateAlias));
         }
     }
 }

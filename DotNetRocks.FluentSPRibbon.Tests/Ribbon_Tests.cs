@@ -39,27 +39,27 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new Ribbon("MyRibbon");
 
-            sut.SetProperty(RibbonProperty.NavigationHelpText, "Help");
+            sut.Set(RibbonProperty.NavigationHelpText, "Help");
 
-            Assert.AreEqual("Help", sut.GetProperty(RibbonProperty.NavigationHelpText));
+            Assert.AreEqual("Help", sut.Get(RibbonProperty.NavigationHelpText));
         }
 
         [Test]
-        public void SetProperties_Should_Store_Values()
+        public void Set_Should_Store_Values()
         {
             var sut = new Ribbon("MyRibbon");
-            sut.SetProperties(new Dictionary<RibbonProperty, string>()
+            sut.Set(new Dictionary<RibbonProperty, string>()
                                   {
                                       {RibbonProperty.NavigationHelpText, "Help"},
                                       {RibbonProperty.ToolTipFooterText, "Footer"}
                                   });
 
-            Assert.AreEqual("Help", sut.GetProperty(RibbonProperty.NavigationHelpText));
-            Assert.AreEqual("Footer", sut.GetProperty(RibbonProperty.ToolTipFooterText));
+            Assert.AreEqual("Help", sut.Get(RibbonProperty.NavigationHelpText));
+            Assert.AreEqual("Footer", sut.Get(RibbonProperty.ToolTipFooterText));
         }
 
         [Test]

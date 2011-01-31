@@ -16,18 +16,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal readonly IList<GalleryButton> _galleryButtons;
 
-        public String GetProperty(GalleryProperty propertyKey)
+        public String Get(GalleryProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public Gallery SetProperty(GalleryProperty propertyKey, String value)
+        public Gallery Set(GalleryProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public Gallery SetProperties(Dictionary<GalleryProperty,String> properties)
+        public Gallery Set(Dictionary<GalleryProperty,String> properties)
         {
             foreach (var property in properties)
             {

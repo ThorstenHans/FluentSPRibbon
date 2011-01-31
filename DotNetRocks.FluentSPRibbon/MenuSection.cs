@@ -26,7 +26,7 @@ namespace DotNetRocks.FluentSPRibbon
             _flyoutAnchors = new List<FlyoutAnchor>();
         }
 
-        public String GetProperty(MenuSectionProperty propertyKey)
+        public String Get(MenuSectionProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
@@ -37,13 +37,13 @@ namespace DotNetRocks.FluentSPRibbon
             private set { this._insertTable = value; }
         }
 
-        public MenuSection SetProperty(MenuSectionProperty propertyKey, String value)
+        public MenuSection Set(MenuSectionProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public MenuSection SetProperties(Dictionary<MenuSectionProperty,String> properties)
+        public MenuSection Set(Dictionary<MenuSectionProperty,String> properties)
         {
             foreach (var property in properties)
             {

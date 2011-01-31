@@ -55,25 +55,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new CheckBox("MyCheckBox");
-            sut.SetProperty(CheckBoxProperty.LabelText, "My CheckBox");
+            sut.Set(CheckBoxProperty.LabelText, "My CheckBox");
 
-            Assert.AreEqual("My CheckBox", sut.GetProperty(CheckBoxProperty.LabelText));
+            Assert.AreEqual("My CheckBox", sut.Get(CheckBoxProperty.LabelText));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new CheckBox("MyCheckBox");
-            sut.SetProperties(new Dictionary<CheckBoxProperty, string>()
+            sut.Set(new Dictionary<CheckBoxProperty, string>()
                                   {
                                       {CheckBoxProperty.ToolTipTitle, "My CheckBox ToolTip"},
                                       {CheckBoxProperty.LabelText, "My CheckBox"}
                                   });
-            Assert.AreEqual("My CheckBox ToolTip", sut.GetProperty(CheckBoxProperty.ToolTipTitle));
-            Assert.AreEqual("My CheckBox", sut.GetProperty(CheckBoxProperty.LabelText));
+            Assert.AreEqual("My CheckBox ToolTip", sut.Get(CheckBoxProperty.ToolTipTitle));
+            Assert.AreEqual("My CheckBox", sut.Get(CheckBoxProperty.LabelText));
         }
     }
 }

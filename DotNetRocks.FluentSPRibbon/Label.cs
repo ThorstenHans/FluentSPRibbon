@@ -15,22 +15,22 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String GetProperty(LabelProperty propertyKey)
+        public String Get(LabelProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
   
-        public Label SetProperty(LabelProperty propertyKey, String value)
+        public Label Set(LabelProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public Label SetProperties(Dictionary<LabelProperty, String> properties)
+        public Label Set(Dictionary<LabelProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

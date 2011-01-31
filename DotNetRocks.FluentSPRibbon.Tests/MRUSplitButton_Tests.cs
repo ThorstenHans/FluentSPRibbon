@@ -52,25 +52,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new MRUSplitButton("MyMRUSplitButton");
-            sut.SetProperty(MRUProperty.ToolTipTitle, "My MRUSplitButton");
+            sut.Set(MRUProperty.ToolTipTitle, "My MRUSplitButton");
 
-            Assert.AreEqual("My DropDown", sut.GetProperty(MRUProperty.ToolTipTitle));
+            Assert.AreEqual("My MRUSplitButton", sut.Get(MRUProperty.ToolTipTitle));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new MRUSplitButton("MyMRUSplitButton");
-            sut.SetProperties(new Dictionary<MRUProperty, string>()
+            sut.Set(new Dictionary<MRUProperty, string>()
                                   {
                                       {MRUProperty.ToolTipTitle, "My MRUSplitButton ToolTip"},
                                       {MRUProperty.Alt, "My MRUSplitButton"}
                                   });
-            Assert.AreEqual("My MRUSplitButton ToolTip", sut.GetProperty(MRUProperty.ToolTipTitle));
-            Assert.AreEqual("My MRUSplitButton", sut.GetProperty(MRUProperty.Alt));
+            Assert.AreEqual("My MRUSplitButton ToolTip", sut.Get(MRUProperty.ToolTipTitle));
+            Assert.AreEqual("My MRUSplitButton", sut.Get(MRUProperty.Alt));
         }
     }
 }

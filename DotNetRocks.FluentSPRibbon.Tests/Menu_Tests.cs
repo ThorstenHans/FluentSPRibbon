@@ -32,7 +32,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = new Menu("MyMenu");
             sut.SetWidthTo("200");
 
-            Assert.AreEqual("200",sut.GetProperty(MenuProperty.MaxWidth));
+            Assert.AreEqual("200",sut.Get(MenuProperty.MaxWidth));
         }
 
     }

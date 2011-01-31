@@ -17,7 +17,7 @@ namespace DotNetRocks.FluentSPRibbon
             _menuSections=new List<MenuSection>();
         }
 
-        public String GetProperty(MenuProperty propertyKey)
+        public String Get(MenuProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }

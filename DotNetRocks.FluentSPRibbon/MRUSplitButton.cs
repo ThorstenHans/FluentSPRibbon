@@ -17,23 +17,23 @@ namespace DotNetRocks.FluentSPRibbon
             
         }
 
-        public String GetProperty(MRUProperty propertyKey)
+        public String Get(MRUProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
     
 
-        public MRUSplitButton SetProperty(MRUProperty propertyKey, String value)
+        public MRUSplitButton Set(MRUProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public MRUSplitButton SetProperties(Dictionary<MRUProperty, String> properties)
+        public MRUSplitButton Set(Dictionary<MRUProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

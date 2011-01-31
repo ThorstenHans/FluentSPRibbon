@@ -9,18 +9,18 @@ namespace DotNetRocks.FluentSPRibbon
 
          internal InsertTable(string id) : base(id) { }
 
-         public String GetProperty(InsertTableProperty propertyKey)
+         public String Get(InsertTableProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-         public InsertTable SetProperty(InsertTableProperty propertyKey, String value)
+         public InsertTable Set(InsertTableProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-         public InsertTable SetProperties(Dictionary<InsertTableProperty, String> properties)
+         public InsertTable Set(Dictionary<InsertTableProperty, String> properties)
         {
             foreach (var property in properties)
             {

@@ -12,22 +12,22 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Button(string id) : base(id) { }
 
-        public Button SetProperty(ButtonProperty key, String value)
+        public Button Set(ButtonProperty key, String value)
         {
             AddOrUpdateProperty(key, value);
             return this;
         }
 
-        internal String GetProperty(ButtonProperty propertyName)
+        internal String Get(ButtonProperty propertyName)
         {
             return GetPropertyValue(propertyName);
         }
 
-        public Button SetProperties(Dictionary<ButtonProperty, String> properties)
+        public Button Set(Dictionary<ButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

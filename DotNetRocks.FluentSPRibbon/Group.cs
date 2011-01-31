@@ -21,18 +21,18 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
    
-        public String GetProperty(GroupProperty propertyKey)
+        public String Get(GroupProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public Group SetProperty(GroupProperty propertyKey, String value)
+        public Group Set(GroupProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public Group SetProperties(Dictionary<GroupProperty, String> properties)
+        public Group Set(Dictionary<GroupProperty, String> properties)
         {
             foreach (var property in properties)
             {

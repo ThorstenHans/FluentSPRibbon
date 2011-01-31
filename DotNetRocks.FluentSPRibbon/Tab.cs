@@ -19,22 +19,22 @@ namespace DotNetRocks.FluentSPRibbon
             _groups = new List<Group>();
         }
 
-        public String GetProperty(TabProperty propertyKey)
+        public String Get(TabProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public Tab SetProperty(TabProperty propertyKey, String value)
+        public Tab Set(TabProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public Tab SetProperties(Dictionary<TabProperty, String> properties)
+        public Tab Set(Dictionary<TabProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

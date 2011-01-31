@@ -24,12 +24,12 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             // Act
             var actual = Create<Button>.Instance("MyRibbon")
-                .SetProperty(ButtonProperty.Description,"Value")
-                .SetProperty(ButtonProperty.LabelText,"Caption");
+                .Set(ButtonProperty.Description,"Value")
+                .Set(ButtonProperty.LabelText,"Caption");
 
             // Assert
-            Assert.AreEqual("Value", actual.GetProperty(ButtonProperty.Description));
-            Assert.AreEqual("Caption",actual.GetProperty(ButtonProperty.LabelText));
+            Assert.AreEqual("Value", actual.Get(ButtonProperty.Description));
+            Assert.AreEqual("Caption",actual.Get(ButtonProperty.LabelText));
         }
 
       

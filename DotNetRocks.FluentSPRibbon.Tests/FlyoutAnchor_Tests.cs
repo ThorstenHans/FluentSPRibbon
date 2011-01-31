@@ -52,25 +52,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new FlyoutAnchor("MyFlyoutAnchor");
-            sut.SetProperty(FlyoutAnchorProperty.ToolTipTitle, "My FlyoutAnchor");
+            sut.Set(FlyoutAnchorProperty.ToolTipTitle, "My FlyoutAnchor");
 
-            Assert.AreEqual("My FlyoutAnchor", sut.GetProperty(FlyoutAnchorProperty.ToolTipTitle));
+            Assert.AreEqual("My FlyoutAnchor", sut.Get(FlyoutAnchorProperty.ToolTipTitle));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new FlyoutAnchor("MyFlyoutAnchor");
-            sut.SetProperties(new Dictionary<FlyoutAnchorProperty, string>()
+            sut.Set(new Dictionary<FlyoutAnchorProperty, string>()
                                   {
                                       {FlyoutAnchorProperty.ToolTipTitle, "My FlyoutAnchor ToolTip"},
                                       {FlyoutAnchorProperty.Alt, "My FlyoutAnchor"}
                                   });
-            Assert.AreEqual("My FlyoutAnchor ToolTip", sut.GetProperty(FlyoutAnchorProperty.ToolTipTitle));
-            Assert.AreEqual("My FlyoutAnchor", sut.GetProperty(FlyoutAnchorProperty.Alt));
+            Assert.AreEqual("My FlyoutAnchor ToolTip", sut.Get(FlyoutAnchorProperty.ToolTipTitle));
+            Assert.AreEqual("My FlyoutAnchor", sut.Get(FlyoutAnchorProperty.Alt));
         }
     }
 }

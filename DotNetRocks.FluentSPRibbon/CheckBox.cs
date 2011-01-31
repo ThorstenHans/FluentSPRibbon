@@ -15,22 +15,22 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String GetProperty(CheckBoxProperty propertyKey)
+        public String Get(CheckBoxProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
       
-        public CheckBox SetProperty(CheckBoxProperty propertyKey, String value)
+        public CheckBox Set(CheckBoxProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public CheckBox SetProperties(Dictionary<CheckBoxProperty,String> properties)
+        public CheckBox Set(Dictionary<CheckBoxProperty,String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

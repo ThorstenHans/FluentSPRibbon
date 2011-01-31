@@ -9,18 +9,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Scale(String id) : base(id) { }
 
-        public String GetProperty(ScaleProperty propertyKey)
+        public String Get(ScaleProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public Scale SetProperty(ScaleProperty propertyKey, String value)
+        public Scale Set(ScaleProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);
             return this;
         }
 
-        public Scale SetProperties(Dictionary<ScaleProperty, String> properties)
+        public Scale Set(Dictionary<ScaleProperty, String> properties)
         {
             foreach (var property in properties)
             {

@@ -10,22 +10,22 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal GalleryButton(string id) : base(id) { }
 
-        public String GetProperty(GalleryButtonProperty propertyKey)
+        public String Get(GalleryButtonProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
         }
 
-        public GalleryButton SetProperty(GalleryButtonProperty propertyKey, String value)
+        public GalleryButton Set(GalleryButtonProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public GalleryButton SetProperties(Dictionary<GalleryButtonProperty, String> properties)
+        public GalleryButton Set(Dictionary<GalleryButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

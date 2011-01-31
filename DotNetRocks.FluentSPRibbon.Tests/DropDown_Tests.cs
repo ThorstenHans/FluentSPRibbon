@@ -52,25 +52,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetProperty_Should_Store_Value()
+        public void Set_Should_Store_Value()
         {
             var sut = new DropDown("MyDropDown");
-            sut.SetProperty(DropDownProperty.ToolTipTitle, "My DropDown");
+            sut.Set(DropDownProperty.ToolTipTitle, "My DropDown");
 
-            Assert.AreEqual("My DropDown", sut.GetProperty(DropDownProperty.ToolTipTitle));
+            Assert.AreEqual("My DropDown", sut.Get(DropDownProperty.ToolTipTitle));
         }
 
         [Test]
-        public void SetProperties_Should_Store_MultipleValues()
+        public void Set_Should_Store_MultipleValues()
         {
             var sut = new DropDown("MyDropDown");
-            sut.SetProperties(new Dictionary<DropDownProperty, string>()
+            sut.Set(new Dictionary<DropDownProperty, string>()
                                   {
                                       {DropDownProperty.ToolTipTitle, "My DropDown ToolTip"},
                                       {DropDownProperty.Alt, "My DropDown"}
                                   });
-            Assert.AreEqual("My DropDown ToolTip", sut.GetProperty(DropDownProperty.ToolTipTitle));
-            Assert.AreEqual("My DropDown", sut.GetProperty(DropDownProperty.Alt));
+            Assert.AreEqual("My DropDown ToolTip", sut.Get(DropDownProperty.ToolTipTitle));
+            Assert.AreEqual("My DropDown", sut.Get(DropDownProperty.Alt));
         }
     }
 }
