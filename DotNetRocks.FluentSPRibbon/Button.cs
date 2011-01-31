@@ -18,6 +18,12 @@ namespace DotNetRocks.FluentSPRibbon
             return this;
         }
 
+        public Button SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         internal String Get(ButtonProperty propertyName)
         {
             return GetPropertyValue(propertyName);

@@ -51,6 +51,7 @@
     <Compile Include="PropertyEnums\ComboBoxProperty.cs" />
     <Compile Include="Create.cs" />
     <Compile Include="DropDown.cs" />
+    <Compile Include="PropertyEnums\DisplayMode.cs" />
     <Compile Include="PropertyEnums\DropDownProperty.cs" />
     <Compile Include="FlyoutAnchor.cs" />
     <Compile Include="PropertyEnums\FlyoutAnchorProperty.cs" />

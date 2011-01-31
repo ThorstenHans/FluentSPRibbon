@@ -19,6 +19,12 @@ namespace DotNetRocks.FluentSPRibbon
             return GetPropertyValue(propertyKey);
         }
 
+        public TextBox SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         public TextBox Set(TextBoxProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);

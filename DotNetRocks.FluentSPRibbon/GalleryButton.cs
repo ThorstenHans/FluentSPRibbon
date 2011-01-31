@@ -15,6 +15,12 @@ namespace DotNetRocks.FluentSPRibbon
             return GetPropertyValue(propertyKey);
         }
 
+        public GalleryButton SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         public GalleryButton Set(GalleryButtonProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);

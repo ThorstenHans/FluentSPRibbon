@@ -32,7 +32,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                                     .Set(GroupProperty.Sequence, "20")
                                                     .Set(GroupProperty.Description,
                                                                    "Master your Workflows by using Ribbon Elements")
-                                                                   .With(()=>Create<Button>.Instance("Button2").Set(ButtonProperty.LabelText,"OrClickMe!")))
+                                                                   .With(()=>Create<Button>.Instance("Button2")
+                                                                       .Set(ButtonProperty.TemplateAlias,"1")
+                                                                       .SetDisplayMode(DisplayMode.Large)))
                                     .With(() => Create<Group>.Instance("ViewSettingsGroup")
                                                     .Set(GroupProperty.Title, "Customize your view")
                                                     .Set(GroupProperty.Sequence, "30")
@@ -44,6 +46,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                     .Set(TabProperty.Description, ".NET Rocks Fluent SPRibbon API"));
 
             actual = ribbon.ToXml();
+            
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(actual);
             // Assert

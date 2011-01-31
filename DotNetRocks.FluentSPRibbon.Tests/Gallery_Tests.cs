@@ -1,10 +1,39 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace DotNetRocks.FluentSPRibbon.Tests
 {
     [TestFixture]
     public class Gallery_Tests
     {
+
+        [Test]
+        public void IsIdProvider_Should_Be_True()
+        {
+            // Arrange
+            var sut = new Gallery("Sample");
+            // Assert
+            Assert.IsTrue(sut.IsIdProvider);
+        }
+
+        [Test]
+        public void PassedParameter_Should_Be_Stored_In_OriginalId()
+        {
+            // Arrange
+            var sut = new Gallery("Gallery1");
+            // Assert
+            Assert.AreEqual("Gallery1",sut.OriginalId);
+        }
+
+        [Test]
+        public void If_Default_Constructor_Is_Called_DefaultValue_Should_Be_Stored_In_OriginalId()
+        {
+            // Arrange
+            var sut = new Gallery();
+            // Assert
+            Assert.AreEqual("NotSet", sut.OriginalId);
+        }
+
         [Test]
         public void Indexer_Should_Return_GalleryButton()
         {
@@ -26,6 +55,27 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual(actual.Parent,sut);
         }
 
+        [Test]
+        public void Set_Should_Store_Value()
+        {
+            var sut = new Gallery("MyGallery");
+            sut.Set(GalleryProperty.Command, "My Gallery");
+
+            Assert.AreEqual("My Gallery", sut.Get(GalleryProperty.Command));
+        }
+
+        [Test]
+        public void Set_Should_Store_MultipleValues()
+        {
+            var sut = new Gallery("MyGallery");
+            sut.Set(new Dictionary<GalleryProperty, string>()
+                                  {
+                                      {GalleryProperty.QueryCommand, "My Gallery!"},
+                                      {GalleryProperty.Command, "My Gallery"}
+                                  });
+            Assert.AreEqual("My Gallery!", sut.Get(GalleryProperty.QueryCommand));
+            Assert.AreEqual("My Gallery", sut.Get(GalleryProperty.Command));
+        }
 
     }
 }

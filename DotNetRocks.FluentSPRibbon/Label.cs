@@ -19,6 +19,12 @@ namespace DotNetRocks.FluentSPRibbon
         {
             return GetPropertyValue(propertyKey);
         }
+
+        public Label SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
   
         public Label Set(LabelProperty propertyKey, String value)
         {

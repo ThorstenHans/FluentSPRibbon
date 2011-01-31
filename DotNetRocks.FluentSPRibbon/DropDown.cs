@@ -15,6 +15,12 @@ namespace DotNetRocks.FluentSPRibbon
             return GetPropertyValue(propertyKey);
         }
 
+        public DropDown SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         public DropDown Set(DropDownProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);

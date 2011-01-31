@@ -15,6 +15,12 @@ namespace DotNetRocks.FluentSPRibbon
             return GetPropertyValue(propertyKey);
         }
 
+        public FlyoutAnchor SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         public FlyoutAnchor Set(FlyoutAnchorProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey,value);

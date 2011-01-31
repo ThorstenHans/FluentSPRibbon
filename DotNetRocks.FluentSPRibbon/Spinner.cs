@@ -20,6 +20,13 @@ namespace DotNetRocks.FluentSPRibbon
         {
             return GetPropertyValue(propertyKey);
         }
+
+        public Spinner SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         public Spinner Set(SpinnerProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);

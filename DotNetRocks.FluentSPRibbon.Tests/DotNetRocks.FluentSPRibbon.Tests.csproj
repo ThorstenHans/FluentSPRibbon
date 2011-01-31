@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Button_Tests.cs" />
     <Compile Include="CheckBox_Tests.cs" />
+    <Compile Include="ColorPicker_Tests.cs" />
     <Compile Include="Color_Tests.cs" />
     <Compile Include="ComboBox_Tests.cs" />
     <Compile Include="Continous_Fluent_API_Tests.cs" />
@@ -53,9 +54,12 @@
     <Compile Include="Gallery_Tests.cs" />
     <Compile Include="Group_Tests.cs" />
     <Compile Include="Id_Tests.cs" />
+    <Compile Include="ImageFolderNotSpecifiedException_Tests.cs" />
     <Compile Include="InsertTable_Tests.cs" />
     <Compile Include="Instance_Creation_Tests.cs" />
+    <Compile Include="InteractiveRibbonElement_Tests.cs" />
     <Compile Include="Label_Tests.cs" />
+    <Compile Include="MaxSize_Tests.cs" />
     <Compile Include="MenuSection_Tests.cs" />
     <Compile Include="Menu_Tests.cs" />
     <Compile Include="MRUSplitButton_Tests.cs" />
@@ -65,6 +69,7 @@
     <Compile Include="Ribbon_Representation_Tests.cs" />
     <Compile Include="Ribbon_Tab_Tests.cs" />
     <Compile Include="Ribbon_Tests.cs" />
+    <Compile Include="Scale_Tests.cs" />
     <Compile Include="Scaling_Tests.cs" />
     <Compile Include="Spinner_Tests.cs" />
     <Compile Include="SplitButton_Tests.cs" />

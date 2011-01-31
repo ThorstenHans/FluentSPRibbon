@@ -7,7 +7,7 @@ namespace DotNetRocks.FluentSPRibbon
     public class ColorPicker 
         : InteractiveRibbonElement, IRibbonElementContainer<ColorPicker,Color>
     {
-        private readonly IList<Color> _colors;
+        internal readonly IList<Color> _colors;
         internal ColorPicker():this("NotSet") { }
 
         internal ColorPicker(String id) : base(id)
@@ -18,6 +18,11 @@ namespace DotNetRocks.FluentSPRibbon
         public String Get(ColorPickerProperty propertyKey)
         {
             return GetPropertyValue(propertyKey);
+        }
+        public ColorPicker SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
         }
 
         public ColorPicker Set(ColorPickerProperty propertyKey, String value)

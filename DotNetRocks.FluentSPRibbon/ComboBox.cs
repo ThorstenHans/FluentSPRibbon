@@ -16,6 +16,11 @@ namespace DotNetRocks.FluentSPRibbon
         {
             return GetPropertyValue(propertyKey);
         }
+        public ComboBox SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
 
         public ComboBox Set(ComboBoxProperty propertyKey, String value)
         {

@@ -17,6 +17,12 @@ namespace DotNetRocks.FluentSPRibbon
             return GetPropertyValue(propertyKey);
         }
 
+        public ToggleButton SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         public ToggleButton Set(ToggleButtonProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);

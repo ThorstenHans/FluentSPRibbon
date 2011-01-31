@@ -21,7 +21,12 @@ namespace DotNetRocks.FluentSPRibbon
         {
             return GetPropertyValue(propertyKey);
         }
-    
+
+        public MRUSplitButton SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
 
         public MRUSplitButton Set(MRUProperty propertyKey, String value)
         {

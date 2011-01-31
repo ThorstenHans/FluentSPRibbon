@@ -19,6 +19,12 @@ namespace DotNetRocks.FluentSPRibbon
         {
             return GetPropertyValue(propertyKey);
         }
+
+        public CheckBox SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
       
         public CheckBox Set(CheckBoxProperty propertyKey, String value)
         {

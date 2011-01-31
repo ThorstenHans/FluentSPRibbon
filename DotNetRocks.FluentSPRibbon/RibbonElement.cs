@@ -90,8 +90,8 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
         public void ReadXml(XmlReader reader)
-        {
-            return;
+        { 
+
         }
 
         public void WriteXml(XmlWriter writer)

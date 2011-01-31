@@ -21,6 +21,12 @@ namespace DotNetRocks.FluentSPRibbon
             return GetPropertyValue(propertyKey);
         }
 
+        public SplitButton SetDisplayMode(DisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
         public SplitButton Set(SplitButtonProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
