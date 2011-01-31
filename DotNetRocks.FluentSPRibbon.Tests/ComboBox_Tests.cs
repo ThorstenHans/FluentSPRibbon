@@ -72,5 +72,19 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My ComboBox ToolTip", sut.Get(ComboBoxProperty.ToolTipTitle));
             Assert.AreEqual("My ComboBox", sut.Get(ComboBoxProperty.Alt));
         }
+
+        [Test]
+        public void It_Should_Be_Possible_To_Set_Menu_On_ComboBox()
+        {
+            // Arrange
+            var sut = new ComboBox("MyComboBox");
+            var menu = new Menu("MyMenu");
+            sut.With(() => menu);
+
+            // Assert
+            Assert.IsNotNull(sut.Menu);
+            Assert.AreEqual(menu,sut.Menu);
+            Assert.AreEqual(sut,menu.Parent);
+        }
     }
 }

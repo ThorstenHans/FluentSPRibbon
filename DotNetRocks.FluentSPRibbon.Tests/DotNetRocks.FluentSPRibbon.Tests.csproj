@@ -53,6 +53,7 @@
     <Compile Include="Gallery_Tests.cs" />
     <Compile Include="Group_Tests.cs" />
     <Compile Include="Id_Tests.cs" />
+    <Compile Include="InsertTable_Tests.cs" />
     <Compile Include="Instance_Creation_Tests.cs" />
     <Compile Include="Label_Tests.cs" />
     <Compile Include="MenuSection_Tests.cs" />

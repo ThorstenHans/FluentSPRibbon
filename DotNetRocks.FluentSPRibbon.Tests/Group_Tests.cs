@@ -126,5 +126,44 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Assert
             Assert.AreEqual("Controls", sut.GetControlsProperty("Name"));
         }
+
+        [Test]
+        public void ChildItemCount_Should_Return_Correct_InterActiveRibbonElement_Count()
+        {
+            // Arrange
+            var sut = new Group("MyGroup");
+            var iae1 = new Button("MyButton");
+            var iae2 = new Button("MyButton2");
+            var iae3 = new TextBox("TextBox1");
+
+            // Act
+            sut.With(() => iae1).With(() => iae2).With(() => iae3);
+
+            // Assert
+
+            Assert.AreEqual(3,sut.ChildItemCount);
+        }
+
+        [Test]
+        public void Set_Should_Store_Value()
+        {
+            var sut = new Group("MyGroup");
+            sut.Set(GroupProperty.Title, "My Group");
+
+            Assert.AreEqual("My Group", sut.Get(GroupProperty.Title));
+        }
+
+        [Test]
+        public void Set_Should_Store_MultipleValues()
+        {
+            var sut = new Group("MyGroup");
+            sut.Set(new Dictionary<GroupProperty, string>()
+                                  {
+                                      {GroupProperty.Description, "My Group Description"},
+                                      {GroupProperty.Title, "My Group"}
+                                  });
+            Assert.AreEqual("My Group Description", sut.Get(GroupProperty.Description));
+            Assert.AreEqual("My Group", sut.Get(GroupProperty.Title));
+        }
     }
 }
