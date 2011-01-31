@@ -65,7 +65,11 @@
     <Compile Include="Ribbon_Tab_Tests.cs" />
     <Compile Include="Ribbon_Tests.cs" />
     <Compile Include="Scaling_Tests.cs" />
+    <Compile Include="Spinner_Tests.cs" />
+    <Compile Include="SplitButton_Tests.cs" />
     <Compile Include="Tab_Tests.cs" />
+    <Compile Include="TextBox_Tests.cs" />
+    <Compile Include="ToggleButton_Tests.cs" />
     <Compile Include="Xml_Serialization_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
