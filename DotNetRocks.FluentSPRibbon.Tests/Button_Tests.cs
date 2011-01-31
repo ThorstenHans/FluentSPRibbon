@@ -43,7 +43,28 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = new Button("My Button");
             Assert.IsTrue(sut.IsIdProvider);
         }
- 
+
+
+        [Test]
+        public void Id_Should_Be_Compsited_If_Parent_Is_Present()
+        {
+            var sut = new Button("Button1");
+            var group = new Group("ActionGroup1");
+            var tab = new Tab("CommonTab");
+            var ribbon = new Ribbon("MyRibbon");
+            ribbon.With(() => tab
+                                  .With(() => group
+                                                  .With(() => sut)));
+
+            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.Button1", sut.Id);
+        }
+
+        [Test]
+        public void Id_Should_Not_Be_Composited_If_Parent_Is_Not_Present()
+        {
+            var sut = new Button("MyButton");
+            Assert.AreEqual("MyButton", sut.Id);
+        }
 
 
 

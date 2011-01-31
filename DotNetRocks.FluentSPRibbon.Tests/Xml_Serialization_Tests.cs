@@ -273,7 +273,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                 .With(() => Create<Group>.Instance("Group4711")
                                     .SetProperty(GroupProperty.Title, "Group4711Title")
                                     .With(() => Create<TextBox>.Instance("MyTextBox")
-                                        .SetProperties(new Dictionary<TextBoxProperty, string>()
+                                        .SetProperties(new Dictionary<TextBoxProperty, String>()
                                                            {
                                                                { TextBoxProperty.ShowAsLabel,"TRUE"},
                                                                { TextBoxProperty.Width,"100px"}

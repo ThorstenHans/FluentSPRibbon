@@ -46,5 +46,34 @@ namespace DotNetRocks.FluentSPRibbon.Tests
 
             Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.CheckBox1", sut.Id);
         }
+
+        [Test]
+        public void Id_Should_Not_Be_Composited_If_Parent_Is_Not_Present()
+        {
+            var sut = new CheckBox("MyCheckBox");
+            Assert.AreEqual("MyCheckBox",sut.Id);
+        }
+
+        [Test]
+        public void SetProperty_Should_Store_Value()
+        {
+            var sut = new CheckBox("MyCheckBox");
+            sut.SetProperty(CheckBoxProperty.LabelText, "My CheckBox");
+
+            Assert.AreEqual("My CheckBox", sut.GetProperty(CheckBoxProperty.LabelText));
+        }
+
+        [Test]
+        public void SetProperties_Should_Store_MultipleValues()
+        {
+            var sut = new CheckBox("MyCheckBox");
+            sut.SetProperties(new Dictionary<CheckBoxProperty, string>()
+                                  {
+                                      {CheckBoxProperty.ToolTipTitle, "My CheckBox ToolTip"},
+                                      {CheckBoxProperty.LabelText, "My CheckBox"}
+                                  });
+            Assert.AreEqual("My CheckBox ToolTip", sut.GetProperty(CheckBoxProperty.ToolTipTitle));
+            Assert.AreEqual("My CheckBox", sut.GetProperty(CheckBoxProperty.LabelText));
+        }
     }
 }
