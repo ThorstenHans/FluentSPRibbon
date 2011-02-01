@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My GalleryButton ToolTip", sut.Get(GalleryButtonProperty.ToolTipTitle));
             Assert.AreEqual("My GalleryButton", sut.Get(GalleryButtonProperty.Alt));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new GalleryButton("GalleryButton");
+            var actual = GalleryButtonDisplayMode.Menu;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

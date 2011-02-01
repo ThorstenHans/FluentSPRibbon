@@ -88,5 +88,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("111", sut.Get(ColorPickerProperty.CommandPreview));
             Assert.AreEqual("100", sut.Get(ColorPickerProperty.Sequence));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new ColorPicker("ColorPicker");
+            var actual = ColorPickerDisplayMode.Menu;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

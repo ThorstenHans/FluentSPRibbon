@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My Label ToolTip", sut.Get(LabelProperty.LabelText));
             Assert.AreEqual("My Label", sut.Get(LabelProperty.TemplateAlias));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new Label("Label");
+            var actual = LabelDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

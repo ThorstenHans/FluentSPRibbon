@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My FlyoutAnchor ToolTip", sut.Get(FlyoutAnchorProperty.ToolTipTitle));
             Assert.AreEqual("My FlyoutAnchor", sut.Get(FlyoutAnchorProperty.Alt));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new FlyoutAnchor("FlyoutAnchor");
+            var actual = FlyoutAnchorDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class InsertTable :RibbonElement<InsertTable,InsertTableProperty>
+    public class InsertTable :InteractiveRibbonElement<InsertTable,InsertTableProperty,InsertTableDisplayMode>
     {
          internal InsertTable() : this("NotSet") { }
 
@@ -21,6 +21,12 @@ namespace DotNetRocks.FluentSPRibbon
             {
                 AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public override InsertTable SetDisplayMode(InsertTableDisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
             return this;
         }
     }

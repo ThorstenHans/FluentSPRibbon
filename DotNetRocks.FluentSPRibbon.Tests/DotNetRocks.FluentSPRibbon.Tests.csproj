@@ -77,6 +77,8 @@
     <Compile Include="Tab_Tests.cs" />
     <Compile Include="TextBox_Tests.cs" />
     <Compile Include="ToggleButton_Tests.cs" />
+    <Compile Include="UnitAbbreviation_Tests.cs" />
+    <Compile Include="Unit_Tests.cs" />
     <Compile Include="Xml_Serialization_Tests.cs" />
   </ItemGroup>
   <ItemGroup>

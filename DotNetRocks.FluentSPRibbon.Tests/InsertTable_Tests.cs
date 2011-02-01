@@ -75,5 +75,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My InsertTable Alt", sut.Get(InsertTableProperty.Alt));
             Assert.AreEqual("My InsertTable", sut.Get(InsertTableProperty.MenuSectionTitle));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new InsertTable("InsertTable");
+            var actual = InsertTableDisplayMode.Menu;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

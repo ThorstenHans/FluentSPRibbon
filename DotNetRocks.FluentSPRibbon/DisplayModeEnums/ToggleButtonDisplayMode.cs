@@ -2,6 +2,8 @@
 {
     public enum ToggleButtonDisplayMode
     {
-        
+        Small,
+        Medium,
+        Large
     }
 }

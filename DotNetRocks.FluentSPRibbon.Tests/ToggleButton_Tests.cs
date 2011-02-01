@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My ToggleButton ToolTip", sut.Get(ToggleButtonProperty.ToolTipTitle));
             Assert.AreEqual("My ToggleButton", sut.Get(ToggleButtonProperty.TemplateAlias));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new ToggleButton("ToggleButton");
+            var actual = ToggleButtonDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

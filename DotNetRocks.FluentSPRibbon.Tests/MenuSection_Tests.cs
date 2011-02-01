@@ -163,6 +163,25 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My MenuSection", sut.Get(MenuSectionProperty.Title));
         }
 
+        [Test]
+        public void IsIdProvider_Should_Be_True()
+        {
+            // Arrange
+            var sut = new MenuSection("MyMenuSection");
+            // Assert
+            Assert.IsTrue(sut.IsIdProvider);
+        }
 
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new MenuSection("MenuSection");
+            var actual = MenuSectionDisplayMode.Menu16;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

@@ -1,7 +1,8 @@
 ﻿namespace DotNetRocks.FluentSPRibbon
 {
-    public enum GalleryButtonDisplayMode
+    public enum TextBoxDisplayMode
     {
+        Medium
         
     }
 }

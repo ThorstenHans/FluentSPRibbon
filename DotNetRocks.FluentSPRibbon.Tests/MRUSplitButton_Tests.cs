@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My MRUSplitButton ToolTip", sut.Get(MRUProperty.ToolTipTitle));
             Assert.AreEqual("My MRUSplitButton", sut.Get(MRUProperty.Alt));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new MRUSplitButton("MRUSplitButton");
+            var actual = MRUDisplayMode.Large;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

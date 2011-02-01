@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My Spinner ToolTip", sut.Get(SpinnerProperty.ToolTipTitle));
             Assert.AreEqual("My Spinner", sut.Get(SpinnerProperty.TemplateAlias));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new Spinner("Spinner");
+            var actual = SpinnerDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

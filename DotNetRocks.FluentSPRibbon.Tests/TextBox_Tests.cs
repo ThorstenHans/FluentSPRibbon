@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My TextBox ToolTip", sut.Get(TextBoxProperty.ToolTipTitle));
             Assert.AreEqual("My TextBox", sut.Get(TextBoxProperty.TemplateAlias));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new TextBox("TextBox");
+            var actual = TextBoxDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

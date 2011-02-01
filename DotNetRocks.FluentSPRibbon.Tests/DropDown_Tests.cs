@@ -72,5 +72,18 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My DropDown ToolTip", sut.Get(DropDownProperty.ToolTipTitle));
             Assert.AreEqual("My DropDown", sut.Get(DropDownProperty.Alt));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new DropDown("MyDropDown");
+            var actual = DropDownDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(),sut.GetDisplayMode());
+
+        }
     }
 }

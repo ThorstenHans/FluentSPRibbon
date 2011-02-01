@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Spinner : InteractiveRibbonElement<Spinner,SpinnerProperty,SpinnerDisplayMode>
+    public class Spinner : InteractiveRibbonElement<Spinner,SpinnerProperty,SpinnerDisplayMode>,
+        IRibbonElementContainer<Spinner,Unit>
     {
+        internal readonly IList<Unit> _units;
         internal Spinner() : this("NotSet")
         {
 
@@ -12,7 +14,7 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Spinner(String id) : base(id)
         {
-
+            this._units=new List<Unit>();
         }
 
         public override Spinner SetDisplayMode(SpinnerDisplayMode displayMode)
@@ -33,6 +35,14 @@ namespace DotNetRocks.FluentSPRibbon
             {
                 AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public Spinner With(Func<Unit> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._units.Add(child);
             return this;
         }
     }

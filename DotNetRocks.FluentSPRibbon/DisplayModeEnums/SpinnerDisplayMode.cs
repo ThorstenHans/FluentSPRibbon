@@ -1,7 +1,7 @@
 ﻿namespace DotNetRocks.FluentSPRibbon
 {
-    public enum SplitButtonDisplayMode
+    public enum SpinnerDisplayMode
     {
-        
+        Medium
     }
 }

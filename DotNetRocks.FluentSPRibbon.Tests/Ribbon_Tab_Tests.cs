@@ -32,6 +32,15 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
+        public void IsIdProvider_Should_Be_True()
+        {
+            // Arrange
+            var sut = new Tab("MyTab");
+            // Assert
+            Assert.IsTrue(sut.IsIdProvider);
+        }
+
+        [Test]
         public void A_Single_Tab_Should_Be_Exported_To_WellFormed_Xml()
         {
             // Act

@@ -86,5 +86,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual(menu,sut.Menu);
             Assert.AreEqual(sut,menu.Parent);
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new ComboBox("ComboBox");
+            var actual = ComboBoxDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

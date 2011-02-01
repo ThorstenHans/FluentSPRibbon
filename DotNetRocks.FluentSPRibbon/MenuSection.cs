@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class MenuSection : RibbonElement<MenuSection,MenuSectionProperty>, 
+    public class MenuSection : InteractiveRibbonElement<MenuSection,MenuSectionProperty,MenuSectionDisplayMode>, 
         IRibbonElementContainer<MenuSection,ToggleButton>,
         IRibbonElementContainer<MenuSection, Button>,
         IRibbonElementContainer<MenuSection, ColorPicker>,
@@ -140,6 +140,12 @@ namespace DotNetRocks.FluentSPRibbon
             writer.WriteStartElement(child.XmlElementName);
             child.WriteXml(writer);
             writer.WriteEndElement();
+        }
+
+        public override MenuSection SetDisplayMode(MenuSectionDisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
         }
     }
 }

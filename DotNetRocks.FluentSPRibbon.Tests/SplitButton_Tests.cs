@@ -72,5 +72,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My SplitButton ToolTip", sut.Get(SplitButtonProperty.LabelText));
             Assert.AreEqual("My SplitButton", sut.Get(SplitButtonProperty.TemplateAlias));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new SplitButton("SplitButton");
+            var actual = SplitButtonDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

@@ -3,10 +3,6 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public enum TextBoxDisplayMode
-    {
-        
-    }
     public class TextBox : InteractiveRibbonElement<TextBox,TextBoxProperty, TextBoxDisplayMode>
     {
         internal TextBox() : this("NotSet")

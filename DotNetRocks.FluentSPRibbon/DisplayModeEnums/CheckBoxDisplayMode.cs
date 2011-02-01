@@ -2,6 +2,7 @@
 {
     public enum CheckBoxDisplayMode
     {
-    
+        Small,
+        Medium
     }
 }

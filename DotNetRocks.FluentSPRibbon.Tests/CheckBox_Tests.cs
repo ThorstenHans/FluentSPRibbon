@@ -75,5 +75,17 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("My CheckBox ToolTip", sut.Get(CheckBoxProperty.ToolTipTitle));
             Assert.AreEqual("My CheckBox", sut.Get(CheckBoxProperty.LabelText));
         }
+
+        [Test]
+        public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
+        {
+            // Arrange
+            var sut = new CheckBox("CheckBox");
+            var actual = CheckBoxDisplayMode.Medium;
+            // Act
+            sut.SetDisplayMode(actual);
+            // Assert
+            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+        }
     }
 }

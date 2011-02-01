@@ -64,5 +64,14 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual(actual, sut.GetMaxSize("MyMaxSize"));
             Assert.AreEqual(sut, actual.Parent);
         }
+
+        [Test]
+        public void IsIdProvider_Should_Be_True()
+        {
+            // Arrange
+            var sut = new Scaling("MyScaling");
+            // Assert
+            Assert.IsTrue(sut.IsIdProvider);
+        }
     }
 }

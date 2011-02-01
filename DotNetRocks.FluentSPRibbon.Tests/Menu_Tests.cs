@@ -27,13 +27,23 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
-        public void SetWidthTo_Should_Add_Property_To_Current_Instance()
+        public void Set_Should_Add_Property_To_Current_Instance()
         {
             var sut = new Menu("MyMenu");
             sut.Set(MenuProperty.MaxWidth,"200");
 
             Assert.AreEqual("200",sut.Get(MenuProperty.MaxWidth));
         }
+
+        [Test]
+        public void IsIdProvider_Should_Be_True()
+        {
+            // Arrange
+            var sut = new Menu("MyMenu");
+            // Assert
+            Assert.IsTrue(sut.IsIdProvider);
+        }
+
 
     }
 }

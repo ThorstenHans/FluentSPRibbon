@@ -1,7 +1,7 @@
 ﻿namespace DotNetRocks.FluentSPRibbon
 {
-    public enum SpinnerDisplayMode
+    public enum DropDownDisplayMode
     {
-        
+        Medium
     }
 }

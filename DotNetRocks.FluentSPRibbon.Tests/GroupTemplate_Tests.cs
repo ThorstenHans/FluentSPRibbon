@@ -15,5 +15,14 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.IsInstanceOf<GroupTemplate>(sut);
             Assert.AreEqual("MyGroupTemplate",sut.Id);
         }
+
+        [Test]
+        public void IsIdProvider_Should_Be_True()
+        {
+            // Arrange
+            var sut = new GroupTemplate("MyGroupTemplate");
+            // Assert
+            Assert.IsTrue(sut.IsIdProvider);
+        }
     }
 }

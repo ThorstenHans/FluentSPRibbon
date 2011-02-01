@@ -31,6 +31,5 @@ namespace DotNetRocks.FluentSPRibbon
             }
             return this;
         }
-
     }
 }

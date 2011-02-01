@@ -2,6 +2,7 @@
 {
     public enum LabelDisplayMode
     {
-        
+        Small,
+        Medium
     }
 }

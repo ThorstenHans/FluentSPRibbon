@@ -1,7 +1,7 @@
 ﻿namespace DotNetRocks.FluentSPRibbon
 {
-    public enum ColorPickerDisplayMode
+    public enum InsertTableDisplayMode
     {
-        
+        Menu
     }
 }
