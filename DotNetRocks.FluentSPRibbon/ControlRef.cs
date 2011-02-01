@@ -5,7 +5,9 @@ namespace DotNetRocks.FluentSPRibbon
 {
     public class ControlRef : TemplateElement<ControlRef,ControlRefProperty,ControlRefDisplayMode>
     {
-        internal ControlRef()  { }
+        internal ControlRef() :base("NotSet")  { }
+
+        internal ControlRef(String id) :base(id) { }
 
         public override ControlRef Set(ControlRefProperty propertyName, string propertyValue)
         {

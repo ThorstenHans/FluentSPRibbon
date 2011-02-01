@@ -17,6 +17,11 @@ namespace DotNetRocks.FluentSPRibbon
             this._overflowSections = new List<OverflowSection>();
         }
 
+        internal override bool IsIdProvider
+        {
+            get { return false; }
+        }
+
         public Layout With(Func<Section> expression)
         {
             var section = expression.Invoke();

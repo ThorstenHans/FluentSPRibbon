@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace DotNetRocks.FluentSPRibbon.Tests
 {
@@ -32,6 +33,28 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = new UnitAbbreviation("MyUnitAbbreviation");
             // Assert
             Assert.IsFalse(sut.IsIdProvider);
+        }
+
+        [Test]
+        public void Set_Should_Store_Value()
+        {
+            var sut = new UnitAbbreviation("MyTextBox");
+            sut.Set(UnitAbbreviationProperty.Value, "My TextBox");
+
+            Assert.AreEqual("My TextBox", sut.Get(UnitAbbreviationProperty.Value));
+        }
+
+        [Test]
+        public void Set_Should_Store_MultipleValues()
+        {
+            var sut = new UnitAbbreviation("UnitAbbreviation");
+            sut.Set(new Dictionary<UnitAbbreviationProperty, string>()
+                                  {
+                                      {UnitAbbreviationProperty.Value, "My UnitAbbreviation Value"},
+                                      {UnitAbbreviationProperty.Sequence, "100"}
+                                  });
+            Assert.AreEqual("My UnitAbbreviation Value", sut.Get(UnitAbbreviationProperty.Value));
+            Assert.AreEqual("100", sut.Get(UnitAbbreviationProperty.Sequence));
         }
         
     }

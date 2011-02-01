@@ -5,7 +5,9 @@ namespace DotNetRocks.FluentSPRibbon
 {
     public class OverflowSection : TemplateElement<OverflowSection,OverflowSectionProperty, OverflowSectionDisplayMode>
     {
-        internal OverflowSection() { }
+        internal OverflowSection() :this("NotSet") { }
+
+        internal OverflowSection(String id) :base(id){ }
 
         public override OverflowSection Set(OverflowSectionProperty propertyName, string propertyValue)
         {

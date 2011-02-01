@@ -25,6 +25,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual(expected,sut.OriginalId);
         }
 
+        [Test]
         public void Set_Should_Store_Value()
         {
             var sut = new GroupTemplate("MyGroupTemplate");
