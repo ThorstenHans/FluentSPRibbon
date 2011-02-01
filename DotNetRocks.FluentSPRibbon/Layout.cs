@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Layout : RibbonElement, IRibbonElementContainer<Layout, Section>, IRibbonElementContainer<Layout, OverflowSection>
+    public class Layout : RibbonElement<Layout,LayoutProperty>, IRibbonElementContainer<Layout, Section>, IRibbonElementContainer<Layout, OverflowSection>
     {
         internal readonly IList<Section> _sections;
         internal readonly IList<OverflowSection> _overflowSections;
@@ -28,8 +28,22 @@ namespace DotNetRocks.FluentSPRibbon
         public Layout With(Func<OverflowSection> expression)
         {
             var overflowSection = expression.Invoke();
-            overflowSection.Parent = this;
             _overflowSections.Add(overflowSection);
+            return this;
+        }
+
+        public override Layout Set(LayoutProperty propertyName, string propertyValue)
+        {
+            AddOrUpdateProperty(propertyName,propertyValue);
+            return this;
+        }
+
+        public override Layout Set(Dictionary<LayoutProperty, string> properties)
+        {
+            foreach (var property in properties)
+            {
+                AddOrUpdateProperty(property.Key,property.Value);
+            }
             return this;
         }
     }

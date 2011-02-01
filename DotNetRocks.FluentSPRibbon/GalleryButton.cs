@@ -1,33 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class GalleryButton : InteractiveRibbonElement
+    public class GalleryButton : InteractiveRibbonElement<GalleryButton,GalleryButtonProperty,GalleryButtonDisplayMode>
     {
         internal GalleryButton() : this("NotSet") { }
 
         internal GalleryButton(string id) : base(id) { }
 
-        public String Get(GalleryButtonProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public GalleryButton SetDisplayMode(DisplayMode displayMode)
+        
+        public override GalleryButton SetDisplayMode(GalleryButtonDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public GalleryButton Set(GalleryButtonProperty propertyKey, String value)
+        public override GalleryButton Set(GalleryButtonProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public GalleryButton Set(Dictionary<GalleryButtonProperty, String> properties)
+        public override GalleryButton Set(Dictionary<GalleryButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {

@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Ribbon : InteractiveRibbonElement, IRibbonElementContainer<Ribbon,Tab>
+    public class Ribbon : RibbonElement<Ribbon,RibbonProperty>, IRibbonElementContainer<Ribbon,Tab>
     {
         internal readonly IList<Tab> _tabs;
       
@@ -24,18 +24,13 @@ namespace DotNetRocks.FluentSPRibbon
       
         }
 
-        public String Get(RibbonProperty propertyKey)
+        public override Ribbon Set(RibbonProperty propertyName, String propertyValue)
         {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public Ribbon Set(RibbonProperty propertyKey, String value)
-        {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Ribbon Set(Dictionary<RibbonProperty, String> properties)
+        public override Ribbon Set(Dictionary<RibbonProperty, String> properties)
         {
             foreach (var property in properties)
             {
@@ -43,12 +38,7 @@ namespace DotNetRocks.FluentSPRibbon
             }
             return this;
         }
-
-        public int ChildItemCount
-        {
-            get { return _tabs.Count; }
-        }
-
+         
         public Ribbon With(Func<Tab> expression)
         {
             var tab = expression.Invoke();

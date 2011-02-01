@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Xml.Serialization;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class ComboBox : InteractiveRibbonElement, IRibbonElementContainer<ComboBox,Menu>
+    public class ComboBox : InteractiveRibbonElement<ComboBox,ComboBoxProperty,ComboBoxDisplayMode>, 
+        IRibbonElementContainer<ComboBox,Menu>
     {
         private Menu _menu;
 
@@ -12,28 +13,25 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal ComboBox(String id) : base(id){ }
  
-        public String Get(ComboBoxProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-        public ComboBox SetDisplayMode(DisplayMode displayMode)
+        public override ComboBox SetDisplayMode(ComboBoxDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public ComboBox Set(ComboBoxProperty propertyKey, String value)
+        public override ComboBox Set(ComboBoxProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
+        [XmlElement("Menu")]
         public Menu Menu
         {
             get { return this._menu; }
         }
 
-        public ComboBox Set(Dictionary<ComboBoxProperty,String> properties)
+        public override ComboBox Set(Dictionary<ComboBoxProperty,String> properties)
         {
             foreach (var property in properties)
             {
@@ -48,7 +46,17 @@ namespace DotNetRocks.FluentSPRibbon
             menu.Parent = this;
             this._menu = menu;
             return this;
+        }
+        protected override void WriteChildren(System.Xml.XmlWriter writer)
+        {
+            if (this._menu != null)
+            {
+                writer.WriteStartElement("Menu");
+                this._menu.WriteXml(writer);
+                writer.WriteEndElement();
 
+
+            }
         }
     }
 }

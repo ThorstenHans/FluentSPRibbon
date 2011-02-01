@@ -1,38 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class DropDown : InteractiveRibbonElement
+    public class DropDown : InteractiveRibbonElement<DropDown,DropDownProperty,DropDownDisplayMode>,
+        IRibbonElementContainer<DropDown,Menu>
     {
+        internal Menu _menu;
+
         internal DropDown() : this("NotSet") { }
 
         internal DropDown(String id) :base(id) { }
 
-        public String Get(DropDownProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public DropDown SetDisplayMode(DisplayMode displayMode)
+        public override  DropDown SetDisplayMode(DropDownDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public DropDown Set(DropDownProperty propertyKey, String value)
+        public override DropDown Set(DropDownProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public DropDown Set(Dictionary<DropDownProperty,String> properties)
+        public override DropDown Set(Dictionary<DropDownProperty,String> properties)
         {
             foreach (var property in properties)
             {
                 AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public Menu GetMenu()
+        {
+            return this._menu;
+        }
+
+        public DropDown With(Func<Menu> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._menu = child;
             return this;
         }
     }

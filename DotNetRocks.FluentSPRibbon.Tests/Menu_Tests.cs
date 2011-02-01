@@ -30,7 +30,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         public void SetWidthTo_Should_Add_Property_To_Current_Instance()
         {
             var sut = new Menu("MyMenu");
-            sut.SetWidthTo("200");
+            sut.Set(MenuProperty.MaxWidth,"200");
 
             Assert.AreEqual("200",sut.Get(MenuProperty.MaxWidth));
         }

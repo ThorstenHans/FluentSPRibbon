@@ -1,6 +1,6 @@
 ﻿namespace DotNetRocks.FluentSPRibbon
 {
-    internal enum SectionProperty
+    public enum SectionProperty
     {
         Type,
         Alignment

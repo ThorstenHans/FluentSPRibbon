@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Spinner : InteractiveRibbonElement
+    public class Spinner : InteractiveRibbonElement<Spinner,SpinnerProperty,SpinnerDisplayMode>
     {
         internal Spinner() : this("NotSet")
         {
@@ -16,24 +15,19 @@ namespace DotNetRocks.FluentSPRibbon
 
         }
 
-        public String Get(SpinnerProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public Spinner SetDisplayMode(DisplayMode displayMode)
+        public override Spinner SetDisplayMode(SpinnerDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public Spinner Set(SpinnerProperty propertyKey, String value)
+        public override Spinner Set(SpinnerProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Spinner Set(Dictionary<SpinnerProperty, String> properties)
+        public override Spinner Set(Dictionary<SpinnerProperty, String> properties)
         {
             foreach (var property in properties)
             {

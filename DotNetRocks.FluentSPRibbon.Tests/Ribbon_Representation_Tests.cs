@@ -12,7 +12,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                
                 .With(()=>Create<Tab>.Instance("MyTab"));
  
-            Assert.AreEqual(1, sut.ChildItemCount);
+            Assert.AreEqual(1, sut._tabs.Count);
  
         }
     }

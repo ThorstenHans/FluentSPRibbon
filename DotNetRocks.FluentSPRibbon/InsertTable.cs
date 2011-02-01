@@ -3,24 +3,19 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class InsertTable : RibbonElement
+    public class InsertTable :RibbonElement<InsertTable,InsertTableProperty>
     {
          internal InsertTable() : this("NotSet") { }
 
          internal InsertTable(string id) : base(id) { }
 
-         public String Get(InsertTableProperty propertyKey)
+         public override InsertTable Set(InsertTableProperty propertyName, String propertyValue)
         {
-            return GetPropertyValue(propertyKey);
-        }
-
-         public InsertTable Set(InsertTableProperty propertyKey, String value)
-        {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-         public InsertTable Set(Dictionary<InsertTableProperty, String> properties)
+         public override InsertTable Set(Dictionary<InsertTableProperty, String> properties)
         {
             foreach (var property in properties)
             {

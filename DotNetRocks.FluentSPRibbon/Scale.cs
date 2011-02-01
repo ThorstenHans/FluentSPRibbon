@@ -3,24 +3,20 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Scale : RibbonElement
+    public class Scale : RibbonElement<Scale,ScaleProperty>
     {
         internal Scale() : this("NotSet") { }
 
         internal Scale(String id) : base(id) { }
 
-        public String Get(ScaleProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
 
-        public Scale Set(ScaleProperty propertyKey, String value)
+        public override Scale Set(ScaleProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Scale Set(Dictionary<ScaleProperty, String> properties)
+        public override Scale Set(Dictionary<ScaleProperty, String> properties)
         {
             foreach (var property in properties)
             {

@@ -1,6 +1,6 @@
 ﻿namespace DotNetRocks.FluentSPRibbon
 {
-    internal enum GroupTemplateProperty
+    public enum GroupTemplateProperty
     {
         ClassName
     }

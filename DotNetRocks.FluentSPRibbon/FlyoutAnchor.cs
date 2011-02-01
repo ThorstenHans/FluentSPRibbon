@@ -1,38 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class FlyoutAnchor : InteractiveRibbonElement
+    public class FlyoutAnchor : InteractiveRibbonElement<FlyoutAnchor,FlyoutAnchorProperty,FlyoutAnchorDisplayMode>,
+        IRibbonElementContainer<FlyoutAnchor,Menu>
     {
+        internal Menu _menu;
+
         internal FlyoutAnchor() : this("NotSet") { }
 
         internal FlyoutAnchor(String id) : base(id) { }
 
-        public String Get(FlyoutAnchorProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public FlyoutAnchor SetDisplayMode(DisplayMode displayMode)
+        public override FlyoutAnchor SetDisplayMode(FlyoutAnchorDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public FlyoutAnchor Set(FlyoutAnchorProperty propertyKey, String value)
+        public override FlyoutAnchor Set(FlyoutAnchorProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public FlyoutAnchor Set(Dictionary<FlyoutAnchorProperty,String> properties)
+        public override FlyoutAnchor Set(Dictionary<FlyoutAnchorProperty,String> properties)
         {
             foreach (var property in properties)
             {
                 AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public Menu GetMenu()
+        {
+            return this._menu;
+        }
+
+        public FlyoutAnchor With(Func<Menu> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._menu = child;
             return this;
         }
     }

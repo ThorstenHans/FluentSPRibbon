@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class SplitButton : InteractiveRibbonElement
+    public class SplitButton : InteractiveRibbonElement<SplitButton,SplitButtonProperty,SplitButtonDisplayMode>,
+        IRibbonElementContainer<SplitButton,Menu>
     {
+        internal Menu _menu;
+
         internal SplitButton() : this("NotSet")
         {
             
@@ -15,25 +17,19 @@ namespace DotNetRocks.FluentSPRibbon
         {
             
         }
-
-        public String Get(SplitButtonProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public SplitButton SetDisplayMode(DisplayMode displayMode)
+        public override SplitButton SetDisplayMode(SplitButtonDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public SplitButton Set(SplitButtonProperty propertyKey, String value)
+        public override SplitButton Set(SplitButtonProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public SplitButton Set(Dictionary<SplitButtonProperty, String> properties)
+        public override SplitButton Set(Dictionary<SplitButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {
@@ -41,6 +37,18 @@ namespace DotNetRocks.FluentSPRibbon
             }
             return this;
         }
-       
+        
+        public Menu GetMenu()
+        {
+            return _menu;
+        }
+
+        public SplitButton With(Func<Menu> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._menu = child;
+            return this;
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             var newRibbon = new Ribbon("MyRibbon");
 
-            Assert.AreEqual(0, newRibbon.ChildItemCount);
+            Assert.AreEqual(0, newRibbon._tabs.Count);
         }
 
         [Test]
@@ -73,7 +73,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             sut.With(() => tab2);
             sut.With(() => tab3);
 
-            Assert.AreEqual(3, sut.ChildItemCount);
+            Assert.AreEqual(3, sut._tabs.Count);
         }
 
         [Test]

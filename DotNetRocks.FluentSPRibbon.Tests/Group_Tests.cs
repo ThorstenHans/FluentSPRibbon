@@ -68,27 +68,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             sut.With(() => actual);
 
             Assert.AreEqual(sut,actual.Parent);
-            Assert.AreEqual(1,sut._interactiveRibbonElements.Count);
+            Assert.AreEqual(1,sut._innerControls.Count);
             
         }
 
-        [Test]
-        public void Indexer_Should_Return_Correct_InterActiveRibbonElement()
-        {
-            var sut = new Group("MyGroup");
-            var button1 = new Button("Button1");
-            var textBox1 = new TextBox("Textbox1");
-            var comboBox1 = new ComboBox("Combobox1");
-
-            sut.With(() => button1)
-                .With(() => textBox1)
-                .With(() => comboBox1);
-
-            Assert.AreEqual(button1,sut["Button1"]);
-            Assert.IsNull(sut["MyGroup.Button1"]);
-            Assert.AreEqual(textBox1, sut["Textbox1"]);
-            Assert.AreEqual(comboBox1, sut["Combobox1"]);
-        }
 
         [Test]
         public void ApplyControlsProperties_Should_Store_Multiple_Properties_On_Controls_PropertyCollection()

@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class TextBox : InteractiveRibbonElement
+    public enum TextBoxDisplayMode
+    {
+        
+    }
+    public class TextBox : InteractiveRibbonElement<TextBox,TextBoxProperty, TextBoxDisplayMode>
     {
         internal TextBox() : this("NotSet")
         {
@@ -14,24 +17,20 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String Get(TextBoxProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
 
-        public TextBox SetDisplayMode(DisplayMode displayMode)
+        public override TextBox SetDisplayMode(TextBoxDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public TextBox Set(TextBoxProperty propertyKey, String value)
+        public override TextBox Set(TextBoxProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public TextBox Set(Dictionary<TextBoxProperty, String> properties)
+        public override TextBox Set(Dictionary<TextBoxProperty, String> properties)
         {
             foreach (var property in properties)
             {

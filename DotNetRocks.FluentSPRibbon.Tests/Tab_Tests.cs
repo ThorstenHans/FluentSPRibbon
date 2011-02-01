@@ -110,7 +110,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             sut.With(() => grp2);
             sut.With(() => grp3);
 
-            Assert.AreEqual(3,sut.ChildItemCount);
+            Assert.AreEqual(3,sut._groups.Count);
         }
     }
 }

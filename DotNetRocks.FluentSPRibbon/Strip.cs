@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Strip : RibbonElement , IRibbonElementContainer<Strip,ControlRef>
+    public class Strip : RibbonElement<Strip,StripProperty> , IRibbonElementContainer<Strip,ControlRef>
     {
         internal readonly IList<ControlRef> _controlRefs;
 
@@ -17,8 +17,23 @@ namespace DotNetRocks.FluentSPRibbon
         public Strip With(Func<ControlRef> expression)
         {
             var controlRef = expression.Invoke();
-            controlRef.Parent = this;
+            
             this._controlRefs.Add(controlRef);
+            return this;
+        }
+
+        public override Strip Set(StripProperty propertyName, string propertyValue)
+        {
+            AddOrUpdateProperty(propertyName,propertyValue);
+            return this;
+        }
+
+        public override Strip Set(Dictionary<StripProperty, string> properties)
+        {
+            foreach (var property in properties)
+            {
+                AddOrUpdateProperty(property.Key,property.Value);
+            }
             return this;
         }
     }

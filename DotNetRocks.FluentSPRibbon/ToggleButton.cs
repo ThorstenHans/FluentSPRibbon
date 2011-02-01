@@ -1,35 +1,29 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class ToggleButton: InteractiveRibbonElement
+    public class ToggleButton: InteractiveRibbonElement<ToggleButton,ToggleButtonProperty, ToggleButtonDisplayMode>
     {
         internal ToggleButton() : this("NotSet"){}
 
         internal ToggleButton(string id) : base(id)
         {
         }
-
-        public String Get(ToggleButtonProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public ToggleButton SetDisplayMode(DisplayMode displayMode)
+         
+        public override ToggleButton SetDisplayMode(ToggleButtonDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public ToggleButton Set(ToggleButtonProperty propertyKey, String value)
+        public override ToggleButton Set(ToggleButtonProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public ToggleButton Set(Dictionary<ToggleButtonProperty, String> properties)
+        public override ToggleButton Set(Dictionary<ToggleButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {

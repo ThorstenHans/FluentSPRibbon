@@ -11,6 +11,68 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     public class Xml_Serialization_Tests
     {
         [Test]
+        public void Api_Should_Be_Able_To_Add_All_Common_RibbonElements()
+        {
+            // Arrange
+            var button = Create<Button>.Instance("Button1");
+            var checkBox = Create<CheckBox>.Instance("CheckBox1");
+            var colorPicker = Create<ColorPicker>.Instance("ColorPicker1")
+                .With(()=>Create<Color>.Instance("Red")
+                          .Set(new Dictionary<ColorProperty, string>
+                                   {{ColorProperty.Title, "Red"},{ColorProperty.Color, "red"},{ColorProperty.Sequence, "1"}})
+                )
+                .With(() => Create<Color>.Instance("Brown")
+                          .Set(new Dictionary<ColorProperty, string> { { ColorProperty.Title, "Brown" }, { ColorProperty.Color, "Brown" }, { ColorProperty.Sequence, "2" } })
+                )
+                .With(() => Create<Color>.Instance("Black")
+                          .Set(new Dictionary<ColorProperty, string> { { ColorProperty.Title, "Black" }, { ColorProperty.Color, "Black" }, { ColorProperty.Sequence, "3" } })
+                )
+                .With(() => Create<Color>.Instance("Green")
+                          .Set(new Dictionary<ColorProperty, string> { { ColorProperty.Title, "Green" }, { ColorProperty.Color, "Green" }, { ColorProperty.Sequence, "4" } })
+                )
+                .With(() => Create<Color>.Instance("Orange")
+                          .Set(new Dictionary<ColorProperty, string> { { ColorProperty.Title, "Orange" }, { ColorProperty.Color, "Orange" }, { ColorProperty.Sequence, "5" } })
+                )
+                .With(() => Create<Color>.Instance("Blue")
+                          .Set(new Dictionary<ColorProperty, string>
+                                   {{ColorProperty.Title, "Blue"},{ColorProperty.Color, "Blue"}, {ColorProperty.Sequence, "6"}})
+                );
+            var button2 = Create<Button>.Instance("MyButton2")
+                .Set(ButtonProperty.LabelText, "MyButton2LabelText");
+            var comboBox = Create<ComboBox>.Instance("ComboBox1")
+                .With(()=>Create<Menu>.Instance("ComboBoxMenu1")
+                    .With(()=>Create<MenuSection>.Instance("MenuSection1")
+                    .With(()=> colorPicker)
+                    .With(()=> button2)));
+            var dropDown = Create<DropDown>.Instance("DropDown1");
+            var flyoutAnchor = Create<FlyoutAnchor>.Instance("FlyoutAnchor1");
+            var galleryButton = Create<GalleryButton>.Instance("GalleryButton1");
+            var label = Create<Label>.Instance("Label1").Set(LabelProperty.LabelText,"Sample LabelText").Set(LabelProperty.Sequence,"50");
+            var mruSplitButton = Create<MRUSplitButton>.Instance("MRUSplitButton1");
+            var spinner = Create<Spinner>.Instance("Spinner1");
+            var splitButton = Create<SplitButton>.Instance("SplitButton");
+            var textBox = Create<TextBox>.Instance("TextBox1").Set(TextBoxProperty.Width,"200px").Set(TextBoxProperty.ToolTipTitle,"TextBox ToolTips are cool");
+            var toggleButton = Create<ToggleButton>.Instance("ToggleButton1");
+            var firstGroup = Create<Group>.Instance("1stGroup").Set(GroupProperty.Title,"Item Actions");
+            var secondGroup = Create<Group>.Instance("2ndGroup").Set(GroupProperty.Title,"View Actions");
+            var firstTab = Create<Tab>.Instance("1stTab").Set(TabProperty.Title,"My LineOfBusiness Application Tab");
+            var secondTab = Create<Tab>.Instance("2ndTab").Set(TabProperty.Title, "My Information Tab");
+
+            var ribbon = Create<Ribbon>.Instance("DotNetRocksRibbon")
+                .With(() => firstTab.
+                    With(()=> secondGroup
+                    .With(()=>button).With(()=>comboBox).With(()=>flyoutAnchor).With(()=> label)
+                    .With(()=> spinner).With(()=> toggleButton)))
+                .With(() => secondTab.
+                    With(()=>firstGroup
+                        .With(()=>checkBox).With(()=>dropDown).With(()=>galleryButton).With(()=>mruSplitButton)
+                        .With(()=>splitButton).With(()=>textBox)));
+
+            var actual = ribbon.ToXml();
+            Assert.IsNotNull(actual);
+            Console.WriteLine(actual);
+        }
+        [Test]
         public void Properties_Should_Be_Written_To_Xml()
         {
             // Arrange
@@ -33,8 +95,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                                     .Set(GroupProperty.Description,
                                                                    "Master your Workflows by using Ribbon Elements")
                                                                    .With(()=>Create<Button>.Instance("Button2")
-                                                                       .Set(ButtonProperty.TemplateAlias,"1")
-                                                                       .SetDisplayMode(DisplayMode.Large)))
+                                                                       .Set(ButtonProperty.TemplateAlias,"1")))
                                     .With(() => Create<Group>.Instance("ViewSettingsGroup")
                                                     .Set(GroupProperty.Title, "Customize your view")
                                                     .Set(GroupProperty.Sequence, "30")

@@ -5,33 +5,31 @@ using System.Linq;
 namespace DotNetRocks.FluentSPRibbon
 {
     public class ColorPicker 
-        : InteractiveRibbonElement, IRibbonElementContainer<ColorPicker,Color>
+        : InteractiveRibbonElement<ColorPicker,ColorPickerProperty,ColorPickerDisplayMode>, 
+        IRibbonElementContainer<ColorPicker,Color>
     {
         internal readonly IList<Color> _colors;
+
         internal ColorPicker():this("NotSet") { }
 
         internal ColorPicker(String id) : base(id)
         {
             _colors=new List<Color>();
         }
-
-        public String Get(ColorPickerProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-        public ColorPicker SetDisplayMode(DisplayMode displayMode)
+ 
+        public override ColorPicker SetDisplayMode(ColorPickerDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public ColorPicker Set(ColorPickerProperty propertyKey, String value)
+        public override ColorPicker Set(ColorPickerProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public ColorPicker Set(Dictionary<ColorPickerProperty, String> properties)
+        public override ColorPicker Set(Dictionary<ColorPickerProperty, String> properties)
         {
             foreach (var property in properties)
             {

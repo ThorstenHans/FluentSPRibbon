@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Gallery : RibbonElement, IRibbonElementContainer<Gallery, GalleryButton>
+    public class Gallery : RibbonElement<Gallery,GalleryProperty>, IRibbonElementContainer<Gallery, GalleryButton>
     {
 
         internal Gallery():this("NotSet") { }
@@ -16,18 +16,14 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal readonly IList<GalleryButton> _galleryButtons;
 
-        public String Get(GalleryProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
 
-        public Gallery Set(GalleryProperty propertyKey, String value)
+        public override Gallery Set(GalleryProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Gallery Set(Dictionary<GalleryProperty,String> properties)
+        public override Gallery Set(Dictionary<GalleryProperty,String> properties)
         {
             foreach (var property in properties)
             {

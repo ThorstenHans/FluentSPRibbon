@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class GroupTemplate : RibbonElement, IRibbonElementContainer<GroupTemplate, Layout>
+    public class GroupTemplate : RibbonElement<GroupTemplate,GroupTemplateProperty>, IRibbonElementContainer<GroupTemplate, Layout>
     {
         internal readonly IList<Layout> _layouts;
 
@@ -16,17 +16,6 @@ namespace DotNetRocks.FluentSPRibbon
             this._layouts = new List<Layout>();
         }
 
-        public GroupTemplate SetCssClass(String cssClassSelector)
-        {
-            AddOrUpdateProperty(GroupTemplateProperty.ClassName, cssClassSelector);
-            return this;
-        }
-
-        public String GetCssClassSelector()
-        {
-            return GetPropertyValue(GroupTemplateProperty.ClassName);
-        }
-
         public Layout GetLayout(String id)
         {
             return _layouts.FirstOrDefault(l => l.OriginalId == id);
@@ -36,6 +25,21 @@ namespace DotNetRocks.FluentSPRibbon
             var layout = expression.Invoke();
             layout.Parent = this;
             _layouts.Add(layout);
+            return this;
+        }
+
+        public override GroupTemplate Set(GroupTemplateProperty propertyName, string propertyValue)
+        {
+            AddOrUpdateProperty(propertyName,propertyValue);
+            return this;
+        }
+
+        public override GroupTemplate Set(Dictionary<GroupTemplateProperty, string> properties)
+        {
+            foreach (var property in properties)
+            {
+                AddOrUpdateProperty(property.Key,property.Value);
+            }
             return this;
         }
     }

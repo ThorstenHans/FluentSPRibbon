@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Tab : InteractiveRibbonElement, IRibbonElementContainer<Tab,Group>
+    public class Tab : RibbonElement<Tab,TabProperty>, IRibbonElementContainer<Tab,Group>
     {
         internal readonly IList<Group> _groups;
         private Scaling _scaling;
@@ -19,18 +19,13 @@ namespace DotNetRocks.FluentSPRibbon
             _groups = new List<Group>();
         }
 
-        public String Get(TabProperty propertyKey)
+        public override Tab Set(TabProperty propertyName, String propertyValue)
         {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public Tab Set(TabProperty propertyKey, String value)
-        {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Tab Set(Dictionary<TabProperty, String> properties)
+        public override Tab Set(Dictionary<TabProperty, String> properties)
         {
             foreach (var property in properties)
             {
@@ -44,17 +39,12 @@ namespace DotNetRocks.FluentSPRibbon
             get { return _groups.FirstOrDefault(g => g.OriginalId == id); }
         }
 
-        public int ChildItemCount
-        {
-            get { return _groups.Count; }
-        }
-
         public Scaling Scaling
         {
             get { return _scaling; }
         }
 
-        public Tab With(Func<Group> expression)
+        public Tab With(Func<Group> expression )
         {
             var group = expression.Invoke();
             group.Parent = this;

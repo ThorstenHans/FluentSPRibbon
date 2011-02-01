@@ -1,37 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class OverflowSection : RibbonElement
+    public class OverflowSection : TemplateElement<OverflowSection,OverflowSectionProperty, OverflowSectionDisplayMode>
     {
-        internal OverflowSection() : this("NotSet") { }
+        internal OverflowSection() { }
 
-        internal OverflowSection(String id)
-            : base(id)
+        public override OverflowSection Set(OverflowSectionProperty propertyName, string propertyValue)
         {
-        }
-        public OverflowSection SetDisplayMode(DisplayMode displayMode)
-        {
-            AddOrUpdateProperty(OverflowSectionProperty.DisplayMode, displayMode.ToString());
+            AddOrUpdateProperty(propertyName,propertyValue);
             return this;
         }
 
-        public OverflowSection HasDividerBefore(bool hasDividerBefore)
+        public override OverflowSection Set(Dictionary<OverflowSectionProperty, string> properties)
         {
-            AddOrUpdateProperty(OverflowSectionProperty.DividerBefore, hasDividerBefore.ToString().ToUpper());
+            foreach (var property in properties)
+            {
+                AddOrUpdateProperty(property.Key,property.Value);
+            }
             return this;
         }
 
-        public OverflowSection HasDividerAfter(bool hasDividerAfter)
+        public override OverflowSection SetDisplayMode(OverflowSectionDisplayMode displayMode)
         {
-            AddOrUpdateProperty(OverflowSectionProperty.DividerAfter, hasDividerAfter.ToString().ToUpper());
+            SetDisplayModeTo(displayMode.ToString());
             return this;
         }
 
-        public OverflowSection SetLayoutType(OverflowLayoutType overflowLayoutType)
+        public override OverflowSectionDisplayMode GetDisplayMode()
         {
-            AddOrUpdateProperty(OverflowSectionProperty.Type, overflowLayoutType.ToString());
-            return this;
+            if (this._properties.ContainsKey(TemplateProperty.DisplayMode))
+                return (OverflowSectionDisplayMode)Enum.Parse(typeof(OverflowSectionDisplayMode), this._properties[TemplateProperty.DisplayMode]);
+            return OverflowSectionDisplayMode.Large;
         }
     }
 }

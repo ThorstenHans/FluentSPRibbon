@@ -12,7 +12,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = Create<Button>.Instance("MyButton");
             Assert.IsNotNull(sut);
             Assert.IsInstanceOf<Button>(sut);
-            Assert.AreEqual("MyButton",sut.Id);
+            Assert.AreEqual("MyButton", sut.Id);
         }
 
         [Test]
@@ -21,10 +21,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = new Button("MyButton");
             sut.Set(ButtonProperty.LabelText, "My Button");
 
-            Assert.AreEqual("My Button",sut.Get(ButtonProperty.LabelText));
+            Assert.AreEqual("My Button", sut.Get(ButtonProperty.LabelText));
         }
 
-        [Test] 
+        [Test]
         public void Set_Should_Store_MultipleValues()
         {
             var sut = new Button("MyButton");
@@ -34,7 +34,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                       {ButtonProperty.LabelText, "My Button"}
                                   });
             Assert.AreEqual("My Button ToolTip", sut.Get(ButtonProperty.ToolTipTitle));
-            Assert.AreEqual("My Button",sut.Get(ButtonProperty.LabelText));
+            Assert.AreEqual("My Button", sut.Get(ButtonProperty.LabelText));
         }
 
         [Test]
@@ -65,23 +65,5 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var sut = new Button("MyButton");
             Assert.AreEqual("MyButton", sut.Id);
         }
-
-        [Test]
-        public void SetDisplayMode_Should_Store_Passed_DisplayMode_For_Current_Instance()
-        {
-            // Arrange
-            var sut = new Button();
-
-            // Act
-            sut.SetDisplayMode(DisplayMode.Medium);
-
-            // Assert
-            Assert.AreEqual("Medium",sut._templateProperties["DisplayMode"]);
-        }
-
-       
-
-
-
     }
 }

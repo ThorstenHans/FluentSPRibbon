@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Section : RibbonElement, IRibbonElementContainer<Section, Row>
+    public class Section : RibbonElement<Section,SectionProperty>, IRibbonElementContainer<Section, Row>
     {
         internal readonly IList<Row> _rows;
 
@@ -15,17 +15,7 @@ namespace DotNetRocks.FluentSPRibbon
             this._rows = new List<Row>();
         }
 
-        public Section SetAlignment(VerticalAlignment verticalAlignment)
-        {
-            AddOrUpdateProperty(SectionProperty.Alignment, verticalAlignment.ToString());
-            return this;
-        }
-
-        public Section SetLayoutType(SectionLayoutType layoutType)
-        {
-            AddOrUpdateProperty(SectionProperty.Type, layoutType.ToString());
-            return this;
-        }
+        
 
         public Section With(Func<Row> expression)
         {
@@ -41,5 +31,19 @@ namespace DotNetRocks.FluentSPRibbon
         }
 
 
+        public override Section Set(SectionProperty propertyName, string propertyValue)
+        {
+            AddOrUpdateProperty(propertyName,propertyValue);
+            return this;
+        }
+
+        public override Section Set(Dictionary<SectionProperty, string> properties)
+        {
+            foreach (var property in properties)
+            {
+                AddOrUpdateProperty(property.Key,property.Value);
+            }
+            return this;
+        }
     }
 }

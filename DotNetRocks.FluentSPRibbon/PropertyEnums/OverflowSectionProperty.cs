@@ -1,6 +1,6 @@
 ﻿namespace DotNetRocks.FluentSPRibbon
 {
-    internal enum OverflowSectionProperty
+    public enum OverflowSectionProperty
     {
         DisplayMode,
         DividerAfter,

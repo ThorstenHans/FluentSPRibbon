@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Label : InteractiveRibbonElement
+    public class Label : InteractiveRibbonElement<Label,LabelProperty,LabelDisplayMode>
     {
         internal Label():this("NotSet")
         {
@@ -15,24 +14,19 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String Get(LabelProperty propertyKey)
-        {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public Label SetDisplayMode(DisplayMode displayMode)
+        public override Label SetDisplayMode(LabelDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
-  
-        public Label Set(LabelProperty propertyKey, String value)
+
+        public override  Label Set(LabelProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public Label Set(Dictionary<LabelProperty, String> properties)
+        public override Label Set(Dictionary<LabelProperty, String> properties)
         {
             foreach (var property in properties)
             {

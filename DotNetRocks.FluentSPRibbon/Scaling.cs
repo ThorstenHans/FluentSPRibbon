@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Scaling : RibbonElement, IRibbonElementContainer<Scaling,MaxSize>,IRibbonElementContainer<Scaling,Scale>
+    public class Scaling : RibbonElement<Scaling,ScalingProperty>, IRibbonElementContainer<Scaling,MaxSize>,IRibbonElementContainer<Scaling,Scale>
     {
 
         internal readonly IList<Scale> _scales;
@@ -42,6 +42,21 @@ namespace DotNetRocks.FluentSPRibbon
         public Scale GetScale(String id)
         {
             return _scales.FirstOrDefault(s => s.OriginalId == id); 
+        }
+
+        public override Scaling Set(ScalingProperty propertyName, string propertyValue)
+        {
+            AddOrUpdateProperty(propertyName,propertyValue);
+            return this;
+        }
+
+        public override Scaling Set(Dictionary<ScalingProperty, string> properties)
+        {
+            foreach (var property in properties)
+            {
+                AddOrUpdateProperty(property.Key,property.Value);
+            }
+            return this;
         }
     }
 }

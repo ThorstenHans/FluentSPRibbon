@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Button : InteractiveRibbonElement
+    public class Button : InteractiveRibbonElement<Button,ButtonProperty, ButtonDisplayMode>
     {
         
 
@@ -12,24 +11,19 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Button(string id) : base(id) { }
 
-        public Button Set(ButtonProperty key, String value)
+        public override Button Set(ButtonProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(key, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Button SetDisplayMode(DisplayMode displayMode)
+        public override Button SetDisplayMode(ButtonDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);
             return this;
         }
 
-        internal String Get(ButtonProperty propertyName)
-        {
-            return GetPropertyValue(propertyName);
-        }
-
-        public Button Set(Dictionary<ButtonProperty, String> properties)
+        public override Button Set(Dictionary<ButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {

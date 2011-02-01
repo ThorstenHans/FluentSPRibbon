@@ -17,7 +17,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                 .With(() => Create<Tab>.Instance("Tab2").Set(TabProperty.Title, "My 2ndTab"));
 
             // Assert
-            Assert.AreEqual(2,ribbon.ChildItemCount);
+            Assert.AreEqual(2,ribbon._tabs.Count);
             
         }
 
@@ -30,7 +30,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                 .With(() => Create<Tab>.Instance("Tab1")
                                 .With(() => Create<Group>.Instance("Grp1").Set(GroupProperty.Title, "Group1"))
                                 .With(() => Create<Group>.Instance("Grp2").Set(GroupProperty.Title, "Group2")));
-            Assert.AreEqual(1, ribbon.ChildItemCount);
+            Assert.AreEqual(1, ribbon._tabs.Count);
             // Assert
         }
 
@@ -51,8 +51,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                                 .With(() => button)));
             Assert.IsNotNull(button);
             Assert.IsNotNull(ribbon);
-            Assert.IsNotNull(ribbon["1stTab"]["1stGroup"]["MyButton"]);
-            Assert.IsInstanceOf(typeof(Button), ribbon["1stTab"]["1stGroup"]["MyButton"]);
+        
 
         }
         

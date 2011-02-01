@@ -17,7 +17,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
                                 .Set(GroupProperty.Description, "Group 1"))
                 .With(()=>Create<Group>.Instance("Grp2"));
             // Assert
-            Assert.AreEqual(2,tab.ChildItemCount);
+            Assert.AreEqual(2,tab._groups.Count);
         }
         
         [Test]
@@ -28,7 +28,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
 
             Assert.IsNotNull(sut);
             Assert.IsNotNull(sut["MyTab"]);
-            Assert.AreEqual(0,sut["MyTab"].ChildItemCount);
+            Assert.AreEqual(0,sut["MyTab"]._groups.Count);
         }
 
         [Test]

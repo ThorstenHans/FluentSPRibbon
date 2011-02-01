@@ -3,24 +3,19 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class MaxSize : RibbonElement
+    public class MaxSize : RibbonElement<MaxSize,MaxSizeProperty>
     {
         internal MaxSize() : this("NotSet") { }
 
         internal MaxSize(string id) : base(id) { }
 
-        public String Get(MaxSizeProperty propertyKey)
+        public override  MaxSize Set(MaxSizeProperty propertyName, String propertyValue)
         {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public MaxSize Set(MaxSizeProperty propertyKey, String value)
-        {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public MaxSize Set(Dictionary<MaxSizeProperty, String> properties)
+        public override MaxSize Set(Dictionary<MaxSizeProperty, String> properties)
         {
             foreach (var property in properties)
             {

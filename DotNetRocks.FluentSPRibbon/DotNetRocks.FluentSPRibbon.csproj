@@ -40,11 +40,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="ButtonDisplayMode.cs" />
+    <Compile Include="CheckBoxDisplayMode.cs" />
+    <Compile Include="ColorPickerDisplayMode.cs" />
+    <Compile Include="ComboBoxDisplayMode.cs" />
     <Compile Include="ControlRef.cs" />
+    <Compile Include="ControlRefDisplayMode.cs" />
+    <Compile Include="ControlRefProperty.cs" />
+    <Compile Include="DropDownDisplayMode.cs" />
+    <Compile Include="FlyoutAnchorDisplayMode.cs" />
+    <Compile Include="GalleryButtonDisplayMode.cs" />
     <Compile Include="GroupTemplate.cs" />
+    <Compile Include="LabelDisplayMode.cs" />
     <Compile Include="Layout.cs" />
+    <Compile Include="LayoutProperty.cs" />
+    <Compile Include="MRUDisplayMode.cs" />
     <Compile Include="OverflowArea.cs" />
+    <Compile Include="OverflowAreaProperty.cs" />
     <Compile Include="OverflowSection.cs" />
+    <Compile Include="OverflowSectionDisplayMode.cs" />
     <Compile Include="PropertyEnums\OverflowLayoutType.cs" />
     <Compile Include="PropertyEnums\GroupTemplateProperty.cs" />
     <Compile Include="PropertyEnums\ButtonProperty.cs" />
@@ -98,20 +112,27 @@
     <Compile Include="PropertyEnums\ScaleProperty.cs" />
     <Compile Include="Scaling.cs" />
     <Compile Include="PropertyEnums\OverflowSectionProperty.cs" />
+    <Compile Include="ScalingProperty.cs" />
     <Compile Include="Section.cs" />
     <Compile Include="Spinner.cs" />
     <Compile Include="PropertyEnums\SpinnerProperty.cs" />
+    <Compile Include="SpinnerDisplayMode.cs" />
     <Compile Include="SplitButton.cs" />
     <Compile Include="PropertyEnums\SplitButtonProperty.cs" />
+    <Compile Include="SplitButtonDisplayMode.cs" />
     <Compile Include="Strip.cs" />
+    <Compile Include="StripProperty.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="PropertyEnums\TabProperty.cs" />
     <Compile Include="TemplateActionRequiredEventArgs.cs" />
+    <Compile Include="TemplateElement.cs" />
+    <Compile Include="TemplateProperty.cs" />
     <Compile Include="TextBox.cs" />
     <Compile Include="PropertyEnums\TextBoxProperty.cs" />
     <Compile Include="Attributes\TextProvider.cs" />
     <Compile Include="ToggleButton.cs" />
     <Compile Include="PropertyEnums\ToggleButtonProperty.cs" />
+    <Compile Include="ToggleButtonDisplayMode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class InteractiveRibbonElement : RibbonElement
+    public abstract class InteractiveRibbonElement<T,TPropertyEnum, TDisplayModeEnum> : RibbonElement<T,TPropertyEnum>
     {
         internal readonly Dictionary<String, String> _templateProperties;
 
@@ -17,13 +17,25 @@ namespace DotNetRocks.FluentSPRibbon
             this._templateProperties=new Dictionary<string, string>();
             
         }
+        
+        public abstract T SetDisplayMode(TDisplayModeEnum displayMode);
 
-        internal void SetDisplayModeTo(DisplayMode displayMode)
+        public ControlRef GetControlRef()
+        {
+            var controlRef = new ControlRef();
+            controlRef.Set(ControlRefProperty.TemplateAlias, Id);
+
+            controlRef.SetDisplayMode(
+                (ControlRefDisplayMode) Enum.Parse(typeof (ControlRefDisplayMode), _templateProperties["DisplayMode"]));
+            return controlRef;
+        }
+
+        protected void SetDisplayModeTo(TDisplayModeEnum displayModeValue)
         {
             if (this._templateProperties.ContainsKey("DisplayMode"))
-                this._templateProperties["DisplayMode"] = displayMode.ToString();
+                this._templateProperties["DisplayMode"] = displayModeValue.ToString();
             else
-                this._templateProperties.Add("DisplayMode",displayMode.ToString());
+                this._templateProperties.Add("DisplayMode",displayModeValue.ToString());
         }
     }
 }
