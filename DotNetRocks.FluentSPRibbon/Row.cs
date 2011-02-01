@@ -20,7 +20,7 @@ namespace DotNetRocks.FluentSPRibbon
             get { return false; }
         }
 
-        internal Row(String id)
+        internal Row(String id) : base(id)
         {
             this._strips = new List<Strip>();
             this._overflowAreas = new List<OverflowArea>();

@@ -8,11 +8,6 @@ namespace DotNetRocks.FluentSPRibbon
         private const String DisplayModeProperty = "DisplayMode";
         internal readonly Dictionary<String, String> _templateProperties;
 
-        public InteractiveRibbonElement() : this("NotSet")
-        {
-            
-        }
-
         public InteractiveRibbonElement(string id) :base(id)
         {
             this._templateProperties=new Dictionary<string, string>();

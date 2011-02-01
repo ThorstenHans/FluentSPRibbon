@@ -6,6 +6,22 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     [TestFixture]
     public class Button_Tests
     {
+
+        [Test]
+        public void GetControlRef_Should_Return_A_Correct_ControlRef_Instance()
+        {
+            // Arrange
+            var sut = new Button("MyButton");
+            // Act
+            sut.SetDisplayMode(ButtonDisplayMode.Large);
+            var actual = sut.GetControlRef();
+            // Assert
+            Assert.IsNotNull(actual);
+            Assert.IsInstanceOf<ControlRef>(actual);
+            Assert.AreEqual(ControlRefDisplayMode.Large,actual.GetDisplayMode());
+
+
+        }
         [Test]
         public void Create_Should_Create_A_New_Instance()
         {

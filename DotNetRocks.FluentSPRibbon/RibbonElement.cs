@@ -13,12 +13,6 @@ namespace DotNetRocks.FluentSPRibbon
         protected readonly String _originalId;
         protected Dictionary<Enum, String> _properties;
 
-        internal RibbonElement()
-            : this("NotSet")
-        {
-
-        }
-
         public virtual String XmlElementName
         {
             get { return GetType().Name; }

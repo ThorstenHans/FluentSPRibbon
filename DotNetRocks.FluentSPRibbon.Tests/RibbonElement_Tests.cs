@@ -27,5 +27,38 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             Assert.AreEqual("CheckBox",actualCheckBox);
             Assert.AreEqual("ComboBox",actualComboBox);
         }
+
+        [Test]
+        public void Property_Should_Be_Updated_If_It_Is_Allready_Existing()
+        {
+            // Arrange
+            var sut = new Button();
+            var actual = "NewTitle";
+            sut.Set(ButtonProperty.LabelText, "Title");
+            // Act
+            sut.Set(ButtonProperty.LabelText,actual);
+            // Assert
+            Assert.AreEqual(actual, sut.Get(ButtonProperty.LabelText));
+        }
+
+        [Test]
+        public void GetSchema_Should_Return_Null()
+        {
+            // Arrange
+            var sut = new Button();
+            // Assert
+            Assert.IsNull(sut.GetSchema());
+        }
+
+        [Test]
+        public void Get_Should_Return_String_Empty_If_Property_Is_Not_Present()
+        {
+            // Arrange
+            var sut = new Button();
+            // Act
+            var actual = sut.Get(ButtonProperty.Sequence);
+            // Assert
+            Assert.IsEmpty(actual);
+        }
     }
 }
