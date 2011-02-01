@@ -7,6 +7,7 @@ namespace DotNetRocks.FluentSPRibbon
         Command,
         [TextProvider]
         Description,
+        [ImageProvider]
         Image32by32Popup,
         Image32by32PopupClass,
         Image32by32PopupLeft,

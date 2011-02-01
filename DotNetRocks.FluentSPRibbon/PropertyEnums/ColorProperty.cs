@@ -1,8 +1,11 @@
-﻿namespace DotNetRocks.FluentSPRibbon
+﻿using DotNetRocks.FluentSPRibbon.Attributes;
+
+namespace DotNetRocks.FluentSPRibbon
 {
     public enum ColorProperty
     {
         Sequence,
+        [TextProvider]
         Title,
         Style,
         Color,

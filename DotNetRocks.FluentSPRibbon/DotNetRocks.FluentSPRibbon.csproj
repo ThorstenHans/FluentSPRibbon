@@ -48,7 +48,7 @@
     <Compile Include="DisplayModeEnums\ControlRefDisplayMode.cs" />
     <Compile Include="DisplayModeEnums\InsertTableDisplayMode.cs" />
     <Compile Include="DisplayModeEnums\MenuSectionDisplayMode.cs" />
-    <Compile Include="OverflowAreaDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\OverflowAreaDisplayMode.cs" />
     <Compile Include="PropertyEnums\ControlRefProperty.cs" />
     <Compile Include="DisplayModeEnums\DropDownDisplayMode.cs" />
     <Compile Include="DisplayModeEnums\FlyoutAnchorDisplayMode.cs" />
@@ -75,7 +75,6 @@
     <Compile Include="PropertyEnums\ComboBoxProperty.cs" />
     <Compile Include="Create.cs" />
     <Compile Include="DropDown.cs" />
-    <Compile Include="PropertyEnums\DisplayMode.cs" />
     <Compile Include="PropertyEnums\DropDownProperty.cs" />
     <Compile Include="FlyoutAnchor.cs" />
     <Compile Include="PropertyEnums\FlyoutAnchorProperty.cs" />

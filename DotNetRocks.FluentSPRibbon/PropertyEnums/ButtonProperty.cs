@@ -4,6 +4,7 @@ namespace DotNetRocks.FluentSPRibbon
 {
     public enum ButtonProperty
     {
+        [TextProvider]
         Alt,
         Command,
         CommandType,
@@ -35,6 +36,7 @@ namespace DotNetRocks.FluentSPRibbon
         ToolTipTitle,
         [TextProvider]
         ToolTipDescription,
+        [TextProvider]
         ToolTipHelpKeyWord,
         ToolTipShortcutKey
     }
