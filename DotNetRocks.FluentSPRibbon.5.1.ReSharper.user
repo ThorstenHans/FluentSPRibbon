@@ -804,7 +804,6 @@
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ComboBoxProperty.cs" caret="929" fromTop="36" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ControlRefProperty.cs" caret="0" fromTop="0" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:DropDownProperty.cs" caret="900" fromTop="35" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:FlyoutAnchorProperty.cs" caret="1094" fromTop="36" />
@@ -834,9 +833,9 @@
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:UnitAbbreviationProperty.cs" caret="0" fromTop="0" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:UnitProperty.cs" caret="0" fromTop="0" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:VerticalAlignment.cs" caret="119" fromTop="3" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2106" fromTop="19" />
     </RecentFiles>
     <RecentEdits>
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:FlyoutAnchorProperty.cs" caret="714" fromTop="29" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:FlyoutAnchorProperty.cs" caret="1021" fromTop="36" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:GalleryButtonProperty.cs" caret="798" fromTop="33" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:GroupProperty.cs" caret="213" fromTop="9" />
@@ -866,6 +865,7 @@
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ToggleButtonProperty.cs" caret="472" fromTop="20" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ToggleButtonProperty.cs" caret="684" fromTop="29" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ToggleButtonProperty.cs" caret="936" fromTop="35" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2035" fromTop="18" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
