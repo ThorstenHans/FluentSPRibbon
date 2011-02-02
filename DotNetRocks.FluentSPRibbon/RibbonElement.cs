@@ -78,7 +78,7 @@ namespace DotNetRocks.FluentSPRibbon
         {
             if (IsIdProvider)
                 writer.WriteAttributeString("Id", Id);
-            foreach (var transformedProperty in
+            foreach (KeyValuePair<Enum, string> transformedProperty in
                 _properties.Select(RibbonSettings.ApplyResourceLink)
                     .Select(RibbonSettings.ApplyImagesFolder))
             {
