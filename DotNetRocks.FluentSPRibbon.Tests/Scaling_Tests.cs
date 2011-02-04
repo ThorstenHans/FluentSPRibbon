@@ -6,6 +6,14 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     public class Scaling_Tests
     {
         [Test]
+        public void If_DefaultConstructor_Is_Called_A_DefaultValue_Should_Be_Passed()
+        {
+            // Arrange
+            var sut = new Scaling();
+            // Assert
+            Assert.AreEqual("NotSet",sut.Id);
+        }
+        [Test]
         public void Create_Should_Create_A_New_Scaling_Instance()
         {
             var sut = Create<Scaling>.Instance("MyScaling");

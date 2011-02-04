@@ -84,5 +84,18 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Assert
             Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
         }
+
+
+        [Test]
+        public void MRuSplitButton_Should_Be_Able_To_Store_A_Menu()
+        {
+            // Arrange
+            var sut = new MRUSplitButton();
+            var menu = Create<Menu>.Instance("MyMenu");
+            // Act
+            sut.With(() => menu);
+            // Assert
+            Assert.AreEqual(menu,sut.GetMenu());
+        }
     }
 }
