@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
+    <Compile Include="ContextualGroup.cs" />
+    <Compile Include="PropertyEnums\ContextualGroupProperty.cs" />
     <Compile Include="DisplayModeEnums\ButtonDisplayMode.cs" />
     <Compile Include="DisplayModeEnums\CheckBoxDisplayMode.cs" />
     <Compile Include="DisplayModeEnums\ColorPickerDisplayMode.cs" />

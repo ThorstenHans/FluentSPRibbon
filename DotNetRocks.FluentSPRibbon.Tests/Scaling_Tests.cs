@@ -73,5 +73,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             // Assert
             Assert.IsTrue(sut.IsIdProvider);
         }
+
+        
     }
 }

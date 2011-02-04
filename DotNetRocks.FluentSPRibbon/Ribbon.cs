@@ -5,9 +5,12 @@ using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Ribbon : RibbonElement<Ribbon,RibbonProperty>, IRibbonElementContainer<Ribbon,Tab>
+    public class Ribbon : RibbonElement<Ribbon,RibbonProperty>, 
+        IRibbonElementContainer<Ribbon,Tab>,
+        IRibbonElementContainer<Ribbon, ContextualGroup>
     {
         internal readonly IList<Tab> _tabs;
+        internal readonly IList<ContextualGroup> _contextualGroups;
       
         public Tab this[string id]
         {
@@ -21,6 +24,7 @@ namespace DotNetRocks.FluentSPRibbon
         internal Ribbon(string id) : base(id)
         {
             this._tabs = new List<Tab>();
+            this._contextualGroups = new List<ContextualGroup>();
       
         }
 
@@ -47,6 +51,14 @@ namespace DotNetRocks.FluentSPRibbon
             return this;
         }
 
+        public Ribbon With(Func<ContextualGroup> expression)
+        {
+            var contextualGroup = expression.Invoke();
+            contextualGroup.Parent = this;
+            this._contextualGroups.Add(contextualGroup);
+            return this;
+        }
+
         protected override void WriteChildren(XmlWriter writer)
         {
             writer.WriteStartElement("Tabs");
@@ -57,6 +69,16 @@ namespace DotNetRocks.FluentSPRibbon
                                            t.WriteXml(writer);
                                            writer.WriteEndElement();
                                        });
+            writer.WriteEndElement();
+            writer.WriteStartElement("ContextualTabs");
+            writer.WriteAttributeString("Id", String.Concat(Id,".ContextualTabs"));
+            _contextualGroups.ToList().ForEach(cg=>
+                                                   {
+                                                       writer.WriteStartElement("ContextualGroup");
+                                                       cg.WriteXml(writer);
+                                                       writer.WriteEndElement();
+
+                                                   });
             writer.WriteEndElement();
         }
 
