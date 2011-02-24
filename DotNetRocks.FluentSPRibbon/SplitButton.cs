@@ -10,13 +10,17 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal SplitButton() : this("NotSet")
         {
-            
         }
 
         internal SplitButton(String id) : base(id)
         {
-            
         }
+
+        public new static SplitButton Create(String id)
+        {
+            return RibbonElement<SplitButton>.Create(id);
+        }
+
         public override SplitButton SetDisplayMode(SplitButtonDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);

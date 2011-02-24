@@ -9,7 +9,6 @@ namespace DotNetRocks.FluentSPRibbon
         internal readonly IList<MenuSection> _menuSections;
         internal Menu() :this("NotSet")
         {
-
         }
 
         internal Menu(String id) : base(id)
@@ -17,7 +16,10 @@ namespace DotNetRocks.FluentSPRibbon
             _menuSections=new List<MenuSection>();
         }
 
-    
+        public new static Menu Create(String id)
+        {
+            return RibbonElement<Menu>.Create(id);
+        }    
 
         public MenuSection this[string id]
         {

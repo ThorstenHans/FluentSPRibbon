@@ -11,10 +11,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             // Act
 
-            var ribbon = Create<Ribbon>.Instance("MyRibbon")
+            var ribbon = Ribbon.Create("MyRibbon")
                 .Set(RibbonProperty.ToolTipFooterText, "MyRibbon")
-                .With(() => Create<Tab>.Instance("Tab1").Set(TabProperty.Title, "MyTab"))
-                .With(() => Create<Tab>.Instance("Tab2").Set(TabProperty.Title, "My 2ndTab"));
+                .With(() => Tab.Create("Tab1").Set(TabProperty.Title, "MyTab"))
+                .With(() => Tab.Create("Tab2").Set(TabProperty.Title, "My 2ndTab"));
 
             // Assert
             Assert.AreEqual(2,ribbon._tabs.Count);
@@ -26,10 +26,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
 
             // Act
-            var ribbon = Create<Ribbon>.Instance("MyRibbon")
-                .With(() => Create<Tab>.Instance("Tab1")
-                                .With(() => Create<Group>.Instance("Grp1").Set(GroupProperty.Title, "Group1"))
-                                .With(() => Create<Group>.Instance("Grp2").Set(GroupProperty.Title, "Group2")));
+            var ribbon = Ribbon.Create("MyRibbon")
+                .With(() => Tab.Create("Tab1")
+                                .With(() => Group.Create("Grp1").Set(GroupProperty.Title, "Group1"))
+                                .With(() => Group.Create("Grp2").Set(GroupProperty.Title, "Group2")));
             Assert.AreEqual(1, ribbon._tabs.Count);
             // Assert
         }
@@ -38,15 +38,14 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void It_Should_Be_Possible_To_Create_Single_Button_And_Pass_It_Into_A_New_Ribbon()
         {
-            var button = Create<Button>
-                .Instance("MyButton")
+            var button = Button.Create("MyButton")
                 .Set(ButtonProperty.LabelText, "Click me!")
                 .Set(ButtonProperty.Sequence, "100")
                 .Set(ButtonProperty.Description, "a new button");
 
-            var ribbon = Create<Ribbon>.Instance("CustomRibbon")
-                .With(() => Create<Tab>.Instance("1stTab")
-                                .With(() => Create<Group>.Instance("1stGroup")
+            var ribbon = Ribbon.Create("CustomRibbon")
+                .With(() => Tab.Create("1stTab")
+                                .With(() => Group.Create("1stGroup")
                                                 .Set(GroupProperty.Title, "Group 1")
                                                 .With(() => button)));
             Assert.IsNotNull(button);

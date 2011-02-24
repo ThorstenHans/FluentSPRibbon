@@ -9,12 +9,16 @@ namespace DotNetRocks.FluentSPRibbon
         internal readonly IList<Unit> _units;
         internal Spinner() : this("NotSet")
         {
-
         }
 
         internal Spinner(String id) : base(id)
         {
             this._units=new List<Unit>();
+        }
+
+        public new static Spinner Create(String id)
+        {
+            return RibbonElement<Spinner>.Create(id);
         }
 
         public override Spinner SetDisplayMode(SpinnerDisplayMode displayMode)

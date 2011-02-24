@@ -25,7 +25,12 @@ namespace DotNetRocks.FluentSPRibbon
             _buttons = new List<Button>();
             _colorPickers = new List<ColorPicker>();
             _flyoutAnchors = new List<FlyoutAnchor>();
-        } 
+        }
+
+        public new static MenuSection Create(String id)
+        {
+            return RibbonElement<MenuSection>.Create(id);
+        }
 
         public InsertTable InsertTable
         {

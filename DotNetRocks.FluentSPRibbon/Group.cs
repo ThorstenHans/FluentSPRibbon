@@ -15,6 +15,8 @@ namespace DotNetRocks.FluentSPRibbon
     {
         internal readonly IList<IRibbonElement> _innerControls;
         private readonly Dictionary<String, String> _controlsProperties;
+        private string _className;
+        private Layout _layout;
 
         internal Group():this("NotSet")
         {
@@ -27,7 +29,10 @@ namespace DotNetRocks.FluentSPRibbon
             this._controlsProperties = new Dictionary<string, string>();
         }
 
-    
+        public static new Group Create(String id)
+        {
+            return RibbonElement<Group>.Create(id);
+        }
         
         public Group ApplyControlsProperty(String name, String value)
         {
@@ -47,11 +52,19 @@ namespace DotNetRocks.FluentSPRibbon
             return this;
         }
 
-     
-
         public int ChildItemCount
         {
             get { return _innerControls.Count; }
+        }
+
+        internal String ClassName
+        {
+            get { return _className; }
+        }
+
+        internal Layout Layout
+        {
+            get { return this._layout; }
         }
 
         
@@ -186,6 +199,20 @@ namespace DotNetRocks.FluentSPRibbon
             var child = expression.Invoke();
             child.Parent = this;
             return AddChildControl(child);
+        }
+
+        public Group SetClassTo(string className)
+        {
+            this._className = className;
+            return this;
+        }
+
+        public Group SetLayout(Func<Layout> expression)
+        {
+            var layout = expression.Invoke();
+            layout.Parent = this;
+            this._layout = layout;
+            return this;
         }
     }
 }

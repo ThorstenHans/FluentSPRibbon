@@ -6,96 +6,85 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     [TestFixture]
     public class MRUSplitButton_Tests
     {
+        private MRUSplitButton _sut;
+
+        [SetUp]
+        public void Setup()
+        {
+            _sut = MRUSplitButton.Create("MyMRUSplitButton");
+        }
         [Test]
         public void Create_Should_Create_A_New_Instance()
         {
-            var sut = Create<MRUSplitButton>.Instance("MyMRUSplitButton");
-
-            Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<MRUSplitButton>(sut);
-            Assert.AreEqual("MyMRUSplitButton", sut.Id);
+            Assert.IsNotNull(_sut);
+            Assert.IsInstanceOf<MRUSplitButton>(_sut);
+            Assert.AreEqual("MyMRUSplitButton", _sut.Id);
         }
 
         [Test]
         public void PassedParameter_Should_Be_Stored_In_OriginalId()
         {
-            var sut = new MRUSplitButton("MyMRUSplitButton");
-            Assert.AreEqual("MyMRUSplitButton", sut.OriginalId);
+            Assert.AreEqual("MyMRUSplitButton", _sut.OriginalId);
         }
 
         [Test]
         public void IsIdProvider_Should_Be_True()
         {
-            var sut = new MRUSplitButton("MyMRUSplitButton");
-            Assert.IsTrue(sut.IsIdProvider);
+            Assert.IsTrue(_sut.IsIdProvider);
         }
 
         [Test]
         public void Id_Should_Be_Compsited_If_Parent_Is_Present()
         {
-            var sut = new MRUSplitButton("MRUSplitButton1");
             var group = new Group("ActionGroup1");
             var tab = new Tab("CommonTab");
             var ribbon = new Ribbon("MyRibbon");
             ribbon.With(() => tab
                                   .With(() => group
-                                                  .With(() => sut)));
-
-            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.MRUSplitButton1", sut.Id);
+                                                  .With(() => _sut)));
+            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.MyMRUSplitButton", _sut.Id);
         }
 
         [Test]
         public void Id_Should_Not_Be_Composited_If_Parent_Is_Not_Present()
         {
-            var sut = new MRUSplitButton("MyMRUSplitButton");
-            Assert.AreEqual("MyMRUSplitButton", sut.Id);
+            Assert.AreEqual("MyMRUSplitButton", _sut.Id);
         }
 
         [Test]
         public void Set_Should_Store_Value()
         {
-            var sut = new MRUSplitButton("MyMRUSplitButton");
-            sut.Set(MRUProperty.ToolTipTitle, "My MRUSplitButton");
-
-            Assert.AreEqual("My MRUSplitButton", sut.Get(MRUProperty.ToolTipTitle));
+            _sut.Set(MRUProperty.ToolTipTitle, "My MRUSplitButton");
+            Assert.AreEqual("My MRUSplitButton", _sut.Get(MRUProperty.ToolTipTitle));
         }
 
         [Test]
         public void Set_Should_Store_MultipleValues()
         {
-            var sut = new MRUSplitButton("MyMRUSplitButton");
-            sut.Set(new Dictionary<MRUProperty, string>()
+            _sut.Set(new Dictionary<MRUProperty, string>()
                                   {
                                       {MRUProperty.ToolTipTitle, "My MRUSplitButton ToolTip"},
                                       {MRUProperty.Alt, "My MRUSplitButton"}
                                   });
-            Assert.AreEqual("My MRUSplitButton ToolTip", sut.Get(MRUProperty.ToolTipTitle));
-            Assert.AreEqual("My MRUSplitButton", sut.Get(MRUProperty.Alt));
+            Assert.AreEqual("My MRUSplitButton ToolTip", _sut.Get(MRUProperty.ToolTipTitle));
+            Assert.AreEqual("My MRUSplitButton", _sut.Get(MRUProperty.Alt));
         }
 
         [Test]
         public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
         {
-            // Arrange
-            var sut = new MRUSplitButton("MRUSplitButton");
             var actual = MRUDisplayMode.Large;
-            // Act
-            sut.SetDisplayMode(actual);
-            // Assert
-            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+            _sut.SetDisplayMode(actual);
+            Assert.AreEqual(actual.ToString(), _sut.GetDisplayMode());
         }
 
 
         [Test]
         public void MRuSplitButton_Should_Be_Able_To_Store_A_Menu()
         {
-            // Arrange
-            var sut = new MRUSplitButton();
-            var menu = Create<Menu>.Instance("MyMenu");
-            // Act
-            sut.With(() => menu);
-            // Assert
-            Assert.AreEqual(menu,sut.GetMenu());
+            var menu = Menu.Create("MyMenu");
+            _sut.With(() => menu);
+            Assert.AreEqual(menu,_sut.GetMenu());
         }
     }
 }

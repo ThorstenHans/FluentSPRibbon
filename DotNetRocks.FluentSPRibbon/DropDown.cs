@@ -12,6 +12,11 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal DropDown(String id) :base(id) { }
 
+        public new static DropDown Create(String id)
+        {
+            return RibbonElement<DropDown>.Create(id);
+        }
+
         public override  DropDown SetDisplayMode(DropDownDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);

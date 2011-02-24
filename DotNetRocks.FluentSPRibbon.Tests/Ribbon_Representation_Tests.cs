@@ -8,9 +8,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void SharePoint_Ribbon_Should_Have_A_Managed_Wrapper()
         {
-            var sut = Create<Ribbon>.Instance("MyRibbon")
+            var sut = Ribbon.Create("MyRibbon")
                
-                .With(()=>Create<Tab>.Instance("MyTab"));
+                .With(()=>Tab.Create("MyTab"));
  
             Assert.AreEqual(1, sut._tabs.Count);
  

@@ -14,6 +14,15 @@ namespace DotNetRocks.FluentSPRibbon
             _galleryButtons=new List<GalleryButton>();
         }
 
+        public new static Gallery Create(String id, ElementDimension elementDimension, String width)
+        {
+            var gallery = RibbonElement<Gallery>.Create(id);
+            gallery.Set(new Dictionary<GalleryProperty, string>
+                            {{GalleryProperty.ElementDimensions, Enum.GetName(typeof (ElementDimension), elementDimension)},
+                             {GalleryProperty.Width, width}});
+            return gallery;
+        }
+
         internal readonly IList<GalleryButton> _galleryButtons;
 
 

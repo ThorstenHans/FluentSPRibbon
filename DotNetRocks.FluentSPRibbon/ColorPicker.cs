@@ -16,6 +16,11 @@ namespace DotNetRocks.FluentSPRibbon
         {
             _colors=new List<Color>();
         }
+
+        public new static ColorPicker Create(String id)
+        {
+            return RibbonElement<ColorPicker>.Create(id);
+        }   
  
         public override ColorPicker SetDisplayMode(ColorPickerDisplayMode displayMode)
         {

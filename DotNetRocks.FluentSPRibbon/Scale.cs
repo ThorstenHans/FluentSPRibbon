@@ -9,7 +9,16 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal Scale(String id) : base(id) { }
 
-
+        public new static Scale Create(String id, String groupId, String size)
+        {
+            var scale = RibbonElement<Scale>.Create(id);
+            scale.Set(new Dictionary<ScaleProperty, string>
+                          {
+                              {ScaleProperty.GroupId, groupId},
+                              {ScaleProperty.Size, size}
+                          });
+            return scale;
+        }
         public override Scale Set(ScaleProperty propertyName, String propertyValue)
         {
             AddOrUpdateProperty(propertyName, propertyValue);

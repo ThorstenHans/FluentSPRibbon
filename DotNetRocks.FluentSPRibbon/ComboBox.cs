@@ -12,6 +12,11 @@ namespace DotNetRocks.FluentSPRibbon
         internal ComboBox() : this("NotSet"){ }
 
         internal ComboBox(String id) : base(id){ }
+
+        public new static ComboBox Create(String id)
+        {
+            return RibbonElement<ComboBox>.Create(id);
+        }
  
         public override ComboBox SetDisplayMode(ComboBoxDisplayMode displayMode)
         {

@@ -13,6 +13,10 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
+        public new static TextBox Create(String id)
+        {
+            return RibbonElement<TextBox>.Create(id);
+        }
 
         public override TextBox SetDisplayMode(TextBoxDisplayMode displayMode)
         {

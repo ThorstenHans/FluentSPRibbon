@@ -15,6 +15,11 @@ namespace DotNetRocks.FluentSPRibbon
             return this;
         }
 
+        public new static OverflowSection Create(String id)
+        {
+            return TemplateElement<OverflowSection, OverflowSectionProperty, OverflowSectionDisplayMode>.Create(id);
+        }
+
         public override OverflowSection Set(Dictionary<OverflowSectionProperty, string> properties)
         {
             foreach (var property in properties)

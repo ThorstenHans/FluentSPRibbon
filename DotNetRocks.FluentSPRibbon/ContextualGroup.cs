@@ -13,6 +13,12 @@ namespace DotNetRocks.FluentSPRibbon
         {
             this._tabs= new List<Tab>();
         }
+
+        public new static ContextualGroup Create(String id)
+        {
+            return RibbonElement<ContextualGroup>.Create(id);
+        }
+
         public override ContextualGroup Set(ContextualGroupProperty propertyName, string propertyValue)
         {
             AddOrUpdateProperty(propertyName,propertyValue);

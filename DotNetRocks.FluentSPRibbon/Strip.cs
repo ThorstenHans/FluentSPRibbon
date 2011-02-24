@@ -16,6 +16,11 @@ namespace DotNetRocks.FluentSPRibbon
             this._controlRefs = new List<ControlRef>();
         }
 
+        public new static Strip Create(String id)
+        {
+            return RibbonElement<Strip>.Create(id);
+        }
+
         public Strip With(Func<ControlRef> expression)
         {
             var controlRef = expression.Invoke();

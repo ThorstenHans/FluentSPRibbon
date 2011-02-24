@@ -2,16 +2,28 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Threading;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public abstract class RibbonElement<T> : IRibbonElement
+    public abstract class RibbonElement<T> : IRibbonElement, IIdSetter
     {
-        protected readonly String _originalId;
+        protected String _originalId;
         protected Dictionary<Enum, String> _properties;
+
+        protected static T Create(String id) 
+        {
+            var type = typeof(T);
+            var constructor = type.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.FlattenHierarchy, null, new Type[] { typeof(String) }, null);
+            return (T)constructor.Invoke(BindingFlags.NonPublic, null, new[] { id }, Thread.CurrentThread.CurrentCulture);
+            
+        }
+
+        
 
         public virtual String XmlElementName
         {
@@ -35,6 +47,7 @@ namespace DotNetRocks.FluentSPRibbon
         public String Id
         {
             get { return ResolveId(_originalId); }
+             
         }
 
         internal string OriginalId
@@ -91,7 +104,12 @@ namespace DotNetRocks.FluentSPRibbon
         protected virtual void WriteChildren(XmlWriter writer)
         {
 
-        }   
+        }
+
+        public void SetIdTo(string newId)
+        {
+            this._originalId = newId;
+        }
     }
 
     public abstract class RibbonElement<T, TPropertyEnum>: RibbonElement<T>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Threading;
 using System.Xml;
 using System.Xml.Schema;
 
@@ -20,6 +22,14 @@ namespace DotNetRocks.FluentSPRibbon
         {
             _id = id;
             _properties = new Dictionary<Enum, String>();
+
+        }
+
+        protected static T Create(String id)
+        {
+            var type = typeof(T);
+            var constructor = type.GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.FlattenHierarchy, null, new Type[] { typeof(String) }, null);
+            return (T)constructor.Invoke(BindingFlags.NonPublic, null, new[] { id }, Thread.CurrentThread.CurrentCulture);
 
         }
 

@@ -17,6 +17,13 @@ namespace DotNetRocks.FluentSPRibbon
             this._overflowSections = new List<OverflowSection>();
         }
 
+        public new static Layout Create(String id, String title)
+        {
+            var layout = RibbonElement<Layout>.Create(id);
+            layout.Set(LayoutProperty.Title, title);
+            return layout;
+        }
+
         internal override bool IsIdProvider
         {
             get { return false; }

@@ -6,83 +6,76 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     [TestFixture]
     public class SplitButton_Tests
     {
+        private SplitButton _sut;
+
+        [SetUp]
+        public void Setup()
+        {
+            _sut = SplitButton.Create("MySplitButton");
+        }
         [Test]
         public void Create_Should_Create_A_New_Instance()
         {
-            var sut = Create<SplitButton>.Instance("MySplitButton");
-
-            Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<SplitButton>(sut);
-            Assert.AreEqual("MySplitButton", sut.Id);
+            Assert.IsNotNull(_sut);
+            Assert.IsInstanceOf<SplitButton>(_sut);
+            Assert.AreEqual("MySplitButton", _sut.Id);
         }
 
         [Test]
         public void PassedParameter_Should_Be_Stored_In_OriginalId()
         {
-            var sut = new SplitButton("MySplitButton");
-            Assert.AreEqual("MySplitButton", sut.OriginalId);
+            Assert.AreEqual("MySplitButton", _sut.OriginalId);
         }
 
         [Test]
         public void IsIdProvider_Should_Be_True()
         {
-            var sut = new SplitButton("MySplitButton");
-            Assert.IsTrue(sut.IsIdProvider);
+            Assert.IsTrue(_sut.IsIdProvider);
         }
 
         [Test]
         public void Id_Should_Be_Compsited_If_Parent_Is_Present()
         {
-            var sut = new SplitButton("SplitButton1");
             var group = new Group("ActionGroup1");
             var tab = new Tab("CommonTab");
             var ribbon = new Ribbon("MyRibbon");
             ribbon.With(() => tab
                                   .With(() => group
-                                                  .With(() => sut)));
-
-            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.SplitButton1", sut.Id);
+                                                  .With(() => _sut)));
+            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.MySplitButton", _sut.Id);
         }
 
         [Test]
         public void Id_Should_Not_Be_Composited_If_Parent_Is_Not_Present()
         {
-            var sut = new SplitButton("MySplitButton");
-            Assert.AreEqual("MySplitButton", sut.Id);
+            Assert.AreEqual("MySplitButton", _sut.Id);
         }
 
         [Test]
         public void Set_Should_Store_Value()
         {
-            var sut = new SplitButton("MySplitButton");
-            sut.Set(SplitButtonProperty.LabelText, "My SplitButton");
-
-            Assert.AreEqual("My SplitButton", sut.Get(SplitButtonProperty.LabelText));
+            _sut.Set(SplitButtonProperty.LabelText, "My SplitButton");
+            Assert.AreEqual("My SplitButton", _sut.Get(SplitButtonProperty.LabelText));
         }
 
         [Test]
         public void Set_Should_Store_MultipleValues()
         {
-            var sut = new SplitButton("MySplitButton");
-            sut.Set(new Dictionary<SplitButtonProperty, string>()
+            _sut.Set(new Dictionary<SplitButtonProperty, string>()
                                   {
                                       {SplitButtonProperty.LabelText, "My SplitButton ToolTip"},
                                       {SplitButtonProperty.TemplateAlias, "My SplitButton"}
                                   });
-            Assert.AreEqual("My SplitButton ToolTip", sut.Get(SplitButtonProperty.LabelText));
-            Assert.AreEqual("My SplitButton", sut.Get(SplitButtonProperty.TemplateAlias));
+            Assert.AreEqual("My SplitButton ToolTip", _sut.Get(SplitButtonProperty.LabelText));
+            Assert.AreEqual("My SplitButton", _sut.Get(SplitButtonProperty.TemplateAlias));
         }
 
         [Test]
         public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
         {
-            // Arrange
-            var sut = new SplitButton("SplitButton");
             var actual = SplitButtonDisplayMode.Medium;
-            // Act
-            sut.SetDisplayMode(actual);
-            // Assert
-            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+            _sut.SetDisplayMode(actual);
+            Assert.AreEqual(actual.ToString(), _sut.GetDisplayMode());
         }
     }
 }

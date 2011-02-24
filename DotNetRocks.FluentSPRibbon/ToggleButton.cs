@@ -10,7 +10,12 @@ namespace DotNetRocks.FluentSPRibbon
         internal ToggleButton(string id) : base(id)
         {
         }
-         
+
+        public new static ToggleButton Create(String id)
+        {
+            return RibbonElement<ToggleButton>.Create(id);
+        }
+
         public override ToggleButton SetDisplayMode(ToggleButtonDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);

@@ -10,13 +10,16 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal MRUSplitButton()  : this("NotSet")
         {
-            
         }
 
         internal MRUSplitButton(String id)
             : base(id)
         {
-            
+        }
+
+        public new static MRUSplitButton Create(String id)
+        {
+            return RibbonElement<MRUSplitButton>.Create(id);
         }
 
         public override MRUSplitButton SetDisplayMode(MRUDisplayMode displayMode)

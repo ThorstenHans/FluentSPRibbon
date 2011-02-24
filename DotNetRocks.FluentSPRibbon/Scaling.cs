@@ -17,6 +17,10 @@ namespace DotNetRocks.FluentSPRibbon
             _maxSizes = new List<MaxSize>();
         }
 
+        public new static Scaling Create(String id)
+        {
+            return RibbonElement<Scaling>.Create(id);
+        }
 
         public MaxSize GetMaxSize(String id)
         {

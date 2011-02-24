@@ -14,6 +14,11 @@ namespace DotNetRocks.FluentSPRibbon
             get { return false; }
         }
 
+        public new static Color Create(String id)
+        {
+            return RibbonElement<Color>.Create(id);
+        }
+
         public override Color Set(ColorProperty propertyName, string propertyValue)
         {
             AddOrUpdateProperty(propertyName, propertyValue);

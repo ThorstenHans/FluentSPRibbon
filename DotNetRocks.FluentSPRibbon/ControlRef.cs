@@ -9,11 +9,18 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal ControlRef(String id) :base(id) { }
 
+        public new static ControlRef Create(String id)
+        {
+            return TemplateElement<ControlRef, ControlRefProperty, ControlRefDisplayMode>.Create(id);
+        }
+
         public override ControlRef Set(ControlRefProperty propertyName, string propertyValue)
         {
             AddOrUpdateProperty(propertyName,propertyValue);
             return this;
         }
+
+        
 
         public override ControlRef Set(Dictionary<ControlRefProperty, string> properties)
         {

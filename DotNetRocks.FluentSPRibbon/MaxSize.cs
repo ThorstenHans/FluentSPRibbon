@@ -9,6 +9,17 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal MaxSize(string id) : base(id) { }
 
+        public new static MaxSize Create(String id, String groupId, String size)
+        {
+            var maxSize = RibbonElement<MaxSize>.Create(id);
+            maxSize.Set(new Dictionary<MaxSizeProperty, string>
+                            {
+                                {MaxSizeProperty.GroupId, groupId},
+                                {MaxSizeProperty.Size, size}
+                            });
+            return maxSize;
+        }
+
         public override  MaxSize Set(MaxSizeProperty propertyName, String propertyValue)
         {
             AddOrUpdateProperty(propertyName, propertyValue);

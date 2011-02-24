@@ -6,78 +6,60 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     [TestFixture]
     public class GroupTemplate_Tests
     {
-        [Test]
-        public void If_Default_Constructor_Is_Called_DefaultValue_Should_Be_Stored_In_OriginalId()
+        private GroupTemplate _sut;
+
+        [SetUp]
+        public void Setup()
         {
-            // Arrange
-            var sut = new GroupTemplate();
-            // Assert
-            Assert.AreEqual("NotSet",sut.OriginalId);
+            _sut = GroupTemplate.Create("MyGroupTemplate");
         }
 
         [Test]
         public void Passed_Parameter_Should_Be_Stored_In_OriginalId()
         {
-            // Arrange
             var expected = "MyGroupTemplate";
-            var sut = new GroupTemplate(expected);
-            // Assert
-            Assert.AreEqual(expected,sut.OriginalId);
+            Assert.AreEqual(expected,_sut.OriginalId);
         }
 
         [Test]
         public void Set_Should_Store_Value()
         {
-            var sut = new GroupTemplate("MyGroupTemplate");
-            sut.Set(GroupTemplateProperty.ClassName, "My GroupTemplateClassName");
-
-            Assert.AreEqual("My GroupTemplateClassName", sut.Get(GroupTemplateProperty.ClassName));
+            _sut.Set(GroupTemplateProperty.ClassName, "My GroupTemplateClassName");
+            Assert.AreEqual("My GroupTemplateClassName", _sut.Get(GroupTemplateProperty.ClassName));
         }
 
         [Test]
         public void Set_Should_Store_MultipleValues()
         {
-            var sut = new GroupTemplate("MyGroupTemplate");
-            sut.Set(new Dictionary<GroupTemplateProperty, string>()
+            _sut.Set(new Dictionary<GroupTemplateProperty, string>()
                                   {
                                       {GroupTemplateProperty.ClassName, "My GroupTemplateClassName"}
                                   });
-            Assert.AreEqual("My GroupTemplateClassName", sut.Get(GroupTemplateProperty.ClassName));
+            Assert.AreEqual("My GroupTemplateClassName", _sut.Get(GroupTemplateProperty.ClassName));
         }
 
         [Test]
         public void Create_Should_Create_A_New_Instance()
         {
-            // Arrange
-            var sut = Create<GroupTemplate>.Instance("MyGroupTemplate");
-            // Assert
-            Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<GroupTemplate>(sut);
-            Assert.AreEqual("MyGroupTemplate",sut.Id);
+            Assert.IsNotNull(_sut);
+            Assert.IsInstanceOf<GroupTemplate>(_sut);
+            Assert.AreEqual("MyGroupTemplate",_sut.Id);
         }
 
         [Test]
         public void With_Should_Add_New_Layout_And_Set_Parent_Reference()
         {
-            // Arrange
-            var sut = new GroupTemplate("MyGroupTemplate");
-            var expected = Create<Layout>.Instance("MyLayout");
-            // Act
-            sut.With(() => expected);
-
-            // Assert
-            Assert.IsNotNull(sut._layouts);
-            Assert.AreEqual(1,sut._layouts.Count);
-            Assert.AreEqual(sut,expected.Parent);
+            var expected = Layout.Create("MyLayout", "MyTitle");
+            _sut.With(() => expected);
+            Assert.IsNotNull(_sut._layouts);
+            Assert.AreEqual(1,_sut._layouts.Count);
+            Assert.AreEqual(_sut,expected.Parent);
         }
 
         [Test]
         public void IsIdProvider_Should_Be_True()
         {
-            // Arrange
-            var sut = new GroupTemplate("MyGroupTemplate");
-            // Assert
-            Assert.IsTrue(sut.IsIdProvider);
+            Assert.IsTrue(_sut.IsIdProvider);
         }
     }
 }

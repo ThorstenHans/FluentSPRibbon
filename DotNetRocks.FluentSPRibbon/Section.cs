@@ -15,6 +15,11 @@ namespace DotNetRocks.FluentSPRibbon
             this._rows = new List<Row>();
         }
 
+        public new static Section Create(String id)
+        {
+            return RibbonElement<Section>.Create(id);
+        }
+
         internal override bool IsIdProvider
         {
             get { return false; }

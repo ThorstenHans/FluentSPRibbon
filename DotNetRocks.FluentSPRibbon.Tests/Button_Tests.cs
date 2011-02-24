@@ -6,16 +6,19 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     [TestFixture]
     public class Button_Tests
     {
+        private Button _sut;
+
+        [SetUp]
+        public void Setup()
+        {
+            _sut = Button.Create("MyButton");
+        }
 
         [Test]
         public void GetControlRef_Should_Return_A_Correct_ControlRef_Instance()
         {
-            // Arrange
-            var sut = new Button("MyButton");
-            // Act
-            sut.SetDisplayMode(ButtonDisplayMode.Large);
-            var actual = sut.GetControlRef();
-            // Assert
+            _sut.SetDisplayMode(ButtonDisplayMode.Large);
+            var actual = _sut.GetControlRef();
             Assert.IsNotNull(actual);
             Assert.IsInstanceOf<ControlRef>(actual);
             Assert.AreEqual(ControlRefDisplayMode.Large,actual.GetDisplayMode());
@@ -25,73 +28,62 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void Create_Should_Create_A_New_Instance()
         {
-            var sut = Create<Button>.Instance("MyButton");
-            Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<Button>(sut);
-            Assert.AreEqual("MyButton", sut.Id);
+            Assert.IsNotNull(_sut);
+            Assert.IsInstanceOf<Button>(_sut);
+            Assert.AreEqual("MyButton", _sut.Id);
         }
 
         [Test]
         public void Set_Should_Store_Value()
         {
-            var sut = new Button("MyButton");
-            sut.Set(ButtonProperty.LabelText, "My Button");
-
-            Assert.AreEqual("My Button", sut.Get(ButtonProperty.LabelText));
+            _sut.Set(ButtonProperty.LabelText, "My Button");
+            Assert.AreEqual("My Button", _sut.Get(ButtonProperty.LabelText));
         }
 
         [Test]
         public void Set_Should_Store_MultipleValues()
         {
-            var sut = new Button("MyButton");
-            sut.Set(new Dictionary<ButtonProperty, string>()
+            _sut.Set(new Dictionary<ButtonProperty, string>()
                                   {
                                       {ButtonProperty.ToolTipTitle, "My Button ToolTip"},
                                       {ButtonProperty.LabelText, "My Button"}
                                   });
-            Assert.AreEqual("My Button ToolTip", sut.Get(ButtonProperty.ToolTipTitle));
-            Assert.AreEqual("My Button", sut.Get(ButtonProperty.LabelText));
+            Assert.AreEqual("My Button ToolTip", _sut.Get(ButtonProperty.ToolTipTitle));
+            Assert.AreEqual("My Button", _sut.Get(ButtonProperty.LabelText));
         }
 
         [Test]
         public void IsIdProvider_Should_Be_True()
         {
-            var sut = new Button("My Button");
-            Assert.IsTrue(sut.IsIdProvider);
+            Assert.IsTrue(_sut.IsIdProvider);
         }
 
 
         [Test]
         public void Id_Should_Be_Compsited_If_Parent_Is_Present()
         {
-            var sut = new Button("Button1");
             var group = new Group("ActionGroup1");
             var tab = new Tab("CommonTab");
             var ribbon = new Ribbon("MyRibbon");
             ribbon.With(() => tab
                                   .With(() => group
-                                                  .With(() => sut)));
+                                                  .With(() => _sut)));
 
-            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.Button1", sut.Id);
+            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.MyButton", _sut.Id);
         }
 
         [Test]
         public void Id_Should_Not_Be_Composited_If_Parent_Is_Not_Present()
         {
-            var sut = new Button("MyButton");
-            Assert.AreEqual("MyButton", sut.Id);
+            Assert.AreEqual("MyButton", _sut.Id);
         }
 
         [Test]
         public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
         {
-            // Arrange
-            var sut = new Button("Button");
             var actual = ButtonDisplayMode.Medium;
-            // Act
-            sut.SetDisplayMode(actual);
-            // Assert
-            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+            _sut.SetDisplayMode(actual);
+            Assert.AreEqual(actual.ToString(), _sut.GetDisplayMode());
         }
     }
 }

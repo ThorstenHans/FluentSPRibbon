@@ -14,6 +14,11 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
+        public static new CheckBox Create(String id)
+        {
+            return RibbonElement<CheckBox>.Create(id);
+        }
+
         public override CheckBox SetDisplayMode(CheckBoxDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);

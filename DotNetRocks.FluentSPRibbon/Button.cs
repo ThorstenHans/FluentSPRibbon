@@ -6,10 +6,14 @@ namespace DotNetRocks.FluentSPRibbon
     public class Button : InteractiveRibbonElement<Button,ButtonProperty, ButtonDisplayMode>
     {
         
-
         internal Button():this("NotSet"){}
 
         internal Button(string id) : base(id) { }
+
+        public static new Button Create(String id)
+        {
+            return RibbonElement<Button>.Create(id);
+        }
 
         public override Button Set(ButtonProperty propertyName, String propertyValue)
         {

@@ -27,6 +27,11 @@ namespace DotNetRocks.FluentSPRibbon
             this._controlRefs = new List<ControlRef>();
         }
 
+        public new static Row Create(String id)
+        {
+            return RibbonElement<Row>.Create(id);
+        }
+
         public Row With(Func<OverflowArea> expression)
         {
             var overflowArea = expression.Invoke();

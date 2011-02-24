@@ -12,6 +12,11 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal FlyoutAnchor(String id) : base(id) { }
 
+        public new static FlyoutAnchor Create(String id)
+        {
+            return RibbonElement<FlyoutAnchor>.Create(id);
+        }
+
         public override FlyoutAnchor SetDisplayMode(FlyoutAnchorDisplayMode displayMode)
         {
             SetDisplayModeTo(displayMode);

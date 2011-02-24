@@ -12,10 +12,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         public void Tab_Should_Store_Multiple_Groups()
         {
             // Act
-            var tab = Create<Tab>.Instance("MyTab")
-                .With(() => Create<Group>.Instance("Grp1")
+            var tab = Tab.Create("MyTab")
+                .With(() => Group.Create("Grp1")
                                 .Set(GroupProperty.Description, "Group 1"))
-                .With(()=>Create<Group>.Instance("Grp2"));
+                .With(()=>Group.Create("Grp2"));
             // Assert
             Assert.AreEqual(2,tab._groups.Count);
         }
@@ -23,8 +23,8 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void A_New_Tab_Should_Always_Be_Empty()
         {
-            var sut = Create<Ribbon>.Instance("MyRibbon")
-                .With(()=>Create<Tab>.Instance("MyTab"));
+            var sut = Ribbon.Create("MyRibbon")
+                .With(()=>Tab.Create("MyTab"));
 
             Assert.IsNotNull(sut);
             Assert.IsNotNull(sut["MyTab"]);
@@ -44,10 +44,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         public void A_Single_Tab_Should_Be_Exported_To_WellFormed_Xml()
         {
             // Act
-            var tab = Create<Tab>.Instance("MyTab")
-                .With(() => Create<Group>.Instance("Grp1")
+            var tab = Tab.Create("MyTab")
+                .With(() => Group.Create("Grp1")
                                 .Set(GroupProperty.Description, "Group 1"))
-                .With(() => Create<Group>.Instance("Grp2"));
+                .With(() => Group.Create("Grp2"));
             string actual = tab.ToXml();
             
             // Assert

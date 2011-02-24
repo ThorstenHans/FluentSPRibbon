@@ -6,83 +6,80 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     [TestFixture]
     public class GalleryButton_Tests
     {
+        private GalleryButton _sut;
+
+        [SetUp]
+        public void Setup()
+        {
+            _sut = GalleryButton.Create("MyGalleryButton", ElementDimension.Size16by16);
+        }
+
         [Test]
         public void Create_Should_Create_A_New_Instance()
         {
-            var sut = Create<GalleryButton>.Instance("MyGalleryButton");
 
-            Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<GalleryButton>(sut);
-            Assert.AreEqual("MyGalleryButton", sut.Id);
+            Assert.IsNotNull(_sut);
+            Assert.IsInstanceOf<GalleryButton>(_sut);
+            Assert.AreEqual("MyGalleryButton", _sut.Id);
+            Assert.AreEqual("Size16by16",_sut.Get(GalleryButtonProperty.ElementDimensions));
         }
 
         [Test]
         public void PassedParameter_Should_Be_Stored_In_OriginalId()
         {
-            var sut = new GalleryButton("MyGalleryButton");
-            Assert.AreEqual("MyGalleryButton", sut.OriginalId);
+            Assert.AreEqual("MyGalleryButton", _sut.OriginalId);
         }
 
         [Test]
         public void IsIdProvider_Should_Be_True()
         {
-            var sut = new GalleryButton("MyGalleryButton");
-            Assert.IsTrue(sut.IsIdProvider);
+            Assert.IsTrue(_sut.IsIdProvider);
         }
 
         [Test]
         public void Id_Should_Be_Compsited_If_Parent_Is_Present()
         {
-            var sut = new GalleryButton("GalleryButton1");
             var group = new Group("ActionGroup1");
             var tab = new Tab("CommonTab");
             var ribbon = new Ribbon("MyRibbon");
             ribbon.With(() => tab
                                   .With(() => group
-                                                  .With(() => sut)));
+                                                  .With(() => _sut)));
 
-            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.GalleryButton1", sut.Id);
+            Assert.AreEqual("MyRibbon.CommonTab.ActionGroup1.MyGalleryButton", _sut.Id);
         }
 
         [Test]
         public void Id_Should_Not_Be_Composited_If_Parent_Is_Not_Present()
         {
-            var sut = new GalleryButton("MyGalleryButton");
-            Assert.AreEqual("MyGalleryButton", sut.Id);
+            Assert.AreEqual("MyGalleryButton", _sut.Id);
         }
 
         [Test]
         public void Set_Should_Store_Value()
         {
-            var sut = new GalleryButton("MyGalleryButton");
-            sut.Set(GalleryButtonProperty.ToolTipTitle, "My GalleryButton");
-
-            Assert.AreEqual("My GalleryButton", sut.Get(GalleryButtonProperty.ToolTipTitle));
+            _sut.Set(GalleryButtonProperty.ToolTipTitle, "My GalleryButton");
+            Assert.AreEqual("My GalleryButton", _sut.Get(GalleryButtonProperty.ToolTipTitle));
         }
 
         [Test]
         public void Set_Should_Store_MultipleValues()
         {
-            var sut = new GalleryButton("MyGalleryButton");
-            sut.Set(new Dictionary<GalleryButtonProperty, string>()
+            _sut.Set(new Dictionary<GalleryButtonProperty, string>()
                                   {
                                       {GalleryButtonProperty.ToolTipTitle, "My GalleryButton ToolTip"},
                                       {GalleryButtonProperty.Alt, "My GalleryButton"}
                                   });
-            Assert.AreEqual("My GalleryButton ToolTip", sut.Get(GalleryButtonProperty.ToolTipTitle));
-            Assert.AreEqual("My GalleryButton", sut.Get(GalleryButtonProperty.Alt));
+            Assert.AreEqual("My GalleryButton ToolTip", _sut.Get(GalleryButtonProperty.ToolTipTitle));
+            Assert.AreEqual("My GalleryButton", _sut.Get(GalleryButtonProperty.Alt));
         }
 
         [Test]
         public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
         {
-            // Arrange
-            var sut = new GalleryButton("GalleryButton");
             var actual = GalleryButtonDisplayMode.Menu;
-            // Act
-            sut.SetDisplayMode(actual);
-            // Assert
-            Assert.AreEqual(actual.ToString(), sut.GetDisplayMode());
+            _sut.SetDisplayMode(actual);
+            Assert.AreEqual(actual.ToString(), _sut.GetDisplayMode());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             
             // Act
-            var actual = Create<Button>.Instance("MyRibbon");
+            var actual = Button.Create("MyRibbon");
             // Assert
             Assert.IsNotNull(actual);
             Assert.IsInstanceOf<Button>(actual);
@@ -23,7 +23,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         public void Should_Provide_A_Fluent_Way_To_Set_Properties_On_RibbonElements()
         {
             // Act
-            var actual = Create<Button>.Instance("MyRibbon")
+            var actual = Button.Create("MyRibbon")
                 .Set(ButtonProperty.Description,"Value")
                 .Set(ButtonProperty.LabelText,"Caption");
 

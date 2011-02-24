@@ -6,57 +6,47 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     [TestFixture]
     public class OverflowArea_Tests
     {
-        [Test]
-        public void Create_Should_Create_A_New_Instance()
+        private OverflowArea _sut;
+
+        [SetUp]
+        public void Setup()
         {
-            // Arrange
-            var sut = Create<OverflowArea>.Instance("Sample");
-            // Assert
-            Assert.IsNotNull(sut);
-            Assert.IsInstanceOf<OverflowArea>(sut);
+            _sut = OverflowArea.Create("Sample");
         }
 
         [Test]
-        public void If_Default_Constructor_Is_Called_DefaultValue_Should_Be_Stored_In_OriginalId()
+        public void Create_Should_Create_A_New_Instance()
         {
-            // Arrange
-            var sut = new OverflowArea();
-            // Assert
-            Assert.AreEqual("NotSet", sut.Id);
+            Assert.IsNotNull(_sut);
+            Assert.IsInstanceOf<OverflowArea>(_sut);
         }
 
         [Test]
         public void Set_Should_Store_Value()
         {
-            var sut = new OverflowArea("MyOverflowArea");
-            sut.Set(OverflowAreaProperty.TemplateAlias, "My OverflowArea");
+            _sut.Set(OverflowAreaProperty.TemplateAlias, "My OverflowArea");
 
             Assert.AreEqual("My OverflowArea",
-                sut.GetProperty(OverflowAreaProperty.TemplateAlias));
+                _sut.GetProperty(OverflowAreaProperty.TemplateAlias));
         }
 
         [Test]
         public void Set_Should_Store_MultipleValues()
         {
-            var sut = new OverflowArea("MyOverflowArea");
-            sut.Set(new Dictionary<OverflowAreaProperty, string>()
+            _sut.Set(new Dictionary<OverflowAreaProperty, string>()
                                   {
                                       {OverflowAreaProperty.TemplateAlias, "My OverflowArea"}
                                   });
             
-            Assert.AreEqual("My OverflowArea", sut.GetProperty(OverflowAreaProperty.TemplateAlias));
+            Assert.AreEqual("My OverflowArea", _sut.GetProperty(OverflowAreaProperty.TemplateAlias));
         }
 
         [Test]
         public void SetDisplayMode_Should_Store_DisplayMode_For_Current_Instance()
         {
-            // Arrange
-            var sut = new OverflowArea("OverflowArea");
             var actual = OverflowAreaDisplayMode.Medium;
-            // Act
-            sut.SetDisplayMode(actual);
-            // Assert
-            Assert.AreEqual(actual, sut.GetDisplayMode());
+            _sut.SetDisplayMode(actual);
+            Assert.AreEqual(actual, _sut.GetDisplayMode());
         } 
     }
 }

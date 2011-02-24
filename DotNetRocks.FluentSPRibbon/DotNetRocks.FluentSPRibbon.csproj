@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="ContextualGroup.cs" />
+    <Compile Include="PropertyEnums\ElementDimension.cs" />
+    <Compile Include="IIdSetter.cs" />
     <Compile Include="PropertyEnums\ContextualGroupProperty.cs" />
     <Compile Include="DisplayModeEnums\ButtonDisplayMode.cs" />
     <Compile Include="DisplayModeEnums\CheckBoxDisplayMode.cs" />
@@ -75,7 +77,6 @@
     <Compile Include="PropertyEnums\ColorProperty.cs" />
     <Compile Include="ComboBox.cs" />
     <Compile Include="PropertyEnums\ComboBoxProperty.cs" />
-    <Compile Include="Create.cs" />
     <Compile Include="DropDown.cs" />
     <Compile Include="PropertyEnums\DropDownProperty.cs" />
     <Compile Include="FlyoutAnchor.cs" />

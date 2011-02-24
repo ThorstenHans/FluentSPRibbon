@@ -9,6 +9,10 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal OverflowArea(String id) : base(id) { }
 
+        public new static OverflowArea Create(String id)
+        {
+            return TemplateElement<OverflowArea, OverflowAreaProperty, OverflowAreaDisplayMode>.Create(id);
+        }
 
         public override OverflowArea Set(OverflowAreaProperty propertyName, string propertyValue)
         {

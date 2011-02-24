@@ -19,6 +19,11 @@ namespace DotNetRocks.FluentSPRibbon
             _groups = new List<Group>();
         }
 
+        public static new Tab Create(String id)
+        {
+            return RibbonElement<Tab>.Create(id);
+        }
+
         public override Tab Set(TabProperty propertyName, String propertyValue)
         {
             AddOrUpdateProperty(propertyName, propertyValue);

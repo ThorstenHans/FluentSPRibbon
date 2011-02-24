@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -7,6 +8,11 @@ namespace DotNetRocks.FluentSPRibbon
         internal UnitAbbreviation() : this("NotSet") { }
 
         internal UnitAbbreviation(string id) : base(id) { }
+
+        public new static UnitAbbreviation Create(String id)
+        {
+            return RibbonElement<UnitAbbreviation>.Create(id);
+        }
 
         internal override bool IsIdProvider
         {

@@ -14,6 +14,11 @@ namespace DotNetRocks.FluentSPRibbon
             this._unitAbbreviations=new List<UnitAbbreviation>();
         }
 
+        public new static Unit Create(String id)
+        {
+            return RibbonElement<Unit>.Create(id);
+        }
+
         internal override bool  IsIdProvider
         { get { return false; } 
         }

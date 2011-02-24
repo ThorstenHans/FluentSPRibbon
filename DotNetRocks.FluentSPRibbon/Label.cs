@@ -7,11 +7,15 @@ namespace DotNetRocks.FluentSPRibbon
     {
         internal Label():this("NotSet")
         {
-            
         }
 
         internal Label(string id) : base(id)
         {
+        }
+
+        public new static Label Create(String id)
+        {
+            return RibbonElement<Label>.Create(id);
         }
 
         public override Label SetDisplayMode(LabelDisplayMode displayMode)

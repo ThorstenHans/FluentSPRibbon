@@ -16,6 +16,11 @@ namespace DotNetRocks.FluentSPRibbon
             this._layouts = new List<Layout>();
         }
 
+        public new static GroupTemplate Create(String id)
+        {
+            return RibbonElement<GroupTemplate>.Create(id);
+        }
+
         public Layout GetLayout(String id)
         {
             return _layouts.FirstOrDefault(l => l.OriginalId == id);

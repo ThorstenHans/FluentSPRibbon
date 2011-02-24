@@ -9,6 +9,14 @@ namespace DotNetRocks.FluentSPRibbon
 
         internal GalleryButton(string id) : base(id) { }
 
+        public new static GalleryButton Create(String id, ElementDimension elementDimension)
+        {
+            var galleryButton = RibbonElement<GalleryButton>.Create(id);
+            galleryButton.Set(GalleryButtonProperty.ElementDimensions,
+                              Enum.GetName(typeof (ElementDimension), elementDimension));
+            return galleryButton;
+
+        }
         
         public override GalleryButton SetDisplayMode(GalleryButtonDisplayMode displayMode)
         {

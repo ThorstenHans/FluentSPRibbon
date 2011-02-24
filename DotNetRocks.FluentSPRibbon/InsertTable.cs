@@ -9,6 +9,11 @@ namespace DotNetRocks.FluentSPRibbon
 
          internal InsertTable(string id) : base(id) { }
 
+        public new static InsertTable Create(String id)
+        {
+            return RibbonElement<InsertTable>.Create(id);
+        }
+
          public override InsertTable Set(InsertTableProperty propertyName, String propertyValue)
         {
             AddOrUpdateProperty(propertyName, propertyValue);

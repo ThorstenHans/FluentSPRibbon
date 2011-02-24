@@ -17,6 +17,11 @@ namespace DotNetRocks.FluentSPRibbon
             get { return _tabs.FirstOrDefault(t => t.OriginalId == id); }
         }
 
+        public new static Ribbon Create(String id)
+        {
+            return RibbonElement<Ribbon>.Create(id);
+        }
+
         internal Ribbon():this("NotSet")
         {
             
