@@ -41,11 +41,41 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="CommandUIDefinition.cs" />
+    <Compile Include="CommandUIExtensionProperty.cs" />
     <Compile Include="CommandUIHandler.cs" />
+    <Compile Include="CommandUIHandlerProperty.cs" />
     <Compile Include="CustomActionProperty.cs" />
     <Compile Include="PropertyEnums\CommandUIDefinitionProperty.cs" />
     <Compile Include="CommandUIExtension.cs" />
     <Compile Include="CustomAction.cs" />
+    <Compile Include="ContextualGroup.cs" />
+    <Compile Include="PropertyEnums\ElementDimension.cs" />
+    <Compile Include="IIdSetter.cs" />
+    <Compile Include="PropertyEnums\ContextualGroupProperty.cs" />
+    <Compile Include="DisplayModeEnums\ButtonDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\CheckBoxDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\ColorPickerDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\ComboBoxDisplayMode.cs" />
+    <Compile Include="ControlRef.cs" />
+    <Compile Include="DisplayModeEnums\ControlRefDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\InsertTableDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\MenuSectionDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\OverflowAreaDisplayMode.cs" />
+    <Compile Include="PropertyEnums\ControlRefProperty.cs" />
+    <Compile Include="DisplayModeEnums\DropDownDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\FlyoutAnchorDisplayMode.cs" />
+    <Compile Include="DisplayModeEnums\GalleryButtonDisplayMode.cs" />
+    <Compile Include="GroupTemplate.cs" />
+    <Compile Include="DisplayModeEnums\LabelDisplayMode.cs" />
+    <Compile Include="Layout.cs" />
+    <Compile Include="LayoutProperty.cs" />
+    <Compile Include="DisplayModeEnums\MRUDisplayMode.cs" />
+    <Compile Include="OverflowArea.cs" />
+    <Compile Include="PropertyEnums\OverflowAreaProperty.cs" />
+    <Compile Include="OverflowSection.cs" />
+    <Compile Include="DisplayModeEnums\OverflowSectionDisplayMode.cs" />
+    <Compile Include="PropertyEnums\OverflowLayoutType.cs" />
+    <Compile Include="PropertyEnums\GroupTemplateProperty.cs" />
     <Compile Include="PropertyEnums\ButtonProperty.cs" />
     <Compile Include="CheckBox.cs" />
     <Compile Include="PropertyEnums\CheckBoxProperty.cs" />
@@ -55,7 +85,6 @@
     <Compile Include="PropertyEnums\ColorProperty.cs" />
     <Compile Include="ComboBox.cs" />
     <Compile Include="PropertyEnums\ComboBoxProperty.cs" />
-    <Compile Include="Create.cs" />
     <Compile Include="DropDown.cs" />
     <Compile Include="PropertyEnums\DropDownProperty.cs" />
     <Compile Include="FlyoutAnchor.cs" />
@@ -84,31 +113,44 @@
     <Compile Include="PropertyEnums\MRUProperty.cs" />
     <Compile Include="MRUSplitButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyEnums\SectionLayoutType.cs" />
+    <Compile Include="PropertyEnums\SectionProperty.cs" />
+    <Compile Include="PropertyEnums\VerticalAlignment.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="RibbonElement.cs" />
     <Compile Include="PropertyEnums\RibbonProperty.cs" />
     <Compile Include="RibbonSettings.cs" />
+    <Compile Include="Row.cs" />
     <Compile Include="Scale.cs" />
     <Compile Include="PropertyEnums\ScaleProperty.cs" />
     <Compile Include="Scaling.cs" />
+    <Compile Include="PropertyEnums\OverflowSectionProperty.cs" />
+    <Compile Include="ScalingProperty.cs" />
+    <Compile Include="Section.cs" />
     <Compile Include="Spinner.cs" />
     <Compile Include="PropertyEnums\SpinnerProperty.cs" />
+    <Compile Include="DisplayModeEnums\SpinnerDisplayMode.cs" />
     <Compile Include="SplitButton.cs" />
     <Compile Include="PropertyEnums\SplitButtonProperty.cs" />
+    <Compile Include="DisplayModeEnums\SplitButtonDisplayMode.cs" />
+    <Compile Include="Strip.cs" />
+    <Compile Include="StripProperty.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="PropertyEnums\TabProperty.cs" />
     <Compile Include="TemplateActionRequiredEventArgs.cs" />
+    <Compile Include="TemplateElement.cs" />
+    <Compile Include="PropertyEnums\TemplateProperty.cs" />
     <Compile Include="TextBox.cs" />
     <Compile Include="PropertyEnums\TextBoxProperty.cs" />
     <Compile Include="Attributes\TextProvider.cs" />
+    <Compile Include="DisplayModeEnums\TextBoxDisplayMode.cs" />
     <Compile Include="ToggleButton.cs" />
     <Compile Include="PropertyEnums\ToggleButtonProperty.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="content\RibbonCustomActions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RibbonCustomActions.xml</LastGenOutput>
-    </None>
+    <Compile Include="DisplayModeEnums\ToggleButtonDisplayMode.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="UnitAbbreviation.cs" />
+    <Compile Include="PropertyEnums\UnitAbbreviationProperty.cs" />
+    <Compile Include="PropertyEnums\UnitProperty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

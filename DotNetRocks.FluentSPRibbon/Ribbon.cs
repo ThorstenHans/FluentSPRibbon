@@ -5,13 +5,21 @@ using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Ribbon : InteractiveRibbonElement, IRibbonElementContainer<Ribbon,Tab>
+    public class Ribbon : RibbonElement<Ribbon,RibbonProperty>, 
+        IRibbonElementContainer<Ribbon,Tab>,
+        IRibbonElementContainer<Ribbon, ContextualGroup>
     {
         internal readonly IList<Tab> _tabs;
+        internal readonly IList<ContextualGroup> _contextualGroups;
       
         public Tab this[string id]
         {
             get { return _tabs.FirstOrDefault(t => t.OriginalId == id); }
+        }
+
+        public new static Ribbon Create(String id)
+        {
+            return RibbonElement<Ribbon>.Create(id);
         }
 
         internal Ribbon():this("NotSet")
@@ -21,39 +29,38 @@ namespace DotNetRocks.FluentSPRibbon
         internal Ribbon(string id) : base(id)
         {
             this._tabs = new List<Tab>();
+            this._contextualGroups = new List<ContextualGroup>();
       
         }
 
-        public String GetProperty(RibbonProperty propertyKey)
+        public override Ribbon Set(RibbonProperty propertyName, String propertyValue)
         {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public Ribbon SetProperty(RibbonProperty propertyKey, String value)
-        {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Ribbon SetProperties(Dictionary<RibbonProperty, String> properties)
+        public override Ribbon Set(Dictionary<RibbonProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }
-
-        public int ChildItemCount
-        {
-            get { return _tabs.Count; }
-        }
-
+         
         public Ribbon With(Func<Tab> expression)
         {
             var tab = expression.Invoke();
             tab.Parent = this;
             this._tabs.Add(tab);
+            return this;
+        }
+
+        public Ribbon With(Func<ContextualGroup> expression)
+        {
+            var contextualGroup = expression.Invoke();
+            contextualGroup.Parent = this;
+            this._contextualGroups.Add(contextualGroup);
             return this;
         }
 
@@ -67,6 +74,16 @@ namespace DotNetRocks.FluentSPRibbon
                                            t.WriteXml(writer);
                                            writer.WriteEndElement();
                                        });
+            writer.WriteEndElement();
+            writer.WriteStartElement("ContextualTabs");
+            writer.WriteAttributeString("Id", String.Concat(Id,".ContextualTabs"));
+            _contextualGroups.ToList().ForEach(cg=>
+                                                   {
+                                                       writer.WriteStartElement("ContextualGroup");
+                                                       cg.WriteXml(writer);
+                                                       writer.WriteEndElement();
+
+                                                   });
             writer.WriteEndElement();
         }
 

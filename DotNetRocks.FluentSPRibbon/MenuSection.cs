@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class MenuSection : RibbonElement, 
+    public class MenuSection : InteractiveRibbonElement<MenuSection,MenuSectionProperty,MenuSectionDisplayMode>, 
         IRibbonElementContainer<MenuSection,ToggleButton>,
         IRibbonElementContainer<MenuSection, Button>,
         IRibbonElementContainer<MenuSection, ColorPicker>,
@@ -26,9 +27,9 @@ namespace DotNetRocks.FluentSPRibbon
             _flyoutAnchors = new List<FlyoutAnchor>();
         }
 
-        public String GetProperty(MenuSectionProperty propertyKey)
+        public new static MenuSection Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<MenuSection>.Create(id);
         }
 
         public InsertTable InsertTable
@@ -37,13 +38,13 @@ namespace DotNetRocks.FluentSPRibbon
             private set { this._insertTable = value; }
         }
 
-        public MenuSection SetProperty(MenuSectionProperty propertyKey, String value)
+        public override  MenuSection Set(MenuSectionProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public MenuSection SetProperties(Dictionary<MenuSectionProperty,String> properties)
+        public override MenuSection Set(Dictionary<MenuSectionProperty, String> properties)
         {
             foreach (var property in properties)
             {
@@ -110,6 +111,46 @@ namespace DotNetRocks.FluentSPRibbon
         public ColorPicker GetColorPicker(String id)
         {
             return _colorPickers.FirstOrDefault(cp => cp.OriginalId == id);
+        }
+
+        protected override void WriteChildren(System.Xml.XmlWriter writer)
+        {
+            writer.WriteStartElement("Controls");
+            writer.WriteAttributeString("Id", String.Format("{0}.Controls", this.Id));
+            foreach (var child in _buttons)
+            {
+
+                WriteInnerElement(writer, child);
+            }
+
+            foreach (var child in _colorPickers)
+            {
+                WriteInnerElement(writer, child);
+            }
+
+            foreach (var child in _flyoutAnchors)
+            {
+                WriteInnerElement(writer, child);
+            }
+
+            foreach (var child in _toggleButtons)
+            {
+                WriteInnerElement(writer, child);
+            }
+            writer.WriteEndElement();
+        }
+
+        private void WriteInnerElement(XmlWriter writer, IRibbonElement child)
+        {
+            writer.WriteStartElement(child.XmlElementName);
+            child.WriteXml(writer);
+            writer.WriteEndElement();
+        }
+
+        public override MenuSection SetDisplayMode(MenuSectionDisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
         }
     }
 }

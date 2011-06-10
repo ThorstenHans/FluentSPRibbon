@@ -1,36 +1,40 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Label : InteractiveRibbonElement
+    public class Label : InteractiveRibbonElement<Label,LabelProperty,LabelDisplayMode>
     {
         internal Label():this("NotSet")
         {
-            
         }
 
         internal Label(string id) : base(id)
         {
         }
 
-        public String GetProperty(LabelProperty propertyKey)
+        public new static Label Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<Label>.Create(id);
         }
-  
-        public Label SetProperty(LabelProperty propertyKey, String value)
+
+        public override Label SetDisplayMode(LabelDisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
+        }
+
+        public override  Label Set(LabelProperty propertyKey, String value)
         {
             AddOrUpdateProperty(propertyKey, value);
             return this;
         }
 
-        public Label SetProperties(Dictionary<LabelProperty, String> properties)
+        public override Label Set(Dictionary<LabelProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

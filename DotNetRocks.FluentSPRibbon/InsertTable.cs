@@ -3,29 +3,35 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class InsertTable : RibbonElement
+    public class InsertTable :InteractiveRibbonElement<InsertTable,InsertTableProperty,InsertTableDisplayMode>
     {
          internal InsertTable() : this("NotSet") { }
 
          internal InsertTable(string id) : base(id) { }
 
-         public String GetProperty(InsertTableProperty propertyKey)
+        public new static InsertTable Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<InsertTable>.Create(id);
         }
 
-         public InsertTable SetProperty(InsertTableProperty propertyKey, String value)
+         public override InsertTable Set(InsertTableProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-         public InsertTable SetProperties(Dictionary<InsertTableProperty, String> properties)
+         public override InsertTable Set(Dictionary<InsertTableProperty, String> properties)
         {
             foreach (var property in properties)
             {
                 AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public override InsertTable SetDisplayMode(InsertTableDisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
             return this;
         }
     }

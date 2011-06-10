@@ -4,18 +4,22 @@ namespace DotNetRocks.FluentSPRibbon
 {
     public enum RibbonProperty
     {
+        [ImageProvider]
         Image32by32GroupPopupDefault,
         Image32by32GroupPopupDefaultClass,
         Image32by32GroupPopupDefaultLeft,
         Image32by32GroupPopupDefaultTop,
+        [ImageProvider]
         ImageDownArrow,
         ImageDownArrowClass,
         ImageDownArrowLeft,
         ImageDownArrowTop,
+        [ImageProvider]
         ImageSideArrow,
         ImageSideArrowClass,
         ImageSideArrowLeft,
         ImageSideArrowTop,
+        [ImageProvider]
         ImageUpArrow,
         ImageUpArrowClass,
         ImageUpArrowLeft,
@@ -31,6 +35,7 @@ namespace DotNetRocks.FluentSPRibbon
         ToolTipFooterImage16by16Class,
         ToolTipFooterImage16by16Left,
         ToolTipFooterImage16by16Top,
+        [ImageProvider]
         ToolTipDisabledCommandImage16by16,
         ToolTipDisabledCommandImage16by16Class,
         ToolTipDisabledCommandImage16by16Left,
@@ -41,6 +46,7 @@ namespace DotNetRocks.FluentSPRibbon
         ToolTipDisabledCommandTitle,
         ToolTipDisabledCommandHelpKey,
         ToolTipHelpCommand,
+        [TextProvider]
         ToolTipSelectedItemTitlePrefix,
         ShortcutKeyJumpToRibbon_Ctrl,
         ShortcutKeyJumpToRibbon_Alt,

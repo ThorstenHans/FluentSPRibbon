@@ -1,40 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class MRUSplitButton : InteractiveRibbonElement
+    public class MRUSplitButton : InteractiveRibbonElement<MRUSplitButton,MRUProperty,MRUDisplayMode>,
+        IRibbonElementContainer<MRUSplitButton,Menu>
     {
+        internal Menu _menu;
+
         internal MRUSplitButton()  : this("NotSet")
         {
-            
         }
 
         internal MRUSplitButton(String id)
             : base(id)
         {
-            
         }
 
-        public String GetProperty(MRUProperty propertyKey)
+        public new static MRUSplitButton Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<MRUSplitButton>.Create(id);
         }
-    
 
-        public MRUSplitButton SetProperty(MRUProperty propertyKey, String value)
+        public override MRUSplitButton SetDisplayMode(MRUDisplayMode displayMode)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public MRUSplitButton SetProperties(Dictionary<MRUProperty, String> properties)
+        public override MRUSplitButton Set(MRUProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override MRUSplitButton Set(Dictionary<MRUProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public Menu GetMenu()
+        {
+            return this._menu;
+        }
+
+        public MRUSplitButton With(Func<Menu> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._menu = child;
             return this;
         }
     }

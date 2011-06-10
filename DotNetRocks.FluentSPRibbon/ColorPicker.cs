@@ -5,9 +5,11 @@ using System.Linq;
 namespace DotNetRocks.FluentSPRibbon
 {
     public class ColorPicker 
-        : InteractiveRibbonElement, IRibbonElementContainer<ColorPicker,Color>
+        : InteractiveRibbonElement<ColorPicker,ColorPickerProperty,ColorPickerDisplayMode>, 
+        IRibbonElementContainer<ColorPicker,Color>
     {
-        private readonly IList<Color> _colors;
+        internal readonly IList<Color> _colors;
+
         internal ColorPicker():this("NotSet") { }
 
         internal ColorPicker(String id) : base(id)
@@ -15,22 +17,28 @@ namespace DotNetRocks.FluentSPRibbon
             _colors=new List<Color>();
         }
 
-        public String GetProperty(ColorPickerProperty propertyKey)
+        public new static ColorPicker Create(String id)
         {
-            return GetPropertyValue(propertyKey);
-        }
-
-        public ColorPicker SetProperty(ColorPickerProperty propertyKey, String value)
+            return RibbonElement<ColorPicker>.Create(id);
+        }   
+ 
+        public override ColorPicker SetDisplayMode(ColorPickerDisplayMode displayMode)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public ColorPicker SetProperties(Dictionary<ColorPickerProperty, String> properties)
+        public override ColorPicker Set(ColorPickerProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override ColorPicker Set(Dictionary<ColorPickerProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

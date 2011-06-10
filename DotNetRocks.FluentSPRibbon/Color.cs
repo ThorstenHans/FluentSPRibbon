@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Color : InteractiveRibbonElement
+    public class Color : RibbonElement<Color,ColorProperty>
     {
         internal Color() :this("NotSet") { }
 
@@ -15,22 +14,22 @@ namespace DotNetRocks.FluentSPRibbon
             get { return false; }
         }
 
-        public string GetProperty(ColorProperty propertyKey)
+        public new static Color Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<Color>.Create(id);
         }
 
-        public Color SetProperty(ColorProperty propertyKey, string value)
+        public override Color Set(ColorProperty propertyName, string propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public Color SetProperties(Dictionary<ColorProperty, String> properties)
+        public override Color Set(Dictionary<ColorProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                Set(property.Key, property.Value);
             }
             return this;
         }

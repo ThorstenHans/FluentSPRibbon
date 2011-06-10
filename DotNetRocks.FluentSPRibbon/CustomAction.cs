@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class CustomAction : InteractiveRibbonElement, 
+    public class CustomAction : RibbonElement<CustomAction,CustomActionProperty>, 
         IRibbonElementContainer<CustomAction, CommandUIDefinition>,
         IRibbonElementContainer<CustomAction, CommandUIHandler>
     {
@@ -22,11 +22,6 @@ namespace DotNetRocks.FluentSPRibbon
         internal override bool IsIdProvider
         {
             get { return true; }
-        }
-
-        internal override string XmlElementName
-        {
-            get { return "CustomAction"; }
         }
 
         public CustomAction RequiresFarmAdmin()
@@ -71,26 +66,6 @@ namespace DotNetRocks.FluentSPRibbon
             return this;
         }
 
-        public CustomAction SetProperty(CustomActionProperty key, String value)
-        {
-            AddOrUpdateProperty(key, value);
-            return this;
-        }
-
-        internal String GetProperty(CustomActionProperty propertyName)
-        {
-            return GetPropertyValue(propertyName);
-        }
-
-        public CustomAction SetProperties(Dictionary<CustomActionProperty, String> properties)
-        {
-            foreach (var property in properties)
-            {
-                SetProperty(property.Key, property.Value);
-            }
-            return this;
-        }
-
         public CustomAction With(Func<CommandUIDefinition> expression)
         {
             var cuiDef = expression.Invoke();
@@ -104,6 +79,21 @@ namespace DotNetRocks.FluentSPRibbon
             var cuiHandler = expression.Invoke();
             cuiHandler.Parent = this;
             this._commandUIHandlers.Add(cuiHandler);
+            return this;
+        }
+
+        public override CustomAction Set(CustomActionProperty propertyName, string propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override CustomAction Set(Dictionary<CustomActionProperty, string> properties)
+        {
+            foreach (var property in properties)
+            {
+                AddOrUpdateProperty(property.Key, property.Value);
+            }
             return this;
         }
     }

@@ -34,15 +34,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void ApplyResourceLink_Should_Transform_Title_Value_To_Resource_Link()
         {
-            // Arrange
             var resourceLink = "$Resources:MyResource, MyButtonTitle";
             RibbonSettings.ResourceFileIdentifier = "MyResource";
             var labelText = new KeyValuePair<Enum, String>(ButtonProperty.LabelText, "MyButtonTitle");
-
-            // Act
             labelText = RibbonSettings.ApplyResourceLink(labelText);
-
-            // Assert
             Assert.IsNotNull(labelText);
             Assert.AreEqual(resourceLink,labelText.Value);
         }
@@ -50,15 +45,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void ApplyResourceLink_Should_Remove_Resource_File_Ending_If_Passed_To_ResourceFileProperty()
         {
-            // Arrange
             var resourceLink = "$Resources:MyResource, MyButtonTitle";
             RibbonSettings.ResourceFileIdentifier = "MyResource.resx";
             var labelText = new KeyValuePair<Enum, String>(ButtonProperty.LabelText, "MyButtonTitle");
-
-            // Act
             labelText = RibbonSettings.ApplyResourceLink(labelText);
-
-            // Assert
             Assert.IsNotNull(labelText);
             Assert.AreEqual(resourceLink, labelText.Value);
         }
@@ -67,15 +57,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void ApplyImagesFolder_Should_Concat_ImagesFolder_And_Relative_ImageUrl()
         {
-            // Arrange
             var imageDestination = "/_layouts/SPFluentRibbon/Images/AddItem.png";
             RibbonSettings.ImagesFolder = "/_layouts/SPFluentRibbon/Images/";
             var imageProperty = new KeyValuePair<Enum, String>(ButtonProperty.Image32by32, "AddItem.png");
-
-            // Act
             imageProperty = RibbonSettings.ApplyImagesFolder(imageProperty);
-
-            // Assert
             Assert.IsNotNull(imageProperty);
             Assert.AreEqual(imageDestination, imageProperty.Value);
         }
@@ -90,15 +75,10 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         [Test]
         public void ApplyImagesFolder_Should_Add_An_Ending_Slash_To_ImagesFolder_If_Missing()
         {
-            // Arrange
             var imageDestination = "/_layouts/SPFluentRibbon/Images/AddItem.png";
             RibbonSettings.ImagesFolder = "/_layouts/SPFluentRibbon/Images";
             var imageProperty = new KeyValuePair<Enum, String>(ButtonProperty.Image32by32, "AddItem.png");
-
-            // Act
             imageProperty = RibbonSettings.ApplyImagesFolder(imageProperty);
-
-            // Assert
             Assert.IsNotNull(imageProperty);
             Assert.AreEqual(imageDestination, imageProperty.Value);
         }
@@ -107,23 +87,13 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         public void Locatlization_Should_Only_Act_If_Specified()
         {
             Assert.IsFalse(RibbonSettings.LocalizeVisualElements);
-            
         }
 
         [Test]
         public void LocalizeVisualElements_Should_Be_True_If_ResourceFileIdentifier_Was_Set()
         {
-            // Arrange
-         
-
-            // Act
             RibbonSettings.ResourceFileIdentifier = "Test";
-
-            // Assert
             Assert.IsTrue(RibbonSettings.LocalizeVisualElements);
         }
-        
-        
-        
     }
 }

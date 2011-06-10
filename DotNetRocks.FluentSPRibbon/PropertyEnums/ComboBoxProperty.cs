@@ -1,11 +1,14 @@
 ﻿using System;
 
+
 namespace DotNetRocks.FluentSPRibbon
 {
     public enum ComboBoxProperty 
     {
         AllowFreeForm,
+        [TextProvider]
         AltArrow,
+        [TextProvider]
         Alt,
         AutoComplete,
         AutoCompleteDelay,
@@ -23,12 +26,16 @@ namespace DotNetRocks.FluentSPRibbon
         PopulateOnlyOnce,
         Sequence,
         TemplateAlias,
+        [ImageProvider]
         ToolTipImage32by32,
         ToolTipImage32by32Class,
         ToolTipImage32by32Left,
         ToolTipImage32by32Top,
+        [TextProvider]
         ToolTipTitle,
+        [TextProvider]
         ToolTipDescription,
+        [TextProvider]
         ToolTipHelpKeyWord,
         ToolTipSelectedItemTitle,
         ToolTipShortcutKey,

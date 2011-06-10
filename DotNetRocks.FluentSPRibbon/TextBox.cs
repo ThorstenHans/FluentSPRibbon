@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class TextBox : InteractiveRibbonElement
+    public class TextBox : InteractiveRibbonElement<TextBox,TextBoxProperty, TextBoxDisplayMode>
     {
         internal TextBox() : this("NotSet")
         {
@@ -14,22 +13,28 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String GetProperty(TextBoxProperty propertyKey)
+        public new static TextBox Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<TextBox>.Create(id);
         }
 
-        public TextBox SetProperty(TextBoxProperty propertyKey, String value)
+        public override TextBox SetDisplayMode(TextBoxDisplayMode displayMode)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public TextBox SetProperties(Dictionary<TextBoxProperty, String> properties)
+        public override TextBox Set(TextBoxProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override TextBox Set(Dictionary<TextBoxProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

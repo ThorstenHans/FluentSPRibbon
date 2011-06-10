@@ -1,40 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class SplitButton : InteractiveRibbonElement
+    public class SplitButton : InteractiveRibbonElement<SplitButton,SplitButtonProperty,SplitButtonDisplayMode>,
+        IRibbonElementContainer<SplitButton,Menu>
     {
+        internal Menu _menu;
+
         internal SplitButton() : this("NotSet")
         {
-            
         }
 
         internal SplitButton(String id) : base(id)
         {
-            
         }
 
-        public String GetProperty(SplitButtonProperty propertyKey)
+        public new static SplitButton Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<SplitButton>.Create(id);
         }
 
-        public SplitButton SetProperty(SplitButtonProperty propertyKey, String value)
+        public override SplitButton SetDisplayMode(SplitButtonDisplayMode displayMode)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public SplitButton SetProperties(Dictionary<SplitButtonProperty, String> properties)
+        public override SplitButton Set(SplitButtonProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override SplitButton Set(Dictionary<SplitButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }
-       
+        
+        public Menu GetMenu()
+        {
+            return _menu;
+        }
+
+        public SplitButton With(Func<Menu> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._menu = child;
+            return this;
+        }
     }
 }

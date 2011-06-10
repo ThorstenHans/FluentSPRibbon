@@ -21,6 +21,7 @@ namespace DotNetRocks.FluentSPRibbon
         ToolTipTitle,
         [TextProvider]
         ToolTipDescription,
+        [TextProvider]
         ToolTipHelpKeyWord,
         ToolTipShortcutKey,
         Width

@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class CheckBox : InteractiveRibbonElement
+    public class CheckBox : InteractiveRibbonElement<CheckBox, CheckBoxProperty, CheckBoxDisplayMode>
     {
 
         internal CheckBox() : this("NotSet")
@@ -15,22 +14,28 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String GetProperty(CheckBoxProperty propertyKey)
+        public static new CheckBox Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<CheckBox>.Create(id);
+        }
+
+        public override CheckBox SetDisplayMode(CheckBoxDisplayMode displayMode)
+        {
+            SetDisplayModeTo(displayMode);
+            return this;
         }
       
-        public CheckBox SetProperty(CheckBoxProperty propertyKey, String value)
+        public override CheckBox Set(CheckBoxProperty propertyName, String propertyValue)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        public CheckBox SetProperties(Dictionary<CheckBoxProperty,String> properties)
+        public override CheckBox Set(Dictionary<CheckBoxProperty,String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

@@ -1,32 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class FlyoutAnchor : InteractiveRibbonElement
+    public class FlyoutAnchor : InteractiveRibbonElement<FlyoutAnchor,FlyoutAnchorProperty,FlyoutAnchorDisplayMode>,
+        IRibbonElementContainer<FlyoutAnchor,Menu>
     {
+        internal Menu _menu;
+
         internal FlyoutAnchor() : this("NotSet") { }
 
         internal FlyoutAnchor(String id) : base(id) { }
 
-        public String GetProperty(FlyoutAnchorProperty propertyKey)
+        public new static FlyoutAnchor Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<FlyoutAnchor>.Create(id);
         }
 
-        public FlyoutAnchor SetProperty(FlyoutAnchorProperty propertyKey, String value)
+        public override FlyoutAnchor SetDisplayMode(FlyoutAnchorDisplayMode displayMode)
         {
-            AddOrUpdateProperty(propertyKey,value);
+            SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public FlyoutAnchor SetProperties(Dictionary<FlyoutAnchorProperty,String> properties)
+        public override FlyoutAnchor Set(FlyoutAnchorProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override FlyoutAnchor Set(Dictionary<FlyoutAnchorProperty,String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public Menu GetMenu()
+        {
+            return this._menu;
+        }
+
+        public FlyoutAnchor With(Func<Menu> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._menu = child;
             return this;
         }
     }

@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class ToggleButton: InteractiveRibbonElement
+    public class ToggleButton: InteractiveRibbonElement<ToggleButton,ToggleButtonProperty, ToggleButtonDisplayMode>
     {
         internal ToggleButton() : this("NotSet"){}
 
@@ -12,22 +11,28 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public String GetProperty(ToggleButtonProperty propertyKey)
+        public new static ToggleButton Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<ToggleButton>.Create(id);
         }
 
-        public ToggleButton SetProperty(ToggleButtonProperty propertyKey, String value)
+        public override ToggleButton SetDisplayMode(ToggleButtonDisplayMode displayMode)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public ToggleButton SetProperties(Dictionary<ToggleButtonProperty, String> properties)
+        public override ToggleButton Set(ToggleButtonProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override ToggleButton Set(Dictionary<ToggleButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }

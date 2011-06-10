@@ -1,36 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Button : InteractiveRibbonElement
+    public class Button : InteractiveRibbonElement<Button,ButtonProperty, ButtonDisplayMode>
     {
         
-
         internal Button():this("NotSet"){}
 
         internal Button(string id) : base(id) { }
 
-        public Button SetProperty(ButtonProperty key, String value)
+        public static new Button Create(String id)
         {
-            AddOrUpdateProperty(key, value);
+            return RibbonElement<Button>.Create(id);
+        }
+
+        public override Button Set(ButtonProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
             return this;
         }
 
-        internal String GetProperty(ButtonProperty propertyName)
+        public override Button SetDisplayMode(ButtonDisplayMode displayMode)
         {
-            return GetPropertyValue(propertyName);
+            SetDisplayModeTo(displayMode);
+            return this;
         }
 
-        public Button SetProperties(Dictionary<ButtonProperty, String> properties)
+        public override Button Set(Dictionary<ButtonProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
         }
-
     }
 }

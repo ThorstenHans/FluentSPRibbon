@@ -1,37 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
-    public class Spinner : InteractiveRibbonElement
+    public class Spinner : InteractiveRibbonElement<Spinner,SpinnerProperty,SpinnerDisplayMode>,
+        IRibbonElementContainer<Spinner,Unit>
     {
+        internal readonly IList<Unit> _units;
         internal Spinner() : this("NotSet")
         {
-
         }
 
         internal Spinner(String id) : base(id)
         {
-
+            this._units=new List<Unit>();
         }
 
-        public String GetProperty(SpinnerProperty propertyKey)
+        public new static Spinner Create(String id)
         {
-            return GetPropertyValue(propertyKey);
+            return RibbonElement<Spinner>.Create(id);
         }
-        public Spinner SetProperty(SpinnerProperty propertyKey, String value)
+
+        public override Spinner SetDisplayMode(SpinnerDisplayMode displayMode)
         {
-            AddOrUpdateProperty(propertyKey, value);
+            SetDisplayModeTo(displayMode);
             return this;
         }
 
-        public Spinner SetProperties(Dictionary<SpinnerProperty, String> properties)
+        public override Spinner Set(SpinnerProperty propertyName, String propertyValue)
+        {
+            AddOrUpdateProperty(propertyName, propertyValue);
+            return this;
+        }
+
+        public override Spinner Set(Dictionary<SpinnerProperty, String> properties)
         {
             foreach (var property in properties)
             {
-                SetProperty(property.Key, property.Value);
+                AddOrUpdateProperty(property.Key, property.Value);
             }
+            return this;
+        }
+
+        public Spinner With(Func<Unit> expression)
+        {
+            var child = expression.Invoke();
+            child.Parent = this;
+            this._units.Add(child);
             return this;
         }
     }
