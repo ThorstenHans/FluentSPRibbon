@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNetRocks.FluentSPRibbon.Attributes
+namespace DotNetRocks.FluentSPRibbon
 {
     [AttributeUsage(AttributeTargets.Field)]
     public class ImageProvider : Attribute

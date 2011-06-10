@@ -1,0 +1,24 @@
+<Configuration>
+  <CustomStructuralPatterns>
+    <Pattern Severity="SUGGESTION">
+      <Comment>Only disposable classes shoud use USING</Comment>
+      <ReplacePattern><![CDATA[var $variable$ = new $t$($args$);
+
+$statement$
+
+$variable$.Dispose();
+$variable$ = null;]]></ReplacePattern>
+      <SearchPattern><![CDATA[using($t$ $variable$ = new $t$($args$))
+{
+	$statement$
+}]]></SearchPattern>
+      <Params />
+      <Placeholders>
+        <StatementPlaceholder Name="statement" Minimal="1" Maximal="1" />
+        <TypePlaceholder Name="t" Type="System.Object" ExactType="False" />
+        <IdentifierPlaceholder Name="variable" Type="" ExactType="False" RegEx="" CaseSensitive="True" />
+        <ArgumentPlaceholder Name="args" Minimal="-1" Maximal="-1" />
+      </Placeholders>
+    </Pattern>
+  </CustomStructuralPatterns>
+</Configuration>

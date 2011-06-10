@@ -40,12 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Button.cs" />
-    <Compile Include="CommandUIDefinition.cs" />
-    <Compile Include="CommandUIHandler.cs" />
-    <Compile Include="CustomActionProperty.cs" />
-    <Compile Include="PropertyEnums\CommandUIDefinitionProperty.cs" />
-    <Compile Include="CommandUIExtension.cs" />
-    <Compile Include="CustomAction.cs" />
     <Compile Include="PropertyEnums\ButtonProperty.cs" />
     <Compile Include="CheckBox.cs" />
     <Compile Include="PropertyEnums\CheckBoxProperty.cs" />
@@ -88,6 +82,7 @@
     <Compile Include="RibbonElement.cs" />
     <Compile Include="PropertyEnums\RibbonProperty.cs" />
     <Compile Include="RibbonSettings.cs" />
+    <Compile Include="SampleClass.cs" />
     <Compile Include="Scale.cs" />
     <Compile Include="PropertyEnums\ScaleProperty.cs" />
     <Compile Include="Scaling.cs" />
@@ -103,22 +98,6 @@
     <Compile Include="Attributes\TextProvider.cs" />
     <Compile Include="ToggleButton.cs" />
     <Compile Include="PropertyEnums\ToggleButtonProperty.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="content\RibbonCustomActions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RibbonCustomActions.xml</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="content\RibbonCustomActions.xml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RibbonCustomActions.tt</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

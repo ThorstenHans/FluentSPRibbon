@@ -1,0 +1,20 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+
+<#@ import namespace="System" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Xml.Serialization" #>
+<#@ import namespace="DotNetRocks.FluentSPRibbon" #>
+<#
+  var ribbon = Create<Ribbon>.Instance("FluentRibbon")
+                     .SetProperty(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API");
+#>
+
+<#= ribbon.ToXml() #>
+<#@ output extension=".xml" #>

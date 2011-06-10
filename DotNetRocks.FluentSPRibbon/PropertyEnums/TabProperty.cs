@@ -1,4 +1,4 @@
-﻿using DotNetRocks.FluentSPRibbon.Attributes;
+﻿
 
 namespace DotNetRocks.FluentSPRibbon
 {

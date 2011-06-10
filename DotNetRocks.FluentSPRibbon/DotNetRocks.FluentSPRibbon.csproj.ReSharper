@@ -1,0 +1,6 @@
+<Configuration>
+  <NamespaceFolders>
+    <SkipFolder>B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:Attributes</SkipFolder>
+    <SkipFolder>B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums</SkipFolder>
+  </NamespaceFolders>
+</Configuration>

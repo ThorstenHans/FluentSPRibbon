@@ -1,0 +1,6 @@
+﻿
+
+<?xml version="1.0"?>
+<Ribbon Id="FluentRibbon" ToolTipFooterText=".NET Rocks Fluent SPRibbon API">
+  <Tabs Id="FluentRibbon.TabsContainer" />
+</Ribbon>
