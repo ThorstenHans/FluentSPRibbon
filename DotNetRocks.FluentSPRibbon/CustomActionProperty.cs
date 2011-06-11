@@ -12,7 +12,7 @@
         Description,
         FeatureId,
         GroupId,
-        [ImageProvider]
+        [ImageProvider, UrlProvider]
         ImageUrl,
         Location,
         RegistrationId,

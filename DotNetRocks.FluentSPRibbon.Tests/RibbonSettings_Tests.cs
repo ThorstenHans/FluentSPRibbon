@@ -16,11 +16,29 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
+        public void ApplyUrlEncoding_For_Image16by16_Property_ShouldTranslate_Non_Url_Chars()
+        {
+            var actual =
+                RibbonSettings.ApplyUrlEncoding(new KeyValuePair<Enum, string>(ButtonProperty.Image16by16,
+                                                                               "My Image.png"));
+           
+            Assert.That(actual.Value, Is.EqualTo("My%20Image.png"));
+        }
+
+        [Test]
         public void It_Should_Be_Able_To_Store_A_ResourceFile_Indicator()
         {
             RibbonSettings.ResourceFileIdentifier = "MyResourceFile";
-
+                
             Assert.AreEqual("MyResourceFile", RibbonSettings.ResourceFileIdentifier);
+        }
+
+        [Test]
+        public void ApplyHtmlEncoding_For_Title_Should_Transform_Non_Html_Chars()
+        {
+            var actual = RibbonSettings.ApplyHtmlEncoding(new KeyValuePair<Enum, string>(ButtonProperty.LabelText, "< >"));
+            Assert.That(actual.Value, Is.EqualTo("&lt; &gt;"));
+
         }
 
         [Test]

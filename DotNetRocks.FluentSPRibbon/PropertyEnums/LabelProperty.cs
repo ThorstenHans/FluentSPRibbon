@@ -7,7 +7,7 @@ namespace DotNetRocks.FluentSPRibbon
         ForId,
         [TextProvider]
         LabelText,
-        [ImageProvider]
+        [ImageProvider, UrlProvider]
         Image16by16,
         Image16by16Class,
         Image16by16Left,

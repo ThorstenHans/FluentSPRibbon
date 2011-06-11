@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 
 
 namespace DotNetRocks.FluentSPRibbon
@@ -34,6 +35,22 @@ namespace DotNetRocks.FluentSPRibbon
             return IsImageProvider(imageProperty.Key) ? new KeyValuePair<Enum, string>(imageProperty.Key, BuildAbsoluteImageUrl(imageProperty.Value)) : imageProperty;
         }
 
+        public static KeyValuePair<Enum,String> ApplyUrlEncoding(KeyValuePair<Enum,String> urlProperty)
+        {
+            
+            return IsUrlProvider(urlProperty.Key) 
+                       ? new KeyValuePair<Enum, string>(urlProperty.Key, Uri.EscapeUriString(urlProperty.Value)) : urlProperty;
+        }
+
+        public static KeyValuePair<Enum,String> ApplyHtmlEncoding(KeyValuePair<Enum,String> plainProperty)
+        {
+            if(IsUrlProvider(plainProperty.Key) ||
+                IsImageProvider(plainProperty.Key))
+                return plainProperty;
+            
+            return new KeyValuePair<Enum, string>(plainProperty.Key, HttpUtility.HtmlEncode(plainProperty.Value));
+        }
+
         private static string BuildAbsoluteImageUrl(string relativeImageUrl)
         {
             if (String.IsNullOrEmpty(ImagesFolder))
@@ -53,6 +70,11 @@ namespace DotNetRocks.FluentSPRibbon
         private static bool IsTextProvider(Enum key)
         {
             return key.GetType().GetField(key.ToString()).GetCustomAttributes(typeof (TextProvider), false).Length > 0;
+        }
+
+        private static bool IsUrlProvider(Enum key)
+        {
+            return key.GetType().GetField(key.ToString()).GetCustomAttributes(typeof (UrlProvider), false).Length > 0;
         }
 
         private static bool IsImageProvider(Enum key)

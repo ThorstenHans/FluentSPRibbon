@@ -13,7 +13,7 @@ namespace DotNetRocks.FluentSPRibbon
         TemplateAlias,
         MenuItemId,
         Sequence,
-        [ImageProvider]
+        [ImageProvider, UrlProvider]
         ToolTipImage32by32,
         ToolTipImage32by32Class,
         ToolTipImage32by32Left,

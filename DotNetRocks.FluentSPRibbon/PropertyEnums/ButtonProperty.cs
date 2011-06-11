@@ -11,12 +11,13 @@ namespace DotNetRocks.FluentSPRibbon
         CommandValueId,
         [TextProvider]
         Description,
-        [ImageProvider]
+        [ImageProvider, UrlProvider]
         Image32by32,
         Image32by32Class,
         Image32by32Left,
         Image32by32Top,
-        [ImageProvider]
+        
+        [ImageProvider, UrlProvider]
         Image16by16,
         Image16by16Class,
         Image16by16Left,
@@ -27,7 +28,7 @@ namespace DotNetRocks.FluentSPRibbon
         MenuItemId,
         Sequence,
         TemplateAlias,
-        [ImageProvider]
+        [ImageProvider, UrlProvider]
         ToolTipImage32by32,
         ToolTipImage32by32Class,
         ToolTipImage32by32Left,

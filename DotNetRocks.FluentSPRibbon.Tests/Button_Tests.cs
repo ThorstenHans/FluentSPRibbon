@@ -21,10 +21,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
             var actual = _sut.GetControlRef();
             Assert.IsNotNull(actual);
             Assert.IsInstanceOf<ControlRef>(actual);
-            Assert.AreEqual(ControlRefDisplayMode.Large,actual.GetDisplayMode());
-
-
+            Assert.AreEqual(ControlRefDisplayMode.Large, actual.GetDisplayMode());
         }
+
         [Test]
         public void Create_Should_Create_A_New_Instance()
         {
