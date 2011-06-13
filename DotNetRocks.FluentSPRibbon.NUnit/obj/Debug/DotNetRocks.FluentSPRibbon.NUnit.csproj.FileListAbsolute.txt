@@ -1,0 +1,7 @@
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit\bin\Debug\DotNetRocks.FluentSPRibbon.NUnit.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit\bin\Debug\DotNetRocks.FluentSPRibbon.NUnit.pdb
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit\bin\Debug\nunit.framework.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit\bin\Debug\nunit.framework.xml
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit\obj\Debug\ResolveAssemblyReference.cache
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit\obj\Debug\DotNetRocks.FluentSPRibbon.NUnit.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit\obj\Debug\DotNetRocks.FluentSPRibbon.NUnit.pdb

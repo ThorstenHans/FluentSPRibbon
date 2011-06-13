@@ -43,9 +43,9 @@
     <Compile Include="Attributes\UrlProvider.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="CommandUIDefinition.cs" />
-    <Compile Include="CommandUIExtensionProperty.cs" />
+    <Compile Include="PropertyEnums\CommandUIExtensionProperty.cs" />
     <Compile Include="CommandUIHandler.cs" />
-    <Compile Include="CommandUIHandlerProperty.cs" />
+    <Compile Include="PropertyEnums\CommandUIHandlerProperty.cs" />
     <Compile Include="CustomActionProperty.cs" />
     <Compile Include="PropertyEnums\CommandUIDefinitionProperty.cs" />
     <Compile Include="CommandUIExtension.cs" />

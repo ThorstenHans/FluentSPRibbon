@@ -10,10 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{2BF5CF18-6
 		Libs\nunit.framework.dll = Libs\nunit.framework.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetRocks.FluentSPRibbon.NUnit", "DotNetRocks.FluentSPRibbon.NUnit\DotNetRocks.FluentSPRibbon.NUnit.csproj", "{320B2364-A3E9-4277-ADA0-2DD23A702755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetRocks.FluentSPRibbon.NUnit.Tests", "DotNetRocks.FluentSPRibbon.NUnit.Tests\DotNetRocks.FluentSPRibbon.NUnit.Tests.csproj", "{56EB7844-6742-400F-9C81-12923CEBB1A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BB6EBE79-BD8E-462D-BCD5-758104A702E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharePointIntegration", "SharePointIntegration", "{C454CB0F-C1B9-446D-A5A6-FA34B14DFA4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnitIntegration", "NUnitIntegration", "{978446C9-EC9C-44D7-8F04-63B8B9F8C4B7}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = DotNetRocks.SharePoint.FluentRibbon.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -27,8 +34,22 @@ Global
 		{8D760DC3-C867-4104-B225-82EDAA54A056}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D760DC3-C867-4104-B225-82EDAA54A056}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D760DC3-C867-4104-B225-82EDAA54A056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{320B2364-A3E9-4277-ADA0-2DD23A702755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{320B2364-A3E9-4277-ADA0-2DD23A702755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{320B2364-A3E9-4277-ADA0-2DD23A702755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{320B2364-A3E9-4277-ADA0-2DD23A702755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56EB7844-6742-400F-9C81-12923CEBB1A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56EB7844-6742-400F-9C81-12923CEBB1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56EB7844-6742-400F-9C81-12923CEBB1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56EB7844-6742-400F-9C81-12923CEBB1A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B909A67D-6B74-4E08-BE52-FCC79FBF3D4D} = {BB6EBE79-BD8E-462D-BCD5-758104A702E4}
+		{8D760DC3-C867-4104-B225-82EDAA54A056} = {BB6EBE79-BD8E-462D-BCD5-758104A702E4}
+		{320B2364-A3E9-4277-ADA0-2DD23A702755} = {978446C9-EC9C-44D7-8F04-63B8B9F8C4B7}
+		{56EB7844-6742-400F-9C81-12923CEBB1A3} = {978446C9-EC9C-44D7-8F04-63B8B9F8C4B7}
 	EndGlobalSection
 EndGlobal

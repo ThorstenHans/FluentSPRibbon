@@ -66,25 +66,31 @@ namespace DotNetRocks.FluentSPRibbon
 
         protected override void WriteChildren(XmlWriter writer)
         {
-            writer.WriteStartElement("Tabs");
-            writer.WriteAttributeString("Id", String.Concat(Id,".TabsContainer"));
-            _tabs.ToList().ForEach(t=>
-                                       {
-                                           writer.WriteStartElement("Tab");
-                                           t.WriteXml(writer);
-                                           writer.WriteEndElement();
-                                       });
-            writer.WriteEndElement();
-            writer.WriteStartElement("ContextualTabs");
-            writer.WriteAttributeString("Id", String.Concat(Id,".ContextualTabs"));
-            _contextualGroups.ToList().ForEach(cg=>
-                                                   {
-                                                       writer.WriteStartElement("ContextualGroup");
-                                                       cg.WriteXml(writer);
-                                                       writer.WriteEndElement();
+            if (_tabs.Count > 0)
+            {
+                writer.WriteStartElement("Tabs");
+                writer.WriteAttributeString("Id", String.Concat(Id, ".TabsContainer"));
+                _tabs.ToList().ForEach(t =>
+                                           {
+                                               writer.WriteStartElement("Tab");
+                                               t.WriteXml(writer);
+                                               writer.WriteEndElement();
+                                           });
+                writer.WriteEndElement();
+            }
+            if (_contextualGroups.Count > 0)
+            {
+                writer.WriteStartElement("ContextualTabs");
+                writer.WriteAttributeString("Id", String.Concat(Id, ".ContextualTabs"));
+                _contextualGroups.ToList().ForEach(cg =>
+                                                       {
+                                                           writer.WriteStartElement("ContextualGroup");
+                                                           cg.WriteXml(writer);
+                                                           writer.WriteEndElement();
 
-                                                   });
-            writer.WriteEndElement();
+                                                       });
+                writer.WriteEndElement();
+            }
         }
 
 

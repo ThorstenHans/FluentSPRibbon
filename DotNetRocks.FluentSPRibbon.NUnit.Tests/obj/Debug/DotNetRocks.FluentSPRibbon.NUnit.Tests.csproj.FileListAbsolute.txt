@@ -1,0 +1,11 @@
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.NUnit.Tests.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.NUnit.Tests.pdb
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.NUnit.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\nunit.framework.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\nunit.mocks.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\pnunit.framework.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.NUnit.pdb
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\nunit.framework.xml
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.NUnit.Tests.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.NUnit.Tests.pdb

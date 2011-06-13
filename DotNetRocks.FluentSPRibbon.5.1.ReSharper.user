@@ -12,27 +12,27 @@
       <Item value="RibbonElementBase`0" priority="7" />
       <Item value="public" priority="110" />
       <Item value="void" priority="45" />
-      <Item value="var" priority="88" />
+      <Item value="var" priority="94" />
       <Item value="Create" priority="15" />
       <Item value="Button`0" priority="11" />
-      <Item value="Ribbon`0" priority="9" />
+      <Item value="Ribbon`0" priority="10" />
       <Item value="Tab`0" priority="17" />
       <Item value="Group`0" priority="11" />
       <Item value="button" priority="2" />
-      <Item value="Assert`0" priority="89" />
+      <Item value="Assert`0" priority="98" />
       <Item value="ribbon" priority="5" />
-      <Item value="typeof" priority="1" />
+      <Item value="typeof" priority="4" />
       <Item value="Test" priority="22" />
       <Item value="newRibbon" priority="0" />
-      <Item value="test" priority="14" />
-      <Item value="sut" priority="92" />
+      <Item value="test" priority="19" />
+      <Item value="sut" priority="93" />
       <Item value="private" priority="18" />
       <Item value="Dictionary" priority="6" />
       <Item value="String`0" priority="65" />
       <Item value="this" priority="76" />
-      <Item value="new" priority="89" />
+      <Item value="new" priority="93" />
       <Item value="Dictionary&lt;string,string&gt;" priority="0" />
-      <Item value="if" priority="9" />
+      <Item value="if" priority="11" />
       <Item value="name" priority="11" />
       <Item value="value" priority="18" />
       <Item value="return" priority="88" />
@@ -189,9 +189,9 @@
       <Item value="s" priority="0" />
       <Item value="scale" priority="1" />
       <Item value="maxSize" priority="1" />
-      <Item value="Attribute`0" priority="1" />
-      <Item value="AttributeUsage" priority="1" />
-      <Item value="AttributeTargets`0" priority="1" />
+      <Item value="Attribute`0" priority="7" />
+      <Item value="AttributeUsage" priority="3" />
+      <Item value="AttributeTargets`0" priority="3" />
       <Item value="t" priority="0" />
       <Item value="Localizable" priority="0" />
       <Item value="ImageProvider" priority="6" />
@@ -243,7 +243,7 @@
       <Item value="List&lt;Button&gt;" priority="0" />
       <Item value="List&lt;ColorPicker&gt;" priority="0" />
       <Item value="List&lt;FlyoutAnchor&gt;" priority="0" />
-      <Item value="as" priority="0" />
+      <Item value="as" priority="1" />
       <Item value="fake" priority="6" />
       <Item value="Scale`0" priority="5" />
       <Item value="ScaleProperty`0" priority="2" />
@@ -267,6 +267,22 @@
       <Item value="CommandUIDefinitionProperty`0" priority="2" />
       <Item value="CustomAction`0" priority="2" />
       <Item value="CustomActionProperty`0" priority="2" />
+      <Item value="Is`0" priority="9" />
+      <Item value="System" priority="9" />
+      <Item value="RibbonCustomization`0" priority="1" />
+      <Item value="TestAttribute`0" priority="0" />
+      <Item value="RibbonExtensionsTests`0" priority="0" />
+      <Item value="RibbonExtensions`0" priority="1" />
+      <Item value="NUnit" priority="0" />
+      <Item value="TestFixtureAttribute`0" priority="0" />
+      <Item value="attributes" priority="2" />
+      <Item value="Length" priority="0" />
+      <Item value="AttributeUsageAttribute`0" priority="1" />
+      <Item value="usageAttrib" priority="1" />
+      <Item value="TestMethod" priority="0" />
+      <Item value="_tabs" priority="0" />
+      <Item value="_contextualGroups" priority="0" />
+      <Item value="ContextualGroup`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Create`1">
       <Item value="Instance`0" priority="15" />
@@ -280,7 +296,7 @@
       <Item value="IsIdProvider" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Ribbon">
-      <Item value="With`0" priority="6" />
+      <Item value="With`0" priority="7" />
       <Item value="Indexer" priority="0" />
       <Item value="ChildItemCount" priority="2" />
       <Item value="Id" priority="0" />
@@ -324,7 +340,7 @@
       <Item value="Throws`1" priority="1" />
       <Item value="Fail`0" priority="0" />
       <Item value="IsFalse`0" priority="1" />
-      <Item value="That`0" priority="0" />
+      <Item value="That`0" priority="9" />
       <Item value="Contains`0" priority="0" />
       <Item value="IsNull`0" priority="0" />
     </ItemStatistics>
@@ -446,7 +462,7 @@
       <Item value="Add`0" priority="24" />
       <Item value="Contains`0" priority="0" />
       <Item value="First`1" priority="0" />
-      <Item value="Count" priority="3" />
+      <Item value="Count" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Color">
       <Item value="OriginalId" priority="0" />
@@ -483,6 +499,8 @@
     <ItemStatistics item="Qualified:@System.AttributeTargets">
       <Item value="Enum" priority="0" />
       <Item value="Field" priority="1" />
+      <Item value="Class" priority="1" />
+      <Item value="Method" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Enum">
       <Item value="ToString`0" priority="2" />
@@ -543,6 +561,31 @@
       <Item value="GetScale`0" priority="0" />
       <Item value="Parent" priority="0" />
     </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Is">
+      <Item value="InstanceOf`0" priority="0" />
+      <Item value="InstanceOf`1" priority="4" />
+      <Item value="Not" priority="0" />
+      <Item value="GreaterThan`0" priority="0" />
+      <Item value="EqualTo`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="GetCustomAttributes`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NUnit.Framework.Constraints.ConstraintExpression">
+      <Item value="Null" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.AttributeUsageAttribute">
+      <Item value="ValidOn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.VisualStudio.TestTools.UnitTesting.Assert">
+      <Item value="IsInstanceOfType`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Ribbon">
+      <Item value="Create`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.ContextualGroup">
+      <Item value="Create`0" priority="0" />
+    </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
@@ -551,31 +594,29 @@
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Gallery_Tests.cs" caret="763" fromTop="21" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:MenuSection_Tests.cs" caret="8" fromTop="0" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Scaling_Tests.cs" caret="223" fromTop="9" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="194" fromTop="9" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Tab_Tests.cs" caret="3326" fromTop="13" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Group_Tests.cs" caret="2839" fromTop="22" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Button_Tests.cs" caret="1590" fromTop="45" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandlerProperty.cs" caret="104" fromTop="6" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:CommandUIHandlerProperty.cs" caret="104" fromTop="6" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ColorProperty.cs" caret="0" fromTop="0" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Scaling.cs" caret="380" fromTop="3" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="835" fromTop="25" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIExtensionProperty.cs" caret="110" fromTop="6" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:CommandUIExtensionProperty.cs" caret="110" fromTop="6" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIExtension.cs" caret="869" fromTop="26" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIDefinition.cs" caret="880" fromTop="26" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2160" fromTop="5" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:RibbonSettings_Tests.cs" caret="575" fromTop="19" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonSettings.cs" caret="2017" fromTop="22" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ButtonProperty.cs" caret="682" fromTop="29" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="3195" fromTop="32" />
+      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonExtensions.cs" caret="221" fromTop="9" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonExtensionsTests.cs" caret="1286" fromTop="26" />
+      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonCustomization.cs" caret="186" fromTop="5" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="110" fromTop="5" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="0" fromTop="0" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="562" fromTop="17" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tab_Tests.cs" caret="143" fromTop="7" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="2796" fromTop="25" />
     </RecentFiles>
     <RecentEdits>
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Tab_Tests.cs" caret="807" fromTop="21" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Tab_Tests.cs" caret="33" fromTop="0" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Tab_Tests.cs" caret="2838" fromTop="19" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Tab_Tests.cs" caret="3639" fromTop="22" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Group_Tests.cs" caret="1399" fromTop="22" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Group_Tests.cs" caret="1186" fromTop="9" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Group_Tests.cs" caret="3259" fromTop="12" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Group_Tests.cs" caret="3905" fromTop="12" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Button_Tests.cs" caret="778" fromTop="11" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Group_Tests.cs" caret="2835" fromTop="22" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Button_Tests.cs" caret="1590" fromTop="7" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ColorProperty.cs" caret="0" fromTop="0" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="664" fromTop="15" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="824" fromTop="20" />
@@ -595,6 +636,17 @@
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2966" fromTop="20" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="844" fromTop="19" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2160" fromTop="5" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="418" fromTop="15" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonExtensionsTests.cs" caret="850" fromTop="26" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonExtensionsTests.cs" caret="1272" fromTop="32" />
+      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonExtensions.cs" caret="137" fromTop="5" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="1256" fromTop="31" />
+      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonCustomization.cs" caret="130" fromTop="4" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="817" fromTop="24" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="2615" fromTop="8" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="3335" fromTop="20" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="3336" fromTop="32" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="2795" fromTop="25" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

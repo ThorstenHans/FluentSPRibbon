@@ -1,0 +1,14 @@
+<ProjectConfiguration>
+  <CopyReferencedAssembliesToWorkspace>false</CopyReferencedAssembliesToWorkspace>
+  <RunPreBuildEvents>false</RunPreBuildEvents>
+  <RunPostBuildEvents>false</RunPostBuildEvents>
+  <InstrumentAssembly>true</InstrumentAssembly>
+  <BuildOutputPath />
+  <DefaultTestTimeout>60000</DefaultTestTimeout>
+  <UseBuildConfiguration />
+  <IgnoredTests>
+    <RegexTestSelector>
+      <RegularExpression>.*</RegularExpression>
+    </RegexTestSelector>
+  </IgnoredTests>
+</ProjectConfiguration>

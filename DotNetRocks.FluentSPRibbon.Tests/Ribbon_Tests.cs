@@ -83,6 +83,26 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         }
 
         [Test]
+        public void Ribbon_Should_Not_Contain_Tabs_Node_When_No_Tab_Is_Given()
+        {
+            var sut = Ribbon.Create("MyRibbon")
+                .With(() => ContextualGroup.Create("MyContextualGroup"))
+                .ToXml();
+            Assert.That(sut,Is.Not.Contains("<Tabs"));
+            Assert.That(sut, Is.StringContaining("<ContextualTabs"));
+        }
+
+        [Test]
+        public void Ribbon_Should_Not_Contain_ContextualTabs_Node_When_No_ContextualTab_Is_Given()
+        {
+            var sut = Ribbon.Create("MyRibbon")
+                .With(() => Tab.Create("MyTab"))
+                .ToXml();
+            Assert.That(sut, Is.Not.Contains("<ContextualTabs"));
+            Assert.That(sut, Is.StringContaining("<Tabs"));
+        }
+
+        [Test]
         public void Indexer_Should_Return_Correct_Tab()
         {
             var tab1 = new Tab("Tab1");
