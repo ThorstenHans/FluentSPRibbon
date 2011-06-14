@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
 
 namespace DotNetRocks.FluentSPRibbon.Tests
@@ -13,6 +14,45 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         {
             _sut = Ribbon.Create("MyRibbon");
         }
+
+        [Test]
+        public void WriteTo_Should_Look_For_Given_File_In_SourceFolder()
+        {
+            var sut = Ribbon.Create("MyRibbon");
+            //Act
+            sut.WriteTo("Elements.xml");
+            var actualContent = File.ReadAllText(@"..\..\Elements.xml");
+
+            Assert.That(actualContent, Is.StringContaining(sut.ToXml()));
+        }
+
+        [Test]
+        public void Users_Should_Be_Able_To_Pass_Custom_Paths_To_WriteTo_Method()
+        {
+            var sut = Ribbon.Create("MyRibbon");
+            sut.WriteTo(CustomPath.Build(@"..\..\Elements.xml"));
+            var actualContent = File.ReadAllText(@"..\..\Elements.xml");
+
+            Assert.That(actualContent, Is.StringContaining(sut.ToXml()));
+        }
+
+        [Test]
+        public void Users_Should_Be_Able_To_Write_To_A_Stream()
+        {
+            var sut = Ribbon.Create("MyRibbon");
+            using (var stream = new MemoryStream())
+            {
+                sut.WriteTo(stream);
+                stream.Position = 0;
+                using (var reader = new StreamReader(stream))
+                {
+                    Assert.That(stream, Is.Not.Null);
+                    Assert.That(stream.Length, Is.GreaterThan(0));
+                    Assert.That(reader.ReadToEnd(), Is.EqualTo(sut.ToXml()));
+                }
+            }
+        }
+
 
         [Test]
         public void Create_Should_Create_A_New_Instance()

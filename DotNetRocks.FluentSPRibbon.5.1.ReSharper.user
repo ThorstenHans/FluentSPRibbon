@@ -10,35 +10,35 @@
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
       <Item value="RibbonElementBase`0" priority="7" />
-      <Item value="public" priority="110" />
-      <Item value="void" priority="45" />
-      <Item value="var" priority="94" />
+      <Item value="public" priority="119" />
+      <Item value="void" priority="51" />
+      <Item value="var" priority="102" />
       <Item value="Create" priority="15" />
       <Item value="Button`0" priority="11" />
-      <Item value="Ribbon`0" priority="10" />
+      <Item value="Ribbon`0" priority="16" />
       <Item value="Tab`0" priority="17" />
       <Item value="Group`0" priority="11" />
       <Item value="button" priority="2" />
-      <Item value="Assert`0" priority="98" />
+      <Item value="Assert`0" priority="104" />
       <Item value="ribbon" priority="5" />
       <Item value="typeof" priority="4" />
       <Item value="Test" priority="22" />
       <Item value="newRibbon" priority="0" />
-      <Item value="test" priority="19" />
-      <Item value="sut" priority="93" />
+      <Item value="test" priority="20" />
+      <Item value="sut" priority="99" />
       <Item value="private" priority="18" />
       <Item value="Dictionary" priority="6" />
-      <Item value="String`0" priority="65" />
-      <Item value="this" priority="76" />
-      <Item value="new" priority="93" />
+      <Item value="String`0" priority="66" />
+      <Item value="this" priority="77" />
+      <Item value="new" priority="98" />
       <Item value="Dictionary&lt;string,string&gt;" priority="0" />
       <Item value="if" priority="11" />
       <Item value="name" priority="11" />
       <Item value="value" priority="18" />
-      <Item value="return" priority="88" />
+      <Item value="return" priority="92" />
       <Item value="_controlsProperties" priority="0" />
       <Item value="foreach" priority="4" />
-      <Item value="writer" priority="1" />
+      <Item value="writer" priority="3" />
       <Item value="controlsProperty" priority="1" />
       <Item value="base" priority="28" />
       <Item value="SplitButton`0" priority="3" />
@@ -49,13 +49,13 @@
       <Item value="CheckBox`0" priority="0" />
       <Item value="IRibbonElement" priority="8" />
       <Item value="ComboBox`0" priority="2" />
-      <Item value="ctor" priority="8" />
+      <Item value="ctor" priority="9" />
       <Item value="DropDown`0" priority="2" />
       <Item value="MRUSplittButton`0" priority="0" />
       <Item value="Spinner`0" priority="0" />
       <Item value="itor" priority="10" />
       <Item value="GalleryButton`0" priority="4" />
-      <Item value="string" priority="6" />
+      <Item value="string" priority="8" />
       <Item value="FlyoutAnchor`0" priority="5" />
       <Item value="class" priority="6" />
       <Item value="MenuSection`0" priority="18" />
@@ -78,7 +78,7 @@
       <Item value="RibbonSettings_Tests`0" priority="0" />
       <Item value="RibbonSettings" priority="0" />
       <Item value="ResourceFile" priority="2" />
-      <Item value="static" priority="5" />
+      <Item value="static" priority="6" />
       <Item value="RibbonSettings`0" priority="14" />
       <Item value="KeyValuePair&lt;String,String&gt;" priority="0" />
       <Item value="title" priority="3" />
@@ -95,7 +95,7 @@
       <Item value="relativeImageUrl" priority="3" />
       <Item value="Uri`0" priority="1" />
       <Item value="ExpectedException" priority="0" />
-      <Item value="Exception`0" priority="8" />
+      <Item value="Exception`0" priority="9" />
       <Item value="message" priority="2" />
       <Item value="innerException" priority="1" />
       <Item value="throw" priority="0" />
@@ -115,7 +115,7 @@
       <Item value="LocalizeVisualElements" priority="1" />
       <Item value="_resourceFileIdentifier" priority="0" />
       <Item value="else" priority="0" />
-      <Item value="true" priority="2" />
+      <Item value="true" priority="3" />
       <Item value="InternalsVisibleTo" priority="0" />
       <Item value="AllInternalsVisible" priority="0" />
       <Item value="group3" priority="0" />
@@ -172,7 +172,7 @@
       <Item value="ColorProperty`0" priority="1" />
       <Item value="actual" priority="36" />
       <Item value="Contains`0" priority="0" />
-      <Item value="bool" priority="0" />
+      <Item value="bool" priority="2" />
       <Item value="Func" priority="0" />
       <Item value="expression" priority="9" />
       <Item value="scaling" priority="1" />
@@ -267,8 +267,8 @@
       <Item value="CommandUIDefinitionProperty`0" priority="2" />
       <Item value="CustomAction`0" priority="2" />
       <Item value="CustomActionProperty`0" priority="2" />
-      <Item value="Is`0" priority="9" />
-      <Item value="System" priority="9" />
+      <Item value="Is`0" priority="14" />
+      <Item value="System" priority="10" />
       <Item value="RibbonCustomization`0" priority="1" />
       <Item value="TestAttribute`0" priority="0" />
       <Item value="RibbonExtensionsTests`0" priority="0" />
@@ -276,13 +276,36 @@
       <Item value="NUnit" priority="0" />
       <Item value="TestFixtureAttribute`0" priority="0" />
       <Item value="attributes" priority="2" />
-      <Item value="Length" priority="0" />
+      <Item value="Length" priority="1" />
       <Item value="AttributeUsageAttribute`0" priority="1" />
       <Item value="usageAttrib" priority="1" />
       <Item value="TestMethod" priority="0" />
       <Item value="_tabs" priority="0" />
       <Item value="_contextualGroups" priority="0" />
       <Item value="ContextualGroup`0" priority="0" />
+      <Item value="RibbonCustomization" priority="0" />
+      <Item value="File`0" priority="0" />
+      <Item value="path" priority="1" />
+      <Item value="ToXml`0" priority="2" />
+      <Item value="actualContent" priority="0" />
+      <Item value="Users_Should_Be_Able_To_Pass_Custom_Paths_To_WriteTo_Method`0" priority="1" />
+      <Item value="MemoryStream`0" priority="0" />
+      <Item value="stream" priority="7" />
+      <Item value="StreamReader`0" priority="0" />
+      <Item value="CustomPath`0" priority="1" />
+      <Item value="prop" priority="0" />
+      <Item value="CustomPath" priority="0" />
+      <Item value="Path" priority="0" />
+      <Item value="customPath" priority="2" />
+      <Item value="WriteTo`0" priority="0" />
+      <Item value="Stream`0" priority="1" />
+      <Item value="StreamWriter`0" priority="0" />
+      <Item value="StreamWriter" priority="0" />
+      <Item value="try" priority="0" />
+      <Item value="catch" priority="0" />
+      <Item value="Text" priority="0" />
+      <Item value="Encoding`0" priority="0" />
+      <Item value="ribbonXmlAsBytes" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Create`1">
       <Item value="Instance`0" priority="15" />
@@ -306,6 +329,8 @@
       <Item value="SetProperties`0" priority="0" />
       <Item value="IsIdProvider" priority="0" />
       <Item value="OriginalId" priority="0" />
+      <Item value="WriteTo`0" priority="4" />
+      <Item value="ToXml`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.Tab">
       <Item value="With`0" priority="4" />
@@ -334,13 +359,13 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
       <Item value="IsNotNull`0" priority="13" />
-      <Item value="IsTrue`0" priority="6" />
+      <Item value="IsTrue`0" priority="7" />
       <Item value="IsInstanceOf`1" priority="5" />
       <Item value="AreEqual`0" priority="61" />
       <Item value="Throws`1" priority="1" />
       <Item value="Fail`0" priority="0" />
       <Item value="IsFalse`0" priority="1" />
-      <Item value="That`0" priority="9" />
+      <Item value="That`0" priority="14" />
       <Item value="Contains`0" priority="0" />
       <Item value="IsNull`0" priority="0" />
     </ItemStatistics>
@@ -564,15 +589,17 @@
     <ItemStatistics item="Qualified:@NUnit.Framework.Is">
       <Item value="InstanceOf`0" priority="0" />
       <Item value="InstanceOf`1" priority="4" />
-      <Item value="Not" priority="0" />
-      <Item value="GreaterThan`0" priority="0" />
-      <Item value="EqualTo`0" priority="0" />
+      <Item value="Not" priority="1" />
+      <Item value="GreaterThan`0" priority="1" />
+      <Item value="EqualTo`0" priority="1" />
+      <Item value="True" priority="0" />
+      <Item value="StringContaining`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Type">
       <Item value="GetCustomAttributes`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:NUnit.Framework.Constraints.ConstraintExpression">
-      <Item value="Null" priority="0" />
+      <Item value="Null" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.AttributeUsageAttribute">
       <Item value="ValidOn" priority="0" />
@@ -581,10 +608,39 @@
       <Item value="IsInstanceOfType`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.Ribbon">
-      <Item value="Create`0" priority="0" />
+      <Item value="Create`0" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DotNetRocks.FluentSPRibbon.ContextualGroup">
       <Item value="Create`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="WriteAllText`0" priority="0" />
+      <Item value="ReadAllText`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="Combine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.MemoryStream">
+      <Item value="Length" priority="0" />
+      <Item value="Position" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="ReadToEnd`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DotNetRocks.FluentSPRibbon.CustomPath">
+      <Item value="Path" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Write`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="Write`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="UTF8" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Encoding">
+      <Item value="GetBytes`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
@@ -607,32 +663,20 @@
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonSettings.cs" caret="2017" fromTop="22" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ButtonProperty.cs" caret="682" fromTop="29" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="3195" fromTop="32" />
-      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonExtensions.cs" caret="221" fromTop="9" />
       <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonExtensionsTests.cs" caret="1286" fromTop="26" />
-      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonCustomization.cs" caret="186" fromTop="5" />
-      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="110" fromTop="5" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="0" fromTop="0" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="562" fromTop="17" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tab_Tests.cs" caret="143" fromTop="7" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="2796" fromTop="25" />
+      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonExtensions.cs" caret="221" fromTop="9" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Unit_Tests.cs" caret="193" fromTop="10" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="385" fromTop="15" />
+      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonCustomization.cs" caret="209" fromTop="8" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="164" fromTop="7" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Elements.xml" caret="0" fromTop="0" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2144" fromTop="1" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomPath.cs" caret="244" fromTop="7" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1030" fromTop="4" />
     </RecentFiles>
     <RecentEdits>
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ColorProperty.cs" caret="0" fromTop="0" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="664" fromTop="15" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="824" fromTop="20" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="583" fromTop="16" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIHandler.cs" caret="212" fromTop="6" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIExtension.cs" caret="124" fromTop="5" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIExtension.cs" caret="869" fromTop="26" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIExtension.cs" caret="644" fromTop="7" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIDefinition.cs" caret="880" fromTop="23" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIDefinition.cs" caret="287" fromTop="6" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIDefinition.cs" caret="425" fromTop="13" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CommandUIDefinition.cs" caret="620" fromTop="19" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2158" fromTop="16" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="129" fromTop="1" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="3183" fromTop="27" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2743" fromTop="14" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2966" fromTop="20" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="844" fromTop="19" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2160" fromTop="5" />
@@ -641,12 +685,28 @@
       <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonExtensionsTests.cs" caret="1272" fromTop="32" />
       <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonExtensions.cs" caret="137" fromTop="5" />
       <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="1256" fromTop="31" />
-      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonCustomization.cs" caret="130" fromTop="4" />
       <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="817" fromTop="24" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="2615" fromTop="8" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="3335" fromTop="20" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="3336" fromTop="32" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="2795" fromTop="25" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="4199" fromTop="25" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Unit_Tests.cs" caret="193" fromTop="10" />
+      <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="385" fromTop="15" />
+      <File id="320B2364-A3E9-4277-ADA0-2DD23A702755/f:RibbonCustomization.cs" caret="209" fromTop="8" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2008" fromTop="14" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1700" fromTop="28" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1700" fromTop="20" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1264" fromTop="20" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1700" fromTop="25" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="933" fromTop="11" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomPath.cs" caret="208" fromTop="6" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomPath.cs" caret="244" fromTop="7" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2886" fromTop="37" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2481" fromTop="24" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2569" fromTop="26" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="336" fromTop="5" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1711" fromTop="17" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2854" fromTop="30" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

@@ -87,6 +87,25 @@ namespace DotNetRocks.FluentSPRibbon
 
         }
 
+        public void WriteTo(String path)
+        {
+            File.WriteAllText(Path.Combine(@"..\..\", path), ToXml());
+        }
+
+        public void WriteTo(CustomPath customPath)
+        {
+            WriteTo(customPath.Path);
+        }
+
+        public Stream WriteTo(Stream stream)
+        {
+            var ribbonXml = ToXml();
+            var ribbonXmlAsBytes = System.Text.Encoding.UTF8.GetBytes(ribbonXml);
+            stream.Write(ribbonXmlAsBytes,0,ribbonXmlAsBytes.Length);
+
+            return stream;
+        }
+
         public void WriteXml(XmlWriter writer)
         {
             if (IsIdProvider)

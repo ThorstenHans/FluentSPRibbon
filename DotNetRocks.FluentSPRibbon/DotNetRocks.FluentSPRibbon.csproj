@@ -43,6 +43,7 @@
     <Compile Include="Attributes\UrlProvider.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="CommandUIDefinition.cs" />
+    <Compile Include="CustomPath.cs" />
     <Compile Include="PropertyEnums\CommandUIExtensionProperty.cs" />
     <Compile Include="CommandUIHandler.cs" />
     <Compile Include="PropertyEnums\CommandUIHandlerProperty.cs" />
