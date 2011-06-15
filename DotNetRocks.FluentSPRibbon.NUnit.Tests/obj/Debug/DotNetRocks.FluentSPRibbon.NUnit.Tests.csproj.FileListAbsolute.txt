@@ -20,3 +20,5 @@ C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\n
 C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.NUnit.Tests.dll
 C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.NUnit.Tests.pdb
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.dll
+C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.pdb

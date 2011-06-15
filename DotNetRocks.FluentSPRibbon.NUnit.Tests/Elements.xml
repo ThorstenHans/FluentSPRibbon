@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Button Id="myButton" LabelText="Click me" Image32by32="/_layouts/images/FluentSPRibbon/MyButton32.png" />
+</Elements>

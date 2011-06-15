@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElementXmlBuildingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RibbonCustomizationTests.cs" />
     <Compile Include="RibbonExtensionsTests.cs" />
@@ -62,6 +63,13 @@
       <Project>{320B2364-A3E9-4277-ADA0-2DD23A702755}</Project>
       <Name>DotNetRocks.FluentSPRibbon.NUnit</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DotNetRocks.FluentSPRibbon\DotNetRocks.FluentSPRibbon.csproj">
+      <Project>{B909A67D-6B74-4E08-BE52-FCC79FBF3D4D}</Project>
+      <Name>DotNetRocks.FluentSPRibbon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Elements.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

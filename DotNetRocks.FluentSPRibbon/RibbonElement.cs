@@ -66,11 +66,20 @@ namespace DotNetRocks.FluentSPRibbon
             String elementAsXml;
             using (var stream = new MemoryStream())
             {
-                serializer.Serialize(stream, this);
-                stream.Position = 0;
-                using (var reader = new StreamReader(stream))
+                var settings = new XmlWriterSettings()
+                                   {
+                                       OmitXmlDeclaration = true,
+                                       NewLineOnAttributes = true
+                                       
+                                   };
+                using (var writer = XmlWriter.Create(stream, settings))
                 {
-                    elementAsXml = reader.ReadToEnd();
+                    serializer.Serialize(writer, this);
+                    stream.Position = 0;
+                    using (var reader = new StreamReader(stream))
+                    {
+                        elementAsXml = reader.ReadToEnd();
+                    }
                 }
             }
 
@@ -89,7 +98,14 @@ namespace DotNetRocks.FluentSPRibbon
 
         public void WriteTo(String path)
         {
-            File.WriteAllText(Path.Combine(@"..\..\", path), ToXml());
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(Path.Combine(@"..\..\", path));
+            var nodeList = xmlDocument.GetElementsByTagName("Elements");
+            if (nodeList.Count > 0)
+            {
+                nodeList[0].InnerXml = ToXml();
+            }
+            xmlDocument.Save(Path.Combine(@"..\..\",path));
         }
 
         public void WriteTo(CustomPath customPath)
