@@ -110,7 +110,14 @@ namespace DotNetRocks.FluentSPRibbon
 
         public void WriteTo(CustomPath customPath)
         {
-            WriteTo(customPath.Path);
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(customPath.Path);
+            var nodeList = xmlDocument.GetElementsByTagName("Elements");
+            if (nodeList.Count > 0)
+            {
+                nodeList[0].InnerXml = ToXml();
+            }
+            xmlDocument.Save(customPath.Path);
         }
 
         public Stream WriteTo(Stream stream)

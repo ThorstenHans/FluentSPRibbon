@@ -18,6 +18,11 @@ namespace DotNetRocks.FluentSPRibbon
             this._commandUIHandlers = new List<CommandUIHandler>();
         }
 
+        public static new CustomAction Create(String id)
+        {
+            return RibbonElement<CustomAction>.Create(id);
+        }
+
 
         internal override bool IsIdProvider
         {
@@ -95,6 +100,16 @@ namespace DotNetRocks.FluentSPRibbon
                 AddOrUpdateProperty(property.Key, property.Value);
             }
             return this;
+        }
+
+        protected override void WriteChildren(System.Xml.XmlWriter writer)
+        {
+            if (this._commandUIDefinitions.Count > 0 || this._commandUIHandlers.Count > 0)
+            {
+                writer.WriteStartElement("CommandUIExtension");
+                
+                writer.WriteEndElement();
+            }
         }
     }
 }

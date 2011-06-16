@@ -51,6 +51,7 @@
     <Compile Include="ContextualGroup_Tests.cs" />
     <Compile Include="Continous_Fluent_API_Tests.cs" />
     <Compile Include="ControlRef_Tests.cs" />
+    <Compile Include="CustomAction_Tests.cs" />
     <Compile Include="DropDown_Tests.cs" />
     <Compile Include="FlyoutAnchor_Tests.cs" />
     <Compile Include="GalleryButton_Tests.cs" />
