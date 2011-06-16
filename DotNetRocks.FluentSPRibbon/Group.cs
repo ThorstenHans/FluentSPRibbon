@@ -11,8 +11,8 @@ namespace DotNetRocks.FluentSPRibbon
         IRibbonElementContainer<Group, Label>, IRibbonElementContainer<Group, MRUSplitButton>,
         IRibbonElementContainer<Group, Spinner>, IRibbonElementContainer<Group, SplitButton>,
         IRibbonElementContainer<Group, TextBox>, IRibbonElementContainer<Group,ToggleButton>
-
     {
+
         internal readonly IList<IRibbonElement> _innerControls;
         private readonly Dictionary<String, String> _controlsProperties;
         private string _className;

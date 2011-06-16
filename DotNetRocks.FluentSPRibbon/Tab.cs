@@ -67,16 +67,21 @@ namespace DotNetRocks.FluentSPRibbon
 
         protected override void WriteChildren(XmlWriter writer)
         {
-            writer.WriteStartElement("Groups");
-            writer.WriteAttributeString("Id",String.Concat(Id, ".GroupsContainer"));
-            _groups.ToList().ForEach(g=>
-                                         {
-                                             writer.WriteStartElement("Group");
-                                             g.WriteXml(writer);
-                                             writer.WriteEndElement();
-                                         });
-            writer.WriteEndElement();
-            
+            if (_groups.Count > 0)
+            {
+                writer.WriteStartElement("Groups");
+                writer.WriteAttributeString("Id", String.Concat(Id, ".GroupsContainer"));
+                _groups.ToList().ForEach(g =>
+                                             {
+                                                 writer.WriteStartElement("Group");
+                                                 g.WriteXml(writer);
+                                                 writer.WriteEndElement();
+                                             });
+                writer.WriteEndElement();
+            }
+
+
+
         }
     }
 }

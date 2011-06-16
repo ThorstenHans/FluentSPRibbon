@@ -123,6 +123,8 @@
     <Compile Include="PropertyEnums\SectionProperty.cs" />
     <Compile Include="PropertyEnums\VerticalAlignment.cs" />
     <Compile Include="QAT.cs" />
+    <Compile Include="PropertyEnums\ControlsProperty.cs" />
+    <Compile Include="PropertyEnums\QATProperty.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="RibbonElement.cs" />
     <Compile Include="PropertyEnums\RibbonProperty.cs" />
