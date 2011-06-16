@@ -43,7 +43,10 @@
     <Compile Include="Attributes\UrlProvider.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="CommandUIDefinition.cs" />
+    <Compile Include="ContextualTabs.cs" />
+    <Compile Include="Controls.cs" />
     <Compile Include="CustomPath.cs" />
+    <Compile Include="Groups.cs" />
     <Compile Include="PropertyEnums\CommandUIExtensionProperty.cs" />
     <Compile Include="CommandUIHandler.cs" />
     <Compile Include="PropertyEnums\CommandUIHandlerProperty.cs" />
@@ -119,6 +122,7 @@
     <Compile Include="PropertyEnums\SectionLayoutType.cs" />
     <Compile Include="PropertyEnums\SectionProperty.cs" />
     <Compile Include="PropertyEnums\VerticalAlignment.cs" />
+    <Compile Include="QAT.cs" />
     <Compile Include="Ribbon.cs" />
     <Compile Include="RibbonElement.cs" />
     <Compile Include="PropertyEnums\RibbonProperty.cs" />
@@ -140,6 +144,7 @@
     <Compile Include="StripProperty.cs" />
     <Compile Include="Tab.cs" />
     <Compile Include="PropertyEnums\TabProperty.cs" />
+    <Compile Include="Tabs.cs" />
     <Compile Include="TemplateActionRequiredEventArgs.cs" />
     <Compile Include="TemplateElement.cs" />
     <Compile Include="PropertyEnums\TemplateProperty.cs" />

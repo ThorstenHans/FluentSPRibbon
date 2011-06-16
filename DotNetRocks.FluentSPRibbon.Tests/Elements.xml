@@ -1,2 +1,4 @@
 <?xml version="1.0"?>
-<Ribbon Id="MyRibbon" />
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Ribbon Id="MyRibbon" />
+</Elements>
