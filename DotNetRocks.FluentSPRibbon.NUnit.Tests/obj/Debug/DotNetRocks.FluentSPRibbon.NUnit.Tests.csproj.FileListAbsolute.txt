@@ -22,3 +22,5 @@ C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\D
 C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\obj\Debug\DotNetRocks.FluentSPRibbon.NUnit.Tests.pdb
 C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.dll
 C:\dev\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.pdb
+C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.dll
+C:\dev\private\FluentSPRibbon\DotNetRocks.FluentSPRibbon.NUnit.Tests\bin\Debug\DotNetRocks.FluentSPRibbon.pdb

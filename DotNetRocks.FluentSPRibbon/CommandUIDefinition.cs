@@ -11,14 +11,14 @@ namespace DotNetRocks.FluentSPRibbon
         {
         }
 
-        public static new CommandUIDefinition Create(string id)
+        public static new CommandUIDefinition Create()
         {
-            return RibbonElement<CommandUIDefinition>.Create(id);
+            return RibbonElement<CommandUIDefinition>.Create("NotSet");
         }
 
         internal override bool IsIdProvider
         {
-            get { return true; }
+            get { return false; }
         }
 
          public override CommandUIDefinition Set(CommandUIDefinitionProperty propertyName, string propertyValue)

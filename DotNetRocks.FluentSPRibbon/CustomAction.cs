@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DotNetRocks.FluentSPRibbon
 {
@@ -107,7 +108,29 @@ namespace DotNetRocks.FluentSPRibbon
             if (this._commandUIDefinitions.Count > 0 || this._commandUIHandlers.Count > 0)
             {
                 writer.WriteStartElement("CommandUIExtension");
-                
+                if (_commandUIDefinitions.Count > 0)
+                {
+                    writer.WriteStartElement("CommandUIDefinitions");
+                    _commandUIDefinitions.ToList().ForEach(cuid =>
+                                                               {
+                                                                   writer.WriteStartElement("CommandUIDefinition");
+                                                                   cuid.WriteXml(writer);
+                                                                   writer.WriteEndElement();
+                                                               });
+                    writer.WriteEndElement();
+                }
+
+                if(_commandUIHandlers.Count>0)
+                {
+                    writer.WriteStartElement("CommandUIHandlers");
+                    _commandUIHandlers.ToList().ForEach(cuih=>
+                                                            {
+                                                                writer.WriteStartElement("CommandUIHandler");
+                                                                cuih.WriteXml(writer);
+                                                                writer.WriteEndElement();
+                                                            });
+                    writer.WriteEndElement();
+                }
                 writer.WriteEndElement();
             }
         }

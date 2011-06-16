@@ -6,8 +6,18 @@ namespace DotNetRocks.FluentSPRibbon
     {
         internal CommandUIHandler() : this("NotSet") { }
 
-        public CommandUIHandler(string id) : base(id)
+        internal CommandUIHandler(string id) : base(id)
         {
+        }
+
+        public static new CommandUIHandler Create()
+        {
+            return RibbonElement<CommandUIHandler>.Create("NotSet");
+        }
+
+        internal override bool IsIdProvider
+        {
+            get { return false; }
         }
 
         public override CommandUIHandler Set(CommandUIHandlerProperty propertyName, string propertyValue)

@@ -48,6 +48,8 @@
     <Compile Include="ColorPicker_Tests.cs" />
     <Compile Include="Color_Tests.cs" />
     <Compile Include="ComboBox_Tests.cs" />
+    <Compile Include="CommandUIDefinition_Tests.cs" />
+    <Compile Include="CommandUIHandler_Tests.cs" />
     <Compile Include="ContextualGroup_Tests.cs" />
     <Compile Include="Continous_Fluent_API_Tests.cs" />
     <Compile Include="ControlRef_Tests.cs" />

@@ -649,7 +649,6 @@
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Scaling_Tests.cs" caret="223" fromTop="9" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Tab_Tests.cs" caret="3326" fromTop="13" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Group_Tests.cs" caret="2839" fromTop="22" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Button_Tests.cs" caret="1590" fromTop="45" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:CommandUIHandlerProperty.cs" caret="104" fromTop="6" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/d:PropertyEnums/f:ColorProperty.cs" caret="0" fromTop="0" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Scaling.cs" caret="380" fromTop="3" />
@@ -665,15 +664,14 @@
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tab_Tests.cs" caret="143" fromTop="7" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="2796" fromTop="25" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:Ribbon.cs" caret="164" fromTop="7" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Elements.xml" caret="0" fromTop="0" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2144" fromTop="1" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomPath.cs" caret="244" fromTop="7" />
-      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1030" fromTop="4" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Xml_Serialization_Tests.cs" caret="118" fromTop="0" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Button_Tests.cs" caret="0" fromTop="0" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="1388" fromTop="14" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Elements.xml" caret="0" fromTop="0" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="744" fromTop="21" />
     </RecentFiles>
     <RecentEdits>
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2966" fromTop="20" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="844" fromTop="19" />
-      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:CustomAction.cs" caret="2160" fromTop="5" />
       <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonCustomizationTests.cs" caret="418" fromTop="15" />
       <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonExtensionsTests.cs" caret="850" fromTop="26" />
       <File id="56EB7844-6742-400F-9C81-12923CEBB1A3/f:RibbonExtensionsTests.cs" caret="1272" fromTop="32" />
@@ -698,6 +696,9 @@
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="336" fromTop="5" />
       <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Ribbon_Tests.cs" caret="1711" fromTop="17" />
       <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="2854" fromTop="30" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="1239" fromTop="8" />
+      <File id="B909A67D-6B74-4E08-BE52-FCC79FBF3D4D/f:RibbonElement.cs" caret="1388" fromTop="14" />
+      <File id="8D760DC3-C867-4104-B225-82EDAA54A056/f:Elements.xml" caret="0" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
