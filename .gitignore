@@ -1,0 +1,8 @@
+[Oo]bj
+[Bb]in
+*.[Uu]ser
+*.[Cc]ache
+_ReSharper*
+*.ReSharper
+*.suo
+*.ReSharper.user
