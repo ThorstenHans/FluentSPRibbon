@@ -1,0 +1,26 @@
+<Ribbon Id="DotNetRocks.Ribbon">
+  <Tabs Id="DotNetRocks.Ribbon.TabsContainer">
+    <Tab Id="DotNetRocks.Ribbon.FirstTab" 
+         Title="$Resources:DotNetRocks.Core.Resources, Tab1_Title" 
+         Description="$Resources:DotNetRocks.Core.Resources, Tab1_Description" Sequence="100" CssClass="DotNetRocksTab">
+      <Groups Id="DotNetRocks.Ribbon.FirstTab.GroupsContainer">
+        <Group Id="DotNetRocks.Ribbon.FirstTab.FirstGroup" Title="$Resources:DotNetRocks.Core.Resources, Group1_Title">
+          <Controls Id="DotNetRocks.Ribbon.FirstTab.FirstGroup.ControlsContainer">
+            <TextBox Id="DotNetRocks.Ribbon.FirstTab.FirstGroup.NameTextBox" Width="200" />
+            <Button Id="DotNetRocks.Ribbon.FirstTab.FirstGroup.ButtonSayHello" 
+                    LabelText="$Resources:DotNetRocks.Core.Resources, Say Hello" Command="SayHelloCommand" Sequence="200" />
+          </Controls>
+        </Group>
+        <Group Id="DotNetRocks.Ribbon.FirstTab.SecondGroup">
+          <Controls Id="DotNetRocks.Ribbon.FirstTab.SecondGroup.ControlsContainer">
+            <ToggleButton Id="DotNetRocks.Ribbon.FirstTab.SecondGroup.MyToggle" 
+                          Image16by16="~/_images/DotNetRocks_Sample/Toggle16.png" 
+                          Image32by32="~/_images/DotNetRocks_Sample/Toggle32.png" 
+                          LabelText="$Resources:DotNetRocks.Core.Resources, Sample Toggle Button" 
+                          Command="ToggleClicked" />
+          </Controls>
+        </Group>
+      </Groups>
+    </Tab>
+  </Tabs>
+</Ribbon>
