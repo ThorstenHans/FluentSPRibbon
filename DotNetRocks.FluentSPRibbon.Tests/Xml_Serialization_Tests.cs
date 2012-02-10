@@ -75,6 +75,9 @@ namespace DotNetRocks.FluentSPRibbon.Tests
         public void Properties_Should_Be_Written_To_Xml()
         {
             String actual = String.Empty;
+            RibbonSettings.ImagesFolder = "/_images/RibbonImages/";
+            RibbonSettings.ResourceFileIdentifier = "MyResources";
+
                 var ribbon = Ribbon.Create("FluentRibbon")
                     .Set(RibbonProperty.ToolTipFooterText, ".NET Rocks Fluent SPRibbon API")
                     .With(() => Tab.Create("FluentRibbonTab1")

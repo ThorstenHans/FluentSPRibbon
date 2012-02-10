@@ -8,6 +8,7 @@ namespace DotNetRocks.FluentSPRibbon.Tests
     public class ContextualTabs_Tests
     {
         [Test]
+        
         public void Create_Should_Create_A_New_Instance_Of_ContextualTabs()
         {
             var sut = ContextualTabs.Create("myId");
